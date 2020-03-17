@@ -1,0 +1,157 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\frenchbsetup{StandardLists=true}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{framed}
+\usepackage{fancyhdr}
+\usepackage[left=1.3cm,right=1.3cm,top=1.8cm,bottom=1.2cm]{geometry}
+\usepackage{array} 
+\usepackage{tabularx}
+\usepackage{fancybox}
+\usepackage{pst-tree}
+\usepackage[framed]{ntheorem}
+\usepackage{tabularx}
+\usepackage{pstricks-add}
+\usepackage{graphicx}
+\usepackage{eurosym}
+\usepackage{pst-tree}
+\usepackage[np]{numprint}
+\usepackage{pifont}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{pgf,tikz}
+\usepackage[tikz]{bclogo}
+\usepackage{pgfkeys}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+\usetikzlibrary{arrows}
+
+
+\rfoot{\small -\thepage-}
+\cfoot{}
+
+\def\R{{\mathbb R}}
+\def\Q{{\mathbb Q}}
+\def\Z{{\mathbb Z}}
+\def\D{{\mathbb D}}
+\def\N{{\mathbb N}}
+\def\C{{\mathbb C}}
+
+\pagestyle{fancy}
+
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\alph{subsubsection}}
+\renewcommand{\labelitemi}{$\bullet$}
+\newcommand{\VE}[1]{\overrightarrow{#1}}
+%\renewcommand{\r}{($O$ ; $\vec{i}$ , $\vec{j}$)}
+\renewcommand{\arraystretch}{1}
+\tikzstyle{mybox} = [draw=black, very thick, rectangle, rounded corners, inner sep=20pt, inner ysep=20pt] 
+\tikzstyle{fancytitle} =[draw=black, very thick, rectangle, rounded corners, fill=white, text=black] % fill obligé sinon ne recouvre pas boite du dessous
+\usepackage{array,multirow,makecell}
+\setcellgapes{1pt}
+\makegapedcells
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash }b{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash }b{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash }b{#1}}
+\theoremstyle{break}
+\theorembodyfont{\upshape}
+\newtheorem{Prop}{Propri\'et\'e}
+\newtheorem{Def}{D\'efinition}
+\newtheorem{Rem}{Remarque}
+\newtheorem{exo}{Exercice}
+\newtheorem{Meth}{Methode}
+\newtheorem{cpreuve}{Preuve}
+\newtheorem{Th}{Théorème}
+\newtheorem{Act}{Activité}
+\theorembodyfont{\small \sffamily }
+\newtheorem{Ex}{Exemple}
+\newtheorem{Preu}{Preuve}
+\everymath{\displaystyle}
+\pagestyle{fancy}
+\lhead[]{\small }
+\chead[]{\textsc{\shadowbox{\begin{large}
+				\textcolor{black}{QUESTIONS du JOUR 1}
+\end{large}}}}
+\rhead[]{\small {}}
+\fancyhead[R]{2019/2020}
+\lfoot{}
+\rfoot{\small -\thepage-}
+
+\begin{document}
+A faire sans calculatrice , compléter sur le sujet et coller dans le cahier d'exercices . \\
+{\renewcommand{\arraystretch}{3}
+\begin{tabular}{|p{1cm}|p{10cm}|p{4.5cm}| }
+	\hline
+&Enoncé&Réponse\\
+\hline
+1&On a placé sur le cercle trigonométrique suivant des points.
+
+	\begin{center}
+		\psset{unit=1.8cm}
+		\begin{pspicture}(-1.2,-1.2)(1.2,1.2)
+		\newrgbcolor{bleu}{0.1 0.05 .5}
+		\newrgbcolor{prune}{.6 0 .48}
+		\newrgbcolor{rose}{.95 .8 .9}
+		\def\pshlabel#1{\footnotesize #1}
+		\def\psvlabel#1{\footnotesize #1}
+		\psaxes[linewidth=.75pt,labels=none,ticks=none]{->}(0,0)(-1.2,-1.2)(1.2,1.2)
+		\psaxes[linewidth=1.5pt,linecolor=red]{->}(0,0)(1,1)
+		\uput[dl](0,0){\footnotesize{O}}\uput[dr](1,0){\footnotesize{\prune $I$}}\uput[ul](0,1){\footnotesize{\prune $J$}}
+		\pscircle[linewidth=1.25pt, linecolor=bleu,linestyle=solid](0,0){1} 
+		\psset{linecolor=prune,linewidth=.5pt,linestyle=dashed,labelsep=4pt}
+		\rput{0}(0,0){\multido{\n=45+90,\i=1+1}{4}{\cnode*(1;\n){2pt}{A\i}}}
+		\rput{0}(0,0){\multido{\n=30+30,\i=1+1}{12}{\cnode*(1;\n){2pt}{B\i}}}
+		\ncline{A1}{A2}  \ncline{A2}{A3}  \ncline{A3}{A4}  \ncline{A4}{A1}
+		\ncline{B1}{B5}  \ncline{B5}{B7}  \ncline{B7}{B11}  \ncline{B11}{B1}
+		\ncline{B2}{B4}  \ncline{B4}{B8} \ncline{B8}{B10} \ncline{B10}{B2} 
+		\nput{10}{A1}{\footnotesize{$A$}}\nput{170}{A2}{\footnotesize{$B$}}\nput{-170}{A3}{\footnotesize{$C$}}\nput{-10}{A4}{\footnotesize{$D$}}
+		\nput{0}{B1}{\footnotesize{$E$}}\nput{180}{B5}{\footnotesize{$F$}}\nput{-180}{B7}{\footnotesize{$G$}}\nput{0}{B11}{\footnotesize{$H$}}
+		\nput{25}{B2}{\footnotesize{$K$}}\nput{145}{B4}{\footnotesize{$L$}}\nput{-105}{B8}{\footnotesize{$M$}}\nput{-105}{B10}{\footnotesize{$N$}}
+		\uput[ur](0,1){\footnotesize{$J$}}\uput[ul](-1,0){\footnotesize{$I'$}}\uput[dl](0,-1){\footnotesize{$J'$}}
+		\end{pspicture}\\
+		\begin{itemize}
+			\item Quel est le point image associé à $x=\dfrac{13\pi}3$?
+			\item Quel est le point image associé à  $y=-\dfrac{17\pi}4$ ?
+		\end{itemize}
+		
+		
+	\end{center}&$x =\dfrac{\pi}{3}$ $\Rightarrow$ $K$\par $y = \dfrac{-\pi}{4}$ $\Rightarrow$ $D $
+
+\\
+\hline
+\rotatebox{-45}{Correction}&juste&\\
+\hline
+2&Déterminer la mesure principale de l'angle orienté dont une mesure en radian est  $\dfrac {47\pi} {3}$.& l'angle orianté a pour mesure pricipale $-\dfrac{\pi}{3}$\\
+
+\hline
+\rotatebox{-45}{Correction}&juste&\\
+\hline
+3&Déterminer la valeur exacte de :	$\cos (\dfrac {7\pi}{6})=$&$G$$(-\dfrac{\sqrt{3}}{2}$;$-\dfrac{1}{2})$$\Rightarrow$$-\dfrac{\sqrt{3}}{2}$ \\
+\hline
+\rotatebox{-45}{Correction}&juste&\\
+\hline
+4&Résoudre dans $]-\pi;\pi]$ l'équation $\cos (x)=-\dfrac{\sqrt{3}}{2}$&$ \dfrac{5\pi}{6}$ et $-\dfrac{5\pi}{6}$\\
+\hline
+\rotatebox{-45}{Correction}&juste&\\
+\hline
+
+5&Résoudre dans $[0 ; 2\pi]$, $\sin(x)=-\dfrac12$& $\dfrac{-5\pi}{6}$ et $\dfrac{-\pi}{6}$ \\
+\hline
+\rotatebox{-45}{Correction}&La il faut faire attention car on demande des mesures d'angles entre $[0 ; 2\pi]$ donc même si $\dfrac{-5\pi}{6}$ et $\dfrac{-\pi}{6}$ sont juste on donnera plutôt   $\dfrac{7\pi}{6}$ et $\dfrac{11\pi}{6}$ &\\
+\hline
+\end{tabular}}
+
+
+
+
+
+
+\end{document}

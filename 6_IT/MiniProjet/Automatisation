@@ -1,0 +1,14 @@
+Pour faire fonctionner l'arrosage automatique, il faut que:
+	- la terre soit sèche
+	- qu'il y ait de l'eau dans la reserve
+	- qu'il ne pleuve pas
+Quand il pleut, il faut:
+	- Ouvrir la trape du haut
+	- si le capteur interne detecte de l'eau à un moment (ouverture de la 2eme trape.
+	- renouvellement sur les 2 et 3 eme etages.
+	- Quand l'eau tombe, des turbines prennent le courant de l'eau et la transforme en energie electrique, ce qui perment d'allimanter les capteurs et les différents Moteurs.
+Si il ne pleut pas, l'energie est produite par les panneaux solaires.
+
+l'energie est stokée dans des batteries.
+
+2m^3 --> 2000l

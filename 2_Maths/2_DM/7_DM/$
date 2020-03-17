@@ -1,0 +1,88 @@
+%%%%%%
+%BASE
+%%%
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+
+%%%%%
+%MATHS
+%%%
+\usepackage{amsmath}
+\usepackage{array}
+
+%%%%%
+%COULEURS
+%%%
+\usepackage{xcolor}
+\usepackage{color}
+
+%%%%%
+%PUCES
+%%%
+\usepackage{pifont}
+
+\everymath{\displaystyle}
+\usepackage{hyperref}
+\setlength{\parindent}{10px}
+
+
+
+%%%%%
+%Haut de Page
+%%%
+\usepackage{fancybox}
+\usepackage{fancyhdr}
+\usepackage[left=1.3cm,right=1.2cm,top=2cm,bottom=1.5cm]{geometry}
+\pagestyle{fancy}
+\fancyhead[L]{Lespinasse Florentin}
+\fancyhead[C]{}
+\fancyhead[R]{1STI2D4~~~~~~~~13 Mars 2020}
+
+\begin{document}
+\begin{center}
+        \shadowbox{\begin{large}
+                \textcolor{black}{DM 7}
+        \end{large}}
+    \end{center}
+    \vspace{0.5 cm}
+
+\begin{itemize}
+	\item \textbf{PARTIE A}
+		\begin{enumerate}
+			\item $f'(x)=3ax^2+2bx+c$
+			\item $f(0):a(o)^3+b(0)^2+c(0)+d=0$\par
+				  $f(0):d=0$ Donc la courbe passe par (0;0)\par
+				  $f'(x):3ax^3+2bx^2+c=-0.6$
+				  $f'(0):3a(0)^2+2b(0)+c=-0.6$\par
+				  Donc $f'(0):c=-0.6$\par
+				  Donc $c=-0.6$ et $d=0$. d est l'ordonnée à l'origine et passe par le point O(0;0).
+			\item La courbe doit passer par le point A(6;3.6)\par
+				  $f(6):a\times(6)^3+b\times(6)^2+(-0.6)\times(6)=3.6$\par  
+				  $f(6):216a+36b-3.6=3.6$\par
+				  $f(6):216a+36b=7.2$\par
+				  Et la tengente de A,\par
+				  $f'(A)=0 \Leftrightarrow 3\times a \times 6^2+2\times b \times -0.6 = 0$\par
+				  $f'(A): 108a+12b-0.6=0$\par
+				  $f'(A): 108a+12b=0.6$\par
+		\end{enumerate}
+	\item \textbf{PARTIE B}
+		\begin{enumerate}
+			\item 
+			\item 
+			\item 
+		\end{enumerate}
+	\item \textbf{PARTIE C}
+		\begin{enumerate}
+			\item 
+			\item 
+			\item 
+		\end{enumerate}
+\end{itemize}
+
+
+
+
+\end{document}
+

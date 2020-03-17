@@ -1,0 +1,7 @@
+\babel@toc {nil}{}
+\contentsline {section}{\numberline {1}\textit {Les Contemplations}}{2}{section.1}% 
+\contentsline {subsection}{\numberline {1.1}Victor Hugo}{2}{subsection.1.1}% 
+\contentsline {section}{\numberline {2}\textit {Paroles}}{3}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}Jaques Pr\'evert}{3}{subsection.2.1}% 
+\contentsline {section}{\numberline {3}\textit {L'ing\'enu}}{4}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}Voltaire}{4}{subsection.3.1}% 

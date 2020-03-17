@@ -1,0 +1,625 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\frenchbsetup{StandardLists=true}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{framed}
+\usepackage{fancyhdr}
+\usepackage[left=1.3cm,right=1.2cm,top=2cm,bottom=1.5cm]{geometry}
+\usepackage{array} 
+\usepackage{fancyhdr} 
+\usepackage{fancybox}
+\usepackage{pst-tree}
+\usepackage[framed]{ntheorem}
+\usepackage{tabularx}
+\usepackage{pstricks-add}
+\usepackage{eurosym}
+%\usepackage{pst-tree}
+\usepackage[np]{numprint}
+\usepackage{pifont}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{pgf,tikz}
+\usepackage{pgfkeys}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+\usetikzlibrary{arrows}
+\usepackage{tikz,tkz-tab}
+\usepackage[tikz]{bclogo}
+\rfoot{\small -\thepage-}
+\cfoot{}
+
+\def\R{{\mathbb R}}
+%\def\Q{{\mathbb Q}}
+%\def\Z{{\mathbb Z}}
+%\def\D{{\mathbb D}}
+\def\N{{\mathbb N}}
+%\def\C{{\mathbb C}}
+
+\pagestyle{fancy}
+
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\alph{subsubsection}}
+\renewcommand{\labelitemi}{$\bullet$}
+\newcommand{\VE}[1]{\overrightarrow{#1}}
+%\renewcommand{\r}{($O$ ; $\vec{i}$ , $\vec{j}$)}
+\renewcommand{\arraystretch}{1.5}
+\tikzstyle{mybox} = [draw=black, very thick, rectangle, rounded corners, inner sep=20pt, inner ysep=20pt] 
+\tikzstyle{fancytitle} =[draw=black, very thick, rectangle, rounded corners, fill=white, text=black] % fill obligé sinon ne recouvre pas boite du dessous
+\usepackage{array,multirow,makecell}
+\setcellgapes{1pt}
+\makegapedcells
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash }b{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash }b{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash }b{#1}}
+\theoremstyle{break}
+\theorembodyfont{\upshape}
+\newtheorem{Prop}{Propri\'et\'e}
+\newtheorem{Def}{D\'efinition}
+\newtheorem{Rem}{Remarque}
+\newtheorem{exo}{Exercice}
+\newtheorem{Meth}{Methode}
+\newtheorem{cpreuve}{Preuve}
+\newtheorem{Th}{Théorème}
+\theorembodyfont{\small \sffamily }
+\newtheorem{Ex}{Exemple}
+\newtheorem{Preu}{Preuve}
+\renewcommand{\arraystretch}{}
+\pagestyle{fancy}
+\fancyhead[L]{1STI2D}
+\fancyhead[C]{COURS}
+\fancyhead[R]{2019/2020}
+\rfoot{\small -\thepage-}
+\cfoot{}
+
+\begin{document}
+	\begin{center}
+		\shadowbox{\begin{large}
+				\textcolor{black}{ FONCTIONS du SECOND et TROISIÈME DEGRÉ}
+		\end{large}}
+	\end{center}
+	\vspace{0.5 cm}
+	\tableofcontents
+	
+	\section{Trinôme du second degré}
+	
+	\subsection{Fonction polynôme du second degré}
+	\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Définition }
+		
+		Une fonction du second degré est une fonction dont l'expression 
+		peut s'écrire sous la forme d'un trin\^ome du second degré: 
+		$f(x)=ax^2+bx+c$ avec $a\neq0$. ($ax^2+bx+c$ est la \textbf{forme développée} de $f$ et $a$, $b$ et $c$ s'appellent les \textbf{coefficients du trinôme})
+	\end{bclogo}
+	
+	\begin{Meth}
+		Dans chacun des cas préciser si la fonction est une fonction trinôme du second degré et si c'est le cas les valeurs des coefficients $a$, $b$ et $c$.\\
+		\begin{tabular}{|p{7cm}|p{2cm}|p{2cm}|p{2.8cm}|p{2.cm}|}\hline
+			
+			\rule[-0.4cm]{0.cm}{1cm}
+			Fonctions &Trinôme?& $a=$  & $b=$ & $c=$  \\[0.2cm]\hline
+			
+			\rule[-0.4cm]{0.cm}{1cm}
+			$R(x)=-x^2+\dfrac{\sqrt{5}}2 x$ 
+			&& $a=\dots$ & $b=\dots$ & $c=\dots$ 
+			\\\hline
+			\rule[-0.4cm]{0.cm}{1cm}
+			$S(x)=3x^2-\left( 1-\sqrt{2}\right)  x-\pi$ 
+			&& $a=\dots$ & $b=\dots$ & $c=\dots$ 
+			\\\hline
+			\rule[-0.4cm]{0.cm}{1cm}
+			$T(x)=\dfrac{6x^2}5 -3$ 
+			&& $a=\dots$ & $b=\dots$ & $c=\dots$ 
+			\\\hline
+			\rule[-0.4cm]{0.cm}{1cm}
+			$U(x)=(2x-3)^2-4(x+3)^2$ 
+			&& $a=\dots$ & $b=\dots$ & $c=\dots$ 
+			\\
+			&&&&\\
+			&&&&
+			\\\hline
+				\rule[-0.4cm]{0.cm}{1cm}
+			$V(x)=-3(x-4)(x+2)$ 
+			&& $a=\dots$ & $b=\dots$ & $c=\dots$ 
+			\\
+			&&&&\\
+			&&&&
+			\\\hline
+			
+		\end{tabular}
+	\end{Meth}
+	
+	\subsection{Représentation graphique d'une fonction du second degré}
+	\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Parabole}
+		\begin{itemize}
+			\item La courbe représentative d'une fonction du second 
+			degré est \textbf{une parabole} d'équation : \\$y=ax^2+bx+c$
+			\item Le sommet de la parabole a pour coordonnées $(\alpha;\beta)$ avec $\alpha=-\dfrac{b}{2a}$ et $\beta=f(\alpha)$
+			
+			\item La parabole admet un axe de symétrie d'équation $x=-\dfrac{b}{2a}$
+		 \item Suivant le signe de $a$ la forme de la parabole est soit ouverte vers le haut soit vers le bas.
+			\begin{multicols}{2}
+				\begin{center}
+					\fbox{	{\Large 	\textbf{a<0}}}\\
+					~\\	\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+					\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.5617977528089886cm,y=0.6593406593406591cm]
+					\draw[->,color=black] (-2.9,0.) -- (6.,0.);
+					\foreach \x in {-2.,-1.,1.,2.,3.,4.,5.,6.}
+					\draw[shift={(\x,0)},color=black] (0pt,-2pt);
+					\draw[->,color=black] (0.,-1.36) -- (0.,7.74);
+					\foreach \y in {-1.,1.,2.,3.,4.,5.,6.,7.}
+					\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt);
+					\clip(-2.9,-1.36) rectangle (6.,7.74);
+					\draw[line width=1.2pt,smooth,samples=100,domain=-2.9000000000000004:6.000000000000001] plot(\x,{0-(\x)^(2.0)+2.0*(\x)+5.0});
+					\draw (0.26,1.58) node[anchor=north west] {\parbox{2.9117647058823524 cm}{$y=\alpha$}};
+					\draw (0.26,1.2) node[anchor=north west] {\parbox{3.5 cm}{$  axe \;  de  \; symetrie $}};
+					\draw (1.5,6.88) node[anchor=north west] {$S(\alpha;\beta)$};
+					\draw (1.5,5.99) node[anchor=north west] {$Sommet$};
+					\draw [line width=1.2pt,dash pattern=on 1pt off 1pt on 2pt off 4pt] (1.,-1.36) -- (1.,7.74);
+					
+					\begin{scriptsize}
+					\draw [color=uuuuuu] (1.,6.)-- ++(-1.5pt,0 pt) -- ++(3.0pt,0 pt) ++(-1.5pt,-1.5pt) -- ++(0 pt,3.0pt);
+					\draw[color=uuuuuu] (1.22,6.2) node {$\mathbf{S}$};
+					\end{scriptsize}
+					\end{tikzpicture}
+				\end{center}
+				
+				\begin{center}
+					\fbox{	{\Large 	\textbf{a>0}}}\\
+					~\\
+					\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+					\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.6925207756232685cm,y=0.5617977528089885cm]
+					\draw[->,color=black] (-4.08,0.) -- (3.14,0.);
+					\foreach \x in {-4.,-3.,-2.,-1.,1.,2.,3.}
+					\draw[shift={(\x,0)},color=black] (0pt,-2pt);
+					\draw[->,color=black] (0.,-0.48) -- (0.,10.2);
+					\foreach \y in {,1.,2.,3.,4.,5.,6.,7.,8.,9.,10.}
+					\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt);
+					\clip(-4.08,-0.48) rectangle (3.14,10.2);
+					\draw[line width=1.2pt,smooth,samples=100,domain=-4.080000000000001:3.1400000000000006] plot(\x,{(\x)^(2.0)+2.0*(\x)+5.0});
+					\draw (-2,8.58) node[anchor=north west] {\parbox{2.9117647058823524 cm}{$y=\alpha$}};
+					\draw (-2.8,8.0) node[anchor=north west] {\parbox{3.5 cm}{$  axe \;  de  \; symetrie $}};
+					\draw (-3.4,3.88) node[anchor=north west] {$S(\alpha;\beta)$};
+					\draw (-3.4,2.99) node[anchor=north west] {$Sommet$};
+					\draw [line width=1.2pt,dash pattern=on 1pt off 1pt on 2pt off 4pt] (-1.,-0.48) -- (-1.,10.2);
+					
+					\begin{scriptsize}
+					\draw [color=uuuuuu] (-1.,4.)-- ++(-1.5pt,0 pt) -- ++(3.0pt,0 pt) ++(-1.5pt,-1.5pt) -- ++(0 pt,3.0pt);
+					\draw[color=uuuuuu] (-0.75,3.7) node {$\mathbf{S}$};
+					\end{scriptsize}
+					\end{tikzpicture}
+				\end{center}
+				
+			\end{multicols}
+		\end{itemize}
+	\end{bclogo}
+	
+	\subsection{Variations }
+	\begin{bclogo}[couleur = yellow!30,arrondi =0.1,logo =\bcbook]{Variations}
+		Pour toute fonction $f $ du second degré définie 
+		par sa forme développé $f(x)=ax^2+bx+c$ 
+		On envisage \textbf{deux cas} pour les variations de $f $ qui dépendent du \textbf{signe de $a$ }:
+			\setlength{\columnseprule}{0.4pt} 
+				\begin{multicols}{2}
+			\begin{tikzpicture}
+			\tkzTabInit[espcl=2.5]{$x$/1,$f(x)$/2.5}{$-\infty$,$\alpha=-\dfrac b{2a}$,$+\infty$}
+			\tkzTabVar{-/,+/$\beta=f(-\dfrac b{2a})$,-/}
+			\end{tikzpicture}
+			\\
+			\begin{tikzpicture}
+			\tkzTabInit[espcl=2.5]{$x$/1,$f(x)$/2.5}{$-\infty$,$\alpha=-\dfrac b{2a}$,$+\infty$}
+			\tkzTabVar{+/,-/$\beta=f(-\dfrac b{2a})$,+/}
+			\end{tikzpicture}	
+		\end{multicols}
+	\begin{multicols}{2}
+		\begin{itemize}
+		
+			\item La fonction admet \textbf{un maximum} pour:\\ $x=\alpha=-\dfrac b{2a}$ qui vaut $\beta=f(-\dfrac b{2a})$
+			
+			\item La fonction admet un \textbf{minimum} pour:\\ $x=\alpha=-\dfrac b{2a}$ qui vaut $\beta=f(-\dfrac b{2a})$
+		\end{itemize}	\end{multicols}
+	\end{bclogo}		
+	\begin{Meth}
+		Parmi les fonctions $k$, $i$ et $j$, lesquelles admettent un minimum ,un maximum ? \\
+		Préciser quand cela est possible pour quelle valeur il est atteint et ce qu’il vaut.\\
+		$k(x)=-6(x-3)+5$,	$i(x)=-x^2-8x+15$ et	$j(x)=x^2+7$
+	\end{Meth}
+	\newpage
+	\subsection{Fonction de la forme $x\mapsto ax^2 +c $ avec $a\neq0$ et $c\in\R$}
+	\begin{bclogo}[couleur = yellow!30,arrondi =0.1,logo =\bcbook]{Fonction paire}
+		Les fonctions de la forme $x\mapsto ax^2+c$ avec $a\neq0$ et $c\in\R$ sont des fonctions paires.
+	\end{bclogo}
+	\begin{Preu}
+		
+	\end{Preu}
+	\begin{bclogo}[couleur = yellow!30,arrondi =0.1,logo =\bcbook]{Courbe représentative}
+		Les paraboles d’équation $y=ax^2+c$ ont pour axe de symétrie l’axe des ordonnées et pour sommet le point de coordonnées $(0 ; c)$. 
+	\end{bclogo}
+	
+	
+	\begin{bclogo}[couleur = yellow!30,arrondi =0.1,logo =\bcbook]{Proposition}
+		
+		Soient $a$ un réel non nul et $c$ un réel.\\
+		On définit sur $\R$ les fonctions $f: x\mapsto ax^2$, $g:x\mapsto -ax^2$ et $h:x \mapsto ax^2+c$. 
+		\begin{itemize}
+			\item La courbe représentative de $g$ s'obtient en effectuant une symétrique par rapport à l'axe des abscisses à partir de celle de $f$.
+			\item La courbe représentative de $h$ s'obtient en effectuant une translation de vecteur $c\VE{j}$ à partir de celle de $f$.
+		\end{itemize}
+	\end{bclogo}
+	
+	
+	\psset{unit=0.8cm,algebraic=true}
+	\def\xmin {-3.5}
+	\def\xmax {3.5}
+	\def\ymin {-4}
+	\def\ymax {4}
+	\begin{center}
+		\begin{pspicture}(\xmin,\ymin)(\xmax,\ymax)
+			\psgrid[subgriddiv=2,gridlabels=3pt,gridwidth=0.5pt,griddots=10,subgriddots=10](\xmin,\ymin)(\xmax,\ymax)
+		\psaxes{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)
+		\psplot[linewidth=1.5pt]{-2.8}{2.8}{0.5*x*x}
+		\psplot[linewidth=1pt,linecolor=blue]{-2.8}{2.8}{-0.5*x*x}
+		\psplot[linewidth=1pt,linecolor=red]{-2}{2}{0.5*x*x+2}
+		\uput[r](2,-2){$\blue{g(x)=-ax^2}$}
+		\uput[l](-2,1){$f(x)=ax^2$}
+		\uput[u](0,3){$\red{h(x)=ax^2+c}$}
+		\psline[linewidth=0.05,arrowscale=2,linecolor=red]{->}(0,0)(0,2)
+		\uput[r](0,1){$\red{c\VE{j}}$}
+		%	\psline[arrowscale=2,linecolor=red]{->}(2,2)(2,4)
+		\end{pspicture}
+	\end{center}
+	
+	\begin{Rem}
+		Plus $a$ est grand et plus la courbe \og se contracte \fg, plus $a$ est proche de $0$ et plus la courbe \og s'étale \fg.
+	\end{Rem} 
+	\begin{center}\psset{unit=0.8cm,algebraic=true}
+		\def\xmin {-3.7}
+		\def\xmax {3.7}
+		\def\ymin {-0.5}
+		\def\ymax {4}
+		\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+		\psgrid[subgriddiv=2,gridlabels=3pt,gridwidth=0.5pt,griddots=10,subgriddots=10](\xmin,\ymin)(\xmax,\ymax)
+		\psaxes[labels=none]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)
+		\psplot[linewidth=1.5pt]{-2.8}{2.8}{x*x}
+		\psplot[linewidth=1pt,linecolor=blue,linestyle=dashed]{-2.8}{2.8}{3*x*x}
+		\psplot[linewidth=1pt,linecolor=red,linestyle=dashed]{-2.8}{2.8}{0.5*x*x}
+		\uput[u](0,3){$\blue{x \mapsto 3x^2}$}
+		\uput[r](1.6,3){$x \mapsto x^2$}
+		\uput[r](1.3,1){$\red{x \mapsto 0,5x^2}$}
+		\end{pspicture*}
+	\end{center}
+	\begin{Meth}
+		\begin{enumerate}
+			\item Déterminer les expressions des fonctions $f$ et $g$ représentées sur le graphique ci-dessous.\\
+			\begin{center}
+			\psset{unit=0.8cm,algebraic=true}
+			\def\xmin {-2.7}
+			\def\xmax {2.7}
+			\def\ymin {-4}
+			\def\ymax {4}
+			\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+			\psgrid[subgriddiv=2,gridlabels=3pt,gridwidth=0.5pt,griddots=10,subgriddots=10](\xmin,\ymin)(\xmax,\ymax)
+			\psaxes{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)
+			\psplot[linewidth=1pt]{-2.8}{2.8}{-2*x*x}
+			\psplot[linewidth=1pt,linestyle=dashed]{-2.8}{2.8}{3*x*x-2}
+			\uput[r](1,1){$\mathcal{C}_g$}
+			\uput[ul](-1,-2){$\mathcal{C}_f$}
+			\end{pspicture*}
+			\end{center}
+			\item Sur le graphique ci-dessus tracer les courbes représentatives des fonctions $h$ et $k$ définies sur $\R$ par $h:x \mapsto 2x^2$ et $k:x \mapsto -2x^2+2$ en expliquant votre démarche.
+		\end{enumerate}
+	\end{Meth} 
+	\subsection{Fonctions du second degré admettant deux racines distinctes ou confondues}
+	\subsubsection{Racine d'un polynôme}
+	\begin{bclogo}[couleur = yellow!30,arrondi =0.1,logo =\bcbook]{Racine d'un polynôme}
+		On dit que le réel $x_1$ est une \textbf{racine de la fonction polynôme} $f$ si et seulement si $f(x_1)=0$
+	\end{bclogo}
+	\begin{Meth}
+		Soit la fonction $K$ définie sur $\R$ par $K(x)=-4x^2+1$ montrer que $x=-\dfrac12$ est une racine de $K$.
+	\end{Meth}
+	\begin{Meth}
+		On a représenté ci dessous une fonction $H$ du second degré . Déterminer les racines de $H$.
+		\def\xmin {-5}
+		\def\xmax {5}
+		\def\ymin {-5}
+		\def\ymax {5}
+			\psset{unit=0.8cm,algebraic=true}
+		\begin{center}
+		\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+		\psgrid[subgriddiv=2,gridlabels=3pt,gridwidth=0.5pt,griddots=10,subgriddots=10](\xmin,\ymin)(\xmax,\ymax)
+		\psaxes{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)
+		\psplot[linewidth=1pt,linestyle=dashed]{-5}{5}{-0.4*(x-2)*(x+3)}
+		\end{pspicture*}
+		\end{center}
+	\end{Meth}
+\newpage
+	\subsubsection{Fonction $x\mapsto a(x-x_1)(x-x_2)$}
+	\begin{bclogo}[couleur = yellow!30,arrondi =0.1,logo =\bcbook]{Fonction second degré sous forme factorisée}
+		Soient $a$, $x_1$, $x_2$ des réels avec $a\neq0$. On définit sur $\R$ une fonction $f: x\mapsto a(x-x_1)(x-x_2)$. 
+		
+		\begin{itemize}
+			\item $x_1$ et $x_2$ sont les racines du polynôme $f$. Si $x_1=x_2$, on dit qu'il y a une \textbf{racine double}.
+			\item Les points d'intersection $A$ et $B$ de la courbe représentative de $f$ avec l'axe des abscisses sont les points de coordonnées $(x_1;0)$ et $(x_2;0)$. Si $x_1=x_2$, il n'y a qu'un seul point d'intersection.
+			\item L'axe de symétrie de la courbe représentative de $f$ a pour équation $x=\dfrac{x_1+x_2}{2}$. Il passe par le milieu $I$ du segment $[AB]$.
+		\end{itemize}
+		\psset{unit=0.7cm,algebraic=true}
+		\def\xmin {-3}
+		\def\xmax {3}
+		\def\ymin {-3}
+		\def\ymax {4}
+		\begin{center}
+			\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+			%	\psgrid[subgriddiv=2,gridlabels=3pt,gridwidth=0.5pt,griddots=10,subgriddots=10](\xmin,\ymin)(\xmax,\ymax)
+			\psaxes[labels=none]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)
+			\psdots[dotstyle=x](-1,0)(2,0)(0.5,0)
+			\psplot[linewidth=1pt]{\xmin}{\xmax}{(x-2)*(x+1)}
+			\uput[ul](-1,0){$A$}
+			\uput[ur](2,0){$B$}
+			\uput[ur](0.5,0){$I$}
+			\psline[linestyle=dashed,linecolor=red](0.5,\ymin)(0.5,\ymax)
+			\end{pspicture*}
+				\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+			%	\psgrid[subgriddiv=2,gridlabels=3pt,gridwidth=0.5pt,griddots=10,subgriddots=10](\xmin,\ymin)(\xmax,\ymax)
+			\psaxes[labels=none]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)
+			\psdots[dotstyle=x](1,0)
+			\psplot[linewidth=1pt]{\xmin}{\xmax}{(x-1)*(x-1)}
+			\uput[ul](1,0){$I$}
+			
+			\psline[linestyle=dashed,linecolor=red](1,\ymin)(1,\ymax)
+			\end{pspicture*}
+		\end{center}
+	\end{bclogo}
+	
+	\begin{Meth}
+		On considère la parabole ci-dessous rapportée à un repère orthonormé.Déterminer la forme factorisée de $f$ puis sa forme développée.
+		\psset{unit=1cm,algebraic=true}
+		\def\xmin {-3}
+		\def\xmax {4}
+		\def\ymin {-4}
+		\def\ymax {5}
+		\begin{center}
+			\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+			\psgrid[subgriddiv=2,gridlabels=3pt,gridwidth=0.5pt,griddots=10,subgriddots=10](\xmin,\ymin)(\xmax,\ymax)
+			\psaxes{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)
+			
+			\psplot[linewidth=1pt]{\xmin}{\xmax}{-(x+1)*(x-3)}
+			
+			\end{pspicture*}
+		\end{center}
+	\end{Meth}
+\begin{Meth}
+	Montrer que $x=2$ est une racine de l'expression $B(x)=3x^2-2x-8$ et en déduire une factorisation de $B(x)$
+\end{Meth}
+\newpage
+	\subsubsection{Signe de $x\mapsto a(x-x_1)(x-x_2)$}
+	\begin{bclogo}[couleur = yellow!30,arrondi =0.1,logo =\bcbook]{Signe fonction second degré sous forme factorisée} 
+		Soit $f$ la fonction définie sur $\R$ par :$f(x)=a(x-x_1)(x-x_2)$.\\
+		Le signe de $f(x)$ dépend du signe de $a$. $f$ est du signe de $a$ à l'extérieur des racines.\\
+		On suppose que $x_1\leqslant x_2$
+		\begin{itemize}
+			\item Si $a>0$\\
+			
+			\begin{tikzpicture}
+			\tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$, $x_1$,$x_2$, $+\infty$}
+			\tkzTabLine{,+,z, -, z,+, }
+			\end{tikzpicture}
+			\item Si $a<0$\\
+			\begin{tikzpicture}
+			\tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$, $x_1$,$x_2$, $+\infty$}
+			\tkzTabLine{,-,z, +, z,-, }
+			\end{tikzpicture}
+		\end{itemize}
+	\end{bclogo}
+	\begin{Rem}
+		Cette proposition reste valable si $x_1=x_2$ on a alors $f(x)=a(x-x_1)^2$ et les tableau de signes suivants:\\
+		\begin{itemize}
+			\item Si $a>0$\\
+			
+			\begin{tikzpicture}
+			\tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$, $x_1$, $+\infty$}
+			\tkzTabLine{,+,z,+, }
+			\end{tikzpicture}
+			\item Si $a<0$\\
+			\begin{tikzpicture}
+			\tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$, $x_1$, $+\infty$}
+			\tkzTabLine{,-,z,-, }
+			\end{tikzpicture}
+		\end{itemize}
+	\end{Rem}
+	\begin{Meth}[Résolution inéquation]
+		Soit $f$ la fonction définie par $f(x)=3x^2-9x-30$
+		\begin{enumerate}
+			\item Montrer que $-2$ et $5$ sont les racines de $f$
+			\item En déduire la forme factoriser de $f(x)$
+			\item Déterminer le signe de $f$ sur $\R$ puis résoudre $f(x)\geqslant0$
+		\end{enumerate}
+	\end{Meth}
+	
+	\section{Fonction polynôme de degré 3}
+	\subsection{Définitions}
+	\begin{bclogo}[couleur = yellow!30,arrondi =0.1,logo =\bcbook]{Définition}
+		On appelle fonction polyn\^ome de degré 3, 
+		ou du troisième degré, toute fonction $f$ dont l'expression 
+		peut s'écrire sous la forme 
+		$f(x)=ax^3+bx^2+cx+d$, 
+		où $a$, $b$, $c$ et $d$ sont des nombres réels, et $a\not=0$. 
+	\end{bclogo}
+	\begin{Ex}
+		\begin{enumerate}
+			\item 	La fonction cubique $f(x)=x^3$ est une fonction polynôme de degré 3 avec $a=\dots$, $b=\dots$, $c=\dots$ et $d=\dots$.
+			\item La fonction $g$ définie par $g(x)=\dfrac13x^3-2x$ est une fonction polynôme de degré 3 avec $a=\dots$, $b=\dots$, $c=\dots$ et $d=\dots$.
+			\item La fonction $h$ définie par $h(x)=-3(x-2)(x+2)^2$ est une fonction polynôme de degré 3 avec $a=\dots$, $b=\dots$, $c=\dots$ et $d=\dots$.
+			\bigskip
+		\end{enumerate}
+		
+	\end{Ex}
+	\subsection{Fonctions de la forme $x \mapsto ax^3+d$ avec $a\neq 0$ et $d$ réel} 
+	\begin{bclogo}[couleur = yellow!30,arrondi =0.1,logo =\bcbook]{Proposition}	
+	On considère la fonction $f$ définie sur $\R$ par $f:x \mapsto ax^3+d$ où $a$ est un réel non nul et $d$ un réel. On note $\mathcal{C}_f$ sa courbe représentative. Cette fonction est une fonction polynôme de degré 3.
+	
+	
+	
+	\begin{minipage}{0.5\textwidth}
+		La courbe représentative $\mathcal{C}_f$ de $f$ s'obtient à partir de celle de la fonction $x \mapsto ax^3$ par translation de vecteur $d\VE{j}$.
+		
+		\begin{itemize}
+			\item Si $a>0$, la fonction $f$ est croissante sur $\R$.
+			\item Si $a<0$, la fonction $f$ est décroissante sur $\R$.
+		\end{itemize}	
+	\end{minipage}
+	
+\end{bclogo}
+
+\begin{Ex}
+	\begin{center}
+	\psset{xunit=1cm,yunit=0.8cm,algebraic=true}
+	\def\xmin {-4}
+	\def\xmax {4}
+	\def\ymin {-3}
+	\def\ymax {10}
+	\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+	%\psgrid[subgriddiv=2,gridlabels=3pt,gridwidth=0.5pt,griddots=10,subgriddots=10](\xmin,\ymin)(\xmax,\ymax)
+	\psaxes[labels=none]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)
+	\psplot[linewidth=1pt,linecolor=blue]{\xmin}{\xmax}{-2*x*x*x}
+	\psplot[linewidth=1pt]{\xmin}{\xmax}{x*x*x}
+	\psplot[linewidth=1pt,linestyle=dashed,linecolor=red]{\xmin}{\xmax}{-2*x*x*x+2}
+	
+	\psline[linecolor=red]{->}(0,0)(0,2)
+	\uput[l](-1,-1){$x \mapsto x^3$}
+	\uput[r](-0.1,1){$\tiny{\red{2\VE{j}}}$}
+	\uput[ur](0.9,0){$\red{x \mapsto -2x^3+2}$}
+	\uput[dl](-1,2){$\blue{x \mapsto -2x^3}$}
+	\end{pspicture*}\end{center}
+\end{Ex}
+	
+\underline{Remarque} : $d$ est l'ordonnée du point d'intersection entre $\mathcal{C}_f$ et l'axe des ordonnées.
+\newpage
+	\subsection{Racine cubique}
+	\begin{bclogo}[couleur = yellow!30,arrondi =0.1,logo =\bcbook]{Racine cubique}
+		L'équation $x^3=a$ admet une unique solution qui s'écrit 
+		$$x=\sqrt[3]{a}=a^{\dfrac13}$$.
+		Cette unique solution s'appelle \textbf{racine cubique} de $a$.
+		\begin{center}
+			\psset{xunit=0.8cm,yunit=0.5cm,algebraic=true}
+			\def\xmin {-4}
+			\def\xmax {4}
+			\def\ymin {-2}
+			\def\ymax {10}
+			\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+			%\psgrid[subgriddiv=2,gridlabels=3pt,gridwidth=0.5pt,griddots=10,subgriddots=10](\xmin,\ymin)(\xmax,\ymax)
+			\psaxes[labels=none]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)
+			
+			\psplot[linewidth=1pt]{\xmin}{\xmax}{x*x*x}
+			\psplot[linewidth=1pt,linestyle=dashed,linecolor=red]{\xmin}{\xmax}{9}
+				\psplot[linewidth=1pt,linestyle=dashed,linecolor=red]{3}{\xmax}{9}
+				\psline[linestyle=dashed,linecolor=red](2.08,0)(2.08,9)
+			\uput[l](-1,-1){$x \mapsto x^3$}
+			\uput[l](-1,8.5){$y=a$}
+				\uput[l](3.08,-0.6){$x=\sqrt[3]{a}$}
+			\end{pspicture*}
+		\end{center}
+			
+	\end{bclogo}
+
+	\begin{Meth}[Résolution équations]
+		Résoudre les équations, et donner une valeur approchée de la solution: 
+		\begin{multicols}{3}
+			\begin{itemize}
+			\item 	$E_1: x^3=27$
+			\item $E_2: x^3=-729$ 
+			\item 	$E_3: x^3=0,8$
+			\item $E_4: 3x^3=24$
+			\item $E_5: -2x^3+8=-120$
+		\end{itemize}
+		\end{multicols}
+
+		\end{Meth}
+	\subsection{Forme factorisée}
+	\subsection{Définitions}
+	\begin{bclogo}[couleur = yellow!30,arrondi =0.1,logo =\bcbook]{Propriété}
+		Soit $f$ une fonction de degré définie par sa forme développée 
+		$f(x)=ax^3+bx^2+cx+d$. 
+		\begin{itemize}
+			\item Si $f$ admet trois racines $x_1$, $x_2$ et $x_3$, alors $f$ 
+			peut s'écrire sous la forme factorisée: 
+			$$f(x)=a\left(  x-x_1\right) \left(  x-x_2\right) \left(  x-x_3\right) $$
+			\item Réciproquement si $f$ peut s'écrire sous forme factorisée $f(x)=a\left(  x-x_1\right) \left(  x-x_2\right) \left(  x-x_3\right) $ alors $x_1$, $x_2$ et $x_3$ sont des racines de $f$.
+		\end{itemize}
+		\end{bclogo}
+	\begin{Rem}
+		Les racines $x_1$, $x_2$ et $x_3$ ne sont pas forcement distinctes.
+		\newpage
+		\setlength{\columnsep}{0.05mm}
+	\begin{multicols}{3}
+	\begin{itemize}
+		
+		\item Si $x_1=x_2=x_3$:\\ on a alors:\\ $f(x)=a(x-x_1)^3$.\\ La courbe de $f$ coupe l'axe des abscisses une fois au point de coordonnée $(x_1;0)$ \\
+		\\
+	
+		\psset{unit=0.6cm,algebraic=true}
+		\def\xmin {-3}
+		\def\xmax {4}
+		\def\ymin {-4}
+		\def\ymax {6}
+		\begin{center}
+			\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+			\psgrid[subgriddiv=2,gridlabels=3pt,gridwidth=0.5pt,griddots=10,subgriddots=10](\xmin,\ymin)(\xmax,\ymax)
+			\psaxes{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)
+			
+			\psplot[linewidth=1pt]{\xmin}{\xmax}{-2*x^3+2}
+			
+			\end{pspicture*}
+		\end{center}
+		\item Si $x_2=x_3$ avec $x_1\neq x_2$:\\ on a alors:\\ $f(x)=a(x-x_1)(x-x_2)^2$.\\ La courbe de $f$ coupe l'axe des abscisses 2 fois aux points de coordonnées $(x_1;0)$ et $(x_2;0)$
+		\\
+		\psset{unit=0.6cm,algebraic=true}
+		\def\xmin {-3}
+		\def\xmax {4}
+		\def\ymin {-9}
+		\def\ymax {1}
+		\begin{center}
+			\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+			\psgrid[subgriddiv=2,gridlabels=3pt,gridwidth=0.5pt,griddots=10,subgriddots=10](\xmin,\ymin)(\xmax,\ymax)
+			\psaxes{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)
+			
+			\psplot[linewidth=1pt]{\xmin}{\xmax}{	0.5*(x+2)*(x+2)*(x-3)}
+			
+			\end{pspicture*}
+		\end{center}
+		\item $x_1$, $x_2$ et $x_3$  sont  distincts:\\ on a alors:\\ $f(x)=a(x-x_1)(x-x_2)(x-x_3)$.\\ La courbe de $f$ coupe l'axe des abscisses 3 fois aux points de coordonnées $(x_1;0)$ , $(x_2;0)$ et $(x_3;0)$
+		\psset{unit=0.6cm,algebraic=true}
+		\def\xmin {-3}
+		\def\xmax {4}
+		\def\ymin {-2}
+		\def\ymax {8}
+		\begin{center}
+			\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+			\psgrid[subgriddiv=2,gridlabels=3pt,gridwidth=0.5pt,griddots=10,subgriddots=10](\xmin,\ymin)(\xmax,\ymax)
+			\psaxes{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)
+			
+			\psplot[linewidth=1pt]{\xmin}{\xmax}{	0.5*(x+2)*(x-2)*(x-3)}
+			
+			\end{pspicture*}
+		\end{center}
+	\end{itemize}
+		\end{multicols}
+\end{Rem}		
+\begin{Meth}[Détermination graphique d'une fonction polynôme du 3$^{ème}$ degré]
+	Déterminer les expressions des 3 fonctions représentées ci-dessus
+\end{Meth}
+	\begin{Meth}[Déterminer les racines d'une fonction polynôme de degré 3]
+		Soit la fonction $f$ définie sur $\R$ par $f(x)=2x^3-6x^2-2x+6$
+		\begin{enumerate}
+			\item Vérifier que pour tout $x\in\R$ : $f(x)=2(x-1)(x+1)(x-3)$
+			\item En déduire les racines de $f$
+			\item Étudier le signe de $f(x)$ sur $\R$
+		\end{enumerate}
+	\end{Meth}
+
+\end{document}

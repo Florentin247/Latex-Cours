@@ -1,0 +1,134 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\frenchbsetup{StandardLists=true} % à inclure si on utilise \usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{framed}
+\usepackage{fancyhdr}
+\usepackage[left=1.2cm,right=1.2cm,top=1.8cm,bottom=1.3cm]{geometry}
+\usepackage{array} 
+\usepackage{fancyhdr} 
+\usepackage{fancybox}
+\usepackage{pst-tree}
+\usepackage[framed]{ntheorem}
+\usepackage{tabularx}
+\usepackage{pstricks,pstricks-add}
+\usepackage{eurosym}
+\usepackage{multicol}
+\usepackage{tikz,tkz-tab}
+\usepackage[tikz]{bclogo}
+\usepackage{mathrsfs}
+\usepackage{numprint}
+\usepackage{pifont}
+\rfoot{\small -\thepage-}
+\cfoot{}
+%papier millimétré
+\newcommand{\mili}[4]{\psgrid[subgriddiv=10, gridlabels=0, gridwidth=0.4pt, subgridwidth=0.4pt,gridcolor=brown!80,subgridcolor=brown!40](#1,#2)(#3,#4)}
+
+% Raccourcis diverses:
+\newcommand{\nwc}{\newcommand}
+\nwc{\dsp}{\displaystyle}
+\nwc{\ct}{\centerline}
+\nwc{\bgar}{\begin{array}}\nwc{\enar}{\end{array}}
+\nwc{\bgit}{\begin{itemize}}\nwc{\enit}{\end{itemize}}
+\nwc{\bgen}{\begin{enumerate}}\nwc{\enen}{\end{enumerate}}
+
+\nwc{\la}{\left\{}\nwc{\ra}{\right\}}
+\nwc{\lp}{\left(}\nwc{\rp}{\right)}
+\nwc{\lb}{\left[}\nwc{\rb}{\right]}
+
+\def\R{{\mathbb R}}
+%\def\Q{{\mathbb Q}}
+\def\Z{{\mathbb Z}}
+%\def\D{{\mathbb D}}
+\def\N{{\mathbb N}}
+%\def\C{{\mathbb C}}
+
+
+\nwc{\bgsk}{\bigskip}
+\nwc{\vsp}{\vspace{0.1cm}}
+\nwc{\vspd}{\vspace{0.2cm}}
+\nwc{\vspt}{\vspace{0.3cm}}
+\nwc{\vspq}{\vspace{0.4cm}}
+
+
+\def\epsi{\varepsilon}
+\def\vphi{\varphi}
+\def\lbd{\lambda}
+
+\def\Cf{\mathcal{C}_f}
+
+
+\pagestyle{fancy}
+\newcommand{\Oij}{$\left( {{\mathrm{O}};\vec i,\vec j} \right)$}
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\alph{subsubsection}}
+\newcommand{\VE}[1]{\overrightarrow{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\renewcommand{\arraystretch}{}
+
+\theoremstyle{break}
+\theorembodyfont{\upshape}
+\newtheorem{Prop}{Propri\'et\'e}
+\newtheorem{Def}{D\'efinition}
+\newtheorem{Rem}{Remarque}
+\newtheorem{corr}{Correction}
+
+
+\newtheorem{Th}{Théorème}
+\theorembodyfont{\small \sffamily }
+\newtheorem{Ex}{Exemple}
+\newtheorem{Preu}{Preuve}
+\theorembodyfont{\small	 \sffamily }
+\newtheorem{Meth}{\underline{Methode}}
+
+\pagestyle{fancy}
+
+
+\begin{document}
+
+	
+
+\begin{center}
+	\psset{unit=8cm}
+	\begin{pspicture}(-1.2,-1.2)(1.2,1.2)
+	\newrgbcolor{bleu}{0.1 0.05 .5}
+	\newrgbcolor{prune}{.6 0 .48}
+	\newrgbcolor{rose}{.95 .8 .9}
+	\def\pshlabel#1{\footnotesize #1}
+	\def\psvlabel#1{\footnotesize #1}
+	\psaxes[linewidth=.75pt,labels=none,ticks=none]{->}(0,0)(-1.2,-1.2)(1.2,1.2)
+	\psaxes[linewidth=1.5pt,linecolor=red]{->}(0,0)(1,1)
+	\uput[dl](0,0){\footnotesize{O}}\uput[dr](1,0){\footnotesize{ $I$}}
+	\uput[dr](1.05,0){\footnotesize{ \textbf{cosinus}}}\uput[ul](0,1){\footnotesize{ $J$}}
+	\pscircle[linewidth=1.25pt,linestyle=solid](0,0){1} 
+	\psset{linewidth=1pt,linestyle=dotted,labelsep=4pt}
+	\rput{0}(0,0){\multido{\n=45+90,\i=1+1}{4}{\cnode*(1;\n){2pt}{A\i}}}
+	\rput{0}(0,0){\multido{\n=30+30,\i=1+1}{12}{\cnode*(1;\n){2pt}{B\i}}}
+	\ncline{A1}{A2}  \ncline{A2}{A3}  \ncline{A3}{A4}  \ncline{A4}{A1}
+	\ncline{B1}{B5}  \ncline{B5}{B7}  \ncline{B7}{B11}  \ncline{B11}{B1}
+	\ncline{B2}{B4}  \ncline{B4}{B8} \ncline{B8}{B10} \ncline{B10}{B2} 
+	\nput{10}{A1}{\footnotesize{$\dfrac{\pi}{4}$}}\nput{170}{A2}{\footnotesize{$\dfrac{3\pi}{4}$}}\nput{-170}{A3}{\footnotesize{$-\dfrac{3\pi}{4}$}}\nput{-10}{A4}{\footnotesize{$-\dfrac{\pi}{4}$}}
+	\nput{0}{B1}{\footnotesize{$\dfrac{\pi}{6}$}}\nput{180}{B5}{\footnotesize{$\dfrac{5\pi}{6}$}}\nput{-180}{B7}{\footnotesize{$-\dfrac{5\pi}{6}$}}\nput{0}{B11}{\footnotesize{$-\dfrac{\pi}{6}$}}
+	\nput{25}{B2}{\footnotesize{$\dfrac{\pi}{3}$}}\nput{145}{B4}{\footnotesize{$\dfrac{2\pi}{3}$}}\nput{-105}{B8}{\footnotesize{$-\dfrac{2\pi}{3}$}}\nput{-105}{B10}{\footnotesize{$-\dfrac{\pi}{3}$}}
+	\uput[ur](0,1){\footnotesize{$\dfrac{\pi}{2}$}}
+		\uput[ur](0,1.1){\footnotesize{$\textbf{sinus}$}}
+	\uput[ul](-1,0){\footnotesize{$\pi$}}\uput[dl](0,-1){\footnotesize{$-\dfrac{\pi}{2}$}}
+	\uput[d](.866,0){\footnotesize{$\dfrac{\sqrt{3}}{2}$}}\uput[l](0,.5){\footnotesize{$\dfrac{1}{2}$}}
+	\uput[d](.707,0){\footnotesize{$\dfrac{\sqrt{2}}{2}$}}\uput[l](0,.707){\footnotesize{$\dfrac{\sqrt{2}}{2}$}}
+	\uput[d](.5,0){\footnotesize{$\dfrac{1}{2}$}}\uput[l](0,.866){\footnotesize{$\dfrac{\sqrt{3}}{2}$}}
+\uput[l](0,1){\footnotesize{$1$}}\uput[d](1,0){\footnotesize{$1$}}
+	\uput[d](-.866,0){\footnotesize{$-\dfrac{\sqrt{3}}{2}$}}\uput[l](0,-.5){\footnotesize{$-\dfrac{1}{2}$}}
+\uput[d](-.707,0){\footnotesize{$-\dfrac{\sqrt{2}}{2}$}}\uput[l](0,-.707){\footnotesize{$-\dfrac{\sqrt{2}}{2}$}}
+\uput[d](-.5,0){\footnotesize{$-\dfrac{1}{2}$}}\uput[l](0,-.866){\footnotesize{$-\dfrac{\sqrt{3}}{2}$}}
+\uput[l](0,-1){\footnotesize{$-1$}}\uput[d](-1,0){\footnotesize{$-1$}}
+	\end{pspicture}
+\end{center}
+
+\end{document}

@@ -1,0 +1,1952 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.10.3)  3 FEB 2020 21:52
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**punition.tex
+(./punition.tex
+LaTeX2e <2018-12-01>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2018/08/11 v2.0j Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2019/07/19 3.33 The Babel package
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2019/07/19 3.33 Babel switching mechanism
+)
+
+! Package babel Error: Unknown option `francais'. Either you misspelled it
+(babel)                or the language definition file francais.ldf was not fou
+nd.
+
+See the babel package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.541 \ProcessOptions*
+                      
+? 
+Package babel Info: You haven't specified a language. I'll use 'nil'
+(babel)             as the main language. Reported on input line 571.
+(/usr/share/texlive/texmf-dist/tex/generic/babel/nil.ldf
+Language: nil 2019/07/19 3.33 Nil language
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2019/07/19 3.33 Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@dirlevel=\count89
+)
+\l@nil=\language3
+))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+(./punition.aux)
+\openout1 = `punition.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count90
+\scratchdimen=\dimen104
+\scratchbox=\box27
+\nofMPsegments=\count91
+\nofMParguments=\count92
+\everyMPshowfont=\toks16
+\MPscratchCnt=\count93
+\MPscratchDim=\dimen105
+\MPnumerator=\count94
+\makeMPintoPDFobject=\count95
+\everyMPtoPDFconversion=\toks17
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 10.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 10.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 10.
+
+! Double superscript.
+<argument> M$^m^
+                e$
+l.10 ...yellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.12 ...{red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.14 ...red}{exelente} \textcolor{yellow}{M$^m^e$}
+                                                   \textcolor{cyan}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.16 ...yellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.18 ...{red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.20 ...yellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.22 ...{red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.24 ...yellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.26 ...{red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.28 ...yellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.30 ...{red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.32 ...yellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.34 ...{red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.36 ...yellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.38 ...{red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.40 ...yellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.42 ...{red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.44 ...yellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.46 ...{red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.48 ...yellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.50 ...{red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+! Double superscript.
+<argument> M$^m^
+                e$
+l.52 ...yellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.54 ...{red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.56 ...yellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.58 ...{red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.60 ...yellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.62 ...{red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.64 ...yellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.66 ...{red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.68 ...yellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.70 ...{red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.72 ...yellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.74 ...{red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.76 ...yellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.78 ...{red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.80 ...yellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.82 ...{red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.84 ...yellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.86 ...{red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.88 ...yellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.90 ...{red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+[2]
+! Double superscript.
+<argument> M$^m^
+                e$
+l.92 ...yellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.94 ...{red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.96 ...yellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.98 ...{red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.100 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.102 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.104 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.106 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.108 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.110 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.113 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.115 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.117 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.119 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.121 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.123 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.125 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.127 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.129 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.131 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+[3]
+! Double superscript.
+<argument> M$^m^
+                e$
+l.133 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.135 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.137 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.139 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.141 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.143 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.145 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.147 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.149 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.151 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.153 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.155 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.157 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.159 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.161 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.163 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.165 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.167 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.169 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.171 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+[4]
+! Double superscript.
+<argument> M$^m^
+                e$
+l.173 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.175 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.177 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.179 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.181 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.183 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.185 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.187 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.189 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.191 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.193 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.195 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.197 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.199 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.201 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.204 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.206 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.208 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.210 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.212 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+[5]
+! Double superscript.
+<argument> M$^m^
+                e$
+l.214 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.216 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.218 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.220 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.222 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.224 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.226 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.228 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.230 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.232 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.234 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.236 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.238 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.240 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.242 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.244 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.246 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.248 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.250 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.252 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+[6]
+! Double superscript.
+<argument> M$^m^
+                e$
+l.254 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.256 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.258 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.260 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.262 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.264 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.266 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.268 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.270 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.272 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.274 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.276 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.278 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.280 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.282 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.284 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.286 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.288 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.290 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.292 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+[7]
+! Double superscript.
+<argument> M$^m^
+                e$
+l.301 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.303 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.305 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.307 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.309 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.311 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.313 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.315 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.317 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.319 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.321 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.323 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.325 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.327 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.329 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.331 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.333 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.335 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.337 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.339 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+[8]
+! Double superscript.
+<argument> M$^m^
+                e$
+l.341 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.343 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.345 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.347 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.349 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.351 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.353 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.355 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.357 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.359 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.361 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.363 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.365 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.367 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.369 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.371 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.373 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.375 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.377 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.379 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+[9]
+! Double superscript.
+<argument> M$^m^
+                e$
+l.381 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.383 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.385 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.387 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.389 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.391 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.393 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.395 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.397 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.399 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.401 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.403 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.405 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.407 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.409 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.411 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.413 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.415 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.417 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.419 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+[10]
+! Double superscript.
+<argument> M$^m^
+                e$
+l.421 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.423 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.425 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.427 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.429 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.431 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.433 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.435 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.437 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.439 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.441 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.443 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.445 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.447 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.449 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.451 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.453 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.455 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.457 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.459 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+[11]
+! Double superscript.
+<argument> M$^m^
+                e$
+l.461 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.463 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.465 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.467 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.469 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.471 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.473 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.475 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.477 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.479 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.481 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.483 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.485 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.487 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.489 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.491 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.493 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.495 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.497 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.499 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+[12]
+! Double superscript.
+<argument> M$^m^
+                e$
+l.501 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.503 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.505 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.507 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.509 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.511 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.513 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.515 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.517 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.519 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.521 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.523 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.525 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.527 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.529 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.531 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.533 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.535 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.537 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.539 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+[13]
+! Double superscript.
+<argument> M$^m^
+                e$
+l.541 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.543 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.545 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.547 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.549 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.551 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.553 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.555 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.557 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.559 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.561 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.563 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.565 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.567 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.569 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.571 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.573 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.575 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.577 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.579 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+[14]
+! Double superscript.
+<argument> M$^m^
+                e$
+l.581 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.583 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.585 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.587 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.589 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.591 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.593 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.595 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.597 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.599 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.601 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.603 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.605 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.607 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.609 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.611 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.613 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.615 ...red}{exelente} \textcolor{green}{M$^m^e$}
+                                                   \textcolor{red}{Cador}
+? 
+! Double superscript.
+<argument> M$^m^
+                e$
+l.617 ...ellow}{exelente} \textcolor{red}{M$^m^e$}
+                                                   \textcolor{yellow}{Cador}
+? 
+[15] (./punition.aux) ) 
+Here is how much of TeX's memory you used:
+ 1517 strings out of 494553
+ 18530 string characters out of 6177377
+ 85458 words of memory out of 5000000
+ 5221 multiletter control sequences out of 15000+600000
+ 7140 words of font info for 24 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 22i,6n,19p,430b,121s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/pinguin/.texlive2019/texmf-var/fonts/pk/ljfour/j
+knappen/ec/ecrm1200.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi8.pfb>
+Output written on punition.pdf (15 pages, 29073 bytes).
+PDF statistics:
+ 96 PDF objects out of 1000 (max. 8388607)
+ 42 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

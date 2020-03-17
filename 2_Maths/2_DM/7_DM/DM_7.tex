@@ -1,0 +1,210 @@
+%%%%%%
+%BASE
+%%%
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+
+%%%%%
+%MATHS
+%%%
+\usepackage{amsmath}
+\usepackage{array}
+
+%%%%%
+%COULEURS
+%%%
+\usepackage{xcolor}
+\usepackage{color}
+
+%%%%%
+%PUCES
+%%%
+\usepackage{pifont}
+
+\everymath{\displaystyle}
+\usepackage{hyperref}
+\setlength{\parindent}{10px}
+
+
+%%%%%
+%Haut de Page
+%%%
+\usepackage{fancybox}
+\usepackage{fancyhdr}
+\usepackage[left=1.3cm,right=1.2cm,top=2cm,bottom=1.5cm]{geometry}
+\pagestyle{fancy}
+\fancyhead[L]{Lespinasse Florentin}
+\fancyhead[C]{}
+\fancyhead[R]{1STI2D4~~~~~~~~13 Mars 2020}
+
+\begin{document}
+\begin{center}
+        \shadowbox{\begin{large}
+                \textcolor{black}{DM 7}
+        \end{large}}
+    \end{center}
+    \vspace{0.5 cm}
+
+\begin{itemize}
+	\item \textbf{PARTIE A}
+		\begin{enumerate}
+			\item $f'(x)=3ax^2+2bx+c$
+			\item $f(0):a(o)^3+b(0)^2+c(0)+d=0$\par
+				  $f(0):d=0$ Donc la courbe passe par (0;0)\par
+				  $f'(x):3ax^3+2bx^2+c=-0.6$
+				  $f'(0):3a(0)^2+2b(0)+c=-0.6$\par
+				  Donc $f'(0):c=-0.6$\par
+				  Donc $c=-0.6$ et $d=0$. d est l'ordonnée à l'origine et passe par le point O(0;0).
+			\item La courbe doit passer par le point A(6;3.6)\par
+				  $f(6):a\times(6)^3+b\times(6)^2+(-0.6)\times(6)=3.6$\par  
+				  $f(6):216a+36b-3.6=3.6$\par
+				  $f(6):216a+36b=7.2$\par
+				  Et la tengente de A,\par
+				  $f'(A)=0 \Leftrightarrow 3\times a \times 6^2+2\times b \times -0.6 = 0$\par
+				  $f'(A): 108a+12b-0.6=0$\par
+				  $f'(A): 108a+12b=0.6$\par
+				System:
+	$				\left \{
+					\begin{array}{rcl}
+					216a+36b-3.6&=&3.6 \\
+					108a+12b&=&0.6
+					\end{array}
+					\right.
+\Leftrightarrow
+					\left \{
+                    \begin{array}{rcl}
+                    216a+36b&=&7.2 \\
+                    108a+12b&=&0.6
+                    \end{array}
+                    \right.\\
+\Leftrightarrow	On~divise~par~3
+					\left \{
+                    \begin{array}{rcl}
+                    72a+12b&=&2.4 \\
+                    108a+12b&=&0.6
+                    \end{array}
+                    \right.
+
+			\item   \left \{
+                    \begin{array}{rcl}
+                    72a+12b&=&2.4 \\
+                    108a+12b&=&0.6
+                    \end{array}
+                    \right.
+\Leftrightarrow
+                    \left \{
+                    \begin{array}{rcl}
+                    72a+12b&=&2.4 \\
+                    108a-72a&=&-1.8
+                    \end{array}
+                    \right.
+
+\Leftrightarrow
+                    \left \{
+                    \begin{array}{rcl}
+                    72a+12b&=&2.4 \\
+                    108a+12b&=0.6&
+                    \end{array}
+                    \right.
+\Leftrightarrow
+                    \left \{
+                    \begin{array}{rcl}
+                    72a+12b&=&2.4 \\
+                    36a&=&-1.8
+                    \end{array}
+                    \right.
+
+\Leftrightarrow
+                    \left \{
+                    \begin{array}{rcl}
+                    72a+12b&=&2.4 \\
+                    a&=&-0.05
+                    \end{array}
+                    \right.
+\Leftrightarrow
+                    \left \{
+                    \begin{array}{rcl}
+                    72\times(-0.05)+12b&=&2.4 \\
+                    a&=&-0.05
+                    \end{array}
+                    \right.
+\Leftrightarrow
+                    \left \{
+                    \begin{array}{rcl}
+                    -3.6+12b&=&2.4 \\
+                    a&=&-0.05
+                    \end{array}
+                    \right.
+
+\Leftrightarrow
+                    \left \{
+                    \begin{array}{rcl}
+                    12b&=&2.4+3.6 \\
+                    a&=&-0.05
+                    \end{array}
+                    \right.
+\Leftrightarrow
+                    \left \{
+                    \begin{array}{rcl}
+                    12b&=&6 \\
+                    a&=&-0.05
+                    \end{array}
+                    \right.
+\Leftrightarrow
+                    \left \{
+                    \begin{array}{rcl}
+                    b&=&\frac{6}{12} \\
+                    a&=&-0.05
+                    \end{array}
+                    \right.
+\Leftrightarrow
+                    \left \{
+                    \begin{array}{rcl}
+                    b&=&0.5 \\
+                    a&=&-0.05
+                    \end{array}
+                    \right.
+
+Donc $f(x)=-0.05x^3+0.5x^2-0.6+0$
+ 
+		\end{enumerate}
+	\item \textbf{PARTIE B}
+		\begin{enumerate}
+			\item $f(4)=-0.05\times4^3+0.5\times4^2-0.6\times4$\par
+				  $f(4)=-3.2+8-2.4$\par
+				  $f(4)=2.4$\par
+				Donc $f(4)=2.4$\par
+			\item $f'(4)=3\times(-0.05)\times4^2+0.5\times4-0.6$\par
+				  $f'(4)=-0.15\times16+1\times4-0.6$\par
+				  $f'(4)=-2.4+4-0.6$\par
+				  $f'(4)=1$\par
+				Donc $f'(4)=1$\par
+		\end{enumerate}
+
+\newpage
+	\item \textbf{PARTIE C}
+		\begin{enumerate}
+			\item \dfrac{Yb-Ye}{Xb-Xe} = \dfrac{4.4-2.4}{6-4}=\dfrac{2}{2}=1\\
+
+				Donc la tengente du point E est égale au coeficient directeur de (BE)\\
+				$(BE)=1x+p$\par
+					$6+p=4.4$\par
+					$p=-1.6$\par
+				$(BE)=x-1.6$\par
+			Si le point E a por même équation que la droite (BE) alors B est sur la tengeante de E.\\
+			Tengente de E: \par
+					$E=x+p$\par
+					$4+p=2.4$\par
+					$p=-1.6$\par
+					Donc E a la même équation de tengente que (BE) donc B est sur la tengente.
+			\item Voir courbe. 
+		\end{enumerate}
+\end{itemize}
+
+
+
+
+\end{document}
+

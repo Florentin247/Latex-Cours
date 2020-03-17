@@ -1,0 +1,37 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{colortbl}
+
+%%%%%
+%Tableau
+%%%
+% Permet d'agrandir le tableau.
+\renewcommand{\arraystretch}{1.5}
+\setlength{\tabcolsep}{1cm}
+
+\begin{document}
+
+	\begin{table}[ht]
+   		\centering
+   		\begin{tabular}{|r|c|c|c|c|}
+  			\hline
+\rowcolor[gray]{0.85} &	Francais & Anglais & Espanol & Italien \\
+		   \hline 
+			1 & Bonjour  &\cellcolor{red} hello & Hola & Buongiorno \\
+			\hline
+			2 & Au revoir & Bye & Adios & arrivederci \\
+		   \hline
+
+   		\end{tabular}
+	\end{table}
+
+%	\begin{tabular}{|l|c|r|}
+%	   \hline
+%	   \cline{2-3}
+%	\end{tabular}
+
+\end{document}

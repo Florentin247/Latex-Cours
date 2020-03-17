@@ -1,0 +1,228 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\frenchbsetup{StandardLists=true}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{framed}
+\usepackage{fancyhdr}
+\usepackage[left=1.3cm,right=1.3cm,top=1.8cm,bottom=1.2cm]{geometry}
+\usepackage{array} 
+\usepackage{fancyhdr} 
+\usepackage{fancybox}
+\usepackage{pst-tree}
+\usepackage[framed]{ntheorem}
+\usepackage{tabularx}
+\usepackage{pstricks-add}
+\usepackage{eurosym}
+%\usepackage{pst-tree}
+\usepackage[np]{numprint}
+\usepackage{pifont}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{pgf,tikz}
+\usepackage[tikz]{bclogo}
+\usepackage{pgfkeys}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+\usetikzlibrary{arrows}
+\usepackage{listingsutf8}
+\lstset{%
+	language=python,%
+	basicstyle=\ttfamily,%
+}
+
+\rfoot{\small -\thepage-}
+\cfoot{}
+
+\def\R{{\mathbb R}}
+\def\Q{{\mathbb Q}}
+\def\Z{{\mathbb Z}}
+\def\D{{\mathbb D}}
+\def\N{{\mathbb N}}
+\def\C{{\mathbb C}}
+
+\pagestyle{fancy}
+
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\alph{subsubsection}}
+\renewcommand{\labelitemi}{$\bullet$}
+\newcommand{\VE}[1]{\overrightarrow{#1}}
+%\renewcommand{\r}{($O$ ; $\vec{i}$ , $\vec{j}$)}
+\renewcommand{\arraystretch}{0.7}
+\tikzstyle{mybox} = [draw=black, very thick, rectangle, rounded corners, inner sep=20pt, inner ysep=20pt] 
+\tikzstyle{fancytitle} =[draw=black, very thick, rectangle, rounded corners, fill=white, text=black] % fill obligé sinon ne recouvre pas boite du dessous
+\usepackage{array,multirow,makecell}
+\setcellgapes{1pt}
+\newcommand{\Syst}[2]{\left\{\begin{array}{ccc} #1\\ #2 \end{array}\right.}
+
+\makegapedcells
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash }b{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash }b{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash }b{#1}}
+\theoremstyle{break}
+\theorembodyfont{\upshape}
+\newtheorem{Prop}{Propri\'et\'e}
+\newtheorem{Def}{D\'efinition}
+\newtheorem{Rem}{Remarque}
+\newtheorem{exo}{Exercice}
+\newtheorem{Meth}{Methode}
+\newtheorem{cpreuve}{Preuve}
+\newtheorem{Th}{Théorème}
+\newtheorem{Act}{Activité}
+\theorembodyfont{\small \sffamily }
+\newtheorem{Ex}{Exemple}
+\newtheorem{Preu}{Preuve}
+\everymath{\displaystyle}
+\pagestyle{fancy}
+\fancyhead[L]{1STI2D}
+\fancyhead[C]{ }
+\fancyhead[R]{2019/2020}
+\rfoot{\small -\thepage-}
+\cfoot{}
+
+\begin{document}
+
+\begin{center}
+   \shadowbox{\begin{large}
+      \textcolor{black}{DM de Mathématiques}
+   \end{large}}
+\end{center}
+\textbf{Exercice 1}\\
+La courbe $\mathscr{C}$ est la représentation graphique d’une fonction $f$ définie et dérivable sur $\R$, dans un repère orthogonal.
+\begin{multicols}{2}
+
+\begin{enumerate}
+	\item Déterminer graphiquement :
+	\begin{enumerate}
+		\item $f(0)$ et $f'(0)$;
+		\item $f(-1)$ et $f'(-1)$;
+		\item $f(2)$ et $f'(2)$;
+		\item L’équation de la tangente au point d’abscisse $-1$ ;
+		\item L’équation de la tangente au point d’abscisse $0$
+			\end{enumerate}
+		\item La droite $T$ tangente à la courbe $\mathscr{C}$ au point d’abscisse $-2$ et d’ordonnée $-1$ passe par le point A de coordonnées  $(1; 26)$
+		\begin{enumerate}
+			\item Déterminer par le calcul une équation de $T$.
+			\item En déduire $f'(-2)$
+		\end{enumerate}
+\end{enumerate}
+\vfill\columnbreak
+	\psset{xunit=1cm,yunit=0.3cm,algebraic=true}
+\def\xmin {-3}
+\def\xmax {4}
+\def\ymin {-7}
+\def\ymax {15}
+
+	\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+	\psgrid[subgriddiv=2,gridlabels=3pt,gridwidth=0.5pt,griddots=10,subgriddots=10](\xmin,\ymin)(\xmax,\ymax)
+	\psaxes[Dy=5]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)
+		\psplot[linewidth=1pt]{-3}{3}{x^3-3*x+1}
+		\psline[arrowscale=2,linestyle=dashed]{<->}(-1,4)(1,-2)
+		\psline[arrowscale=2,linestyle=dashed]{<->}(-2.5,3)(0.5,3)
+			\psline[arrowscale=2,linestyle=dashed]{<->}(1,-6)(3,12)
+			\psdot[dotstyle=*](-1,3)
+				\psdot[dotstyle=*](0,1)
+					\psdot[dotstyle=*](2,3)
+	\end{pspicture*}
+
+\end{multicols}
+\textbf{Exercice 2}\\
+	Un propriétaire propose à la location deux appartements notés T1 et T2. Le loyer mensuel net pour chacun des appartements se compose de trois parties :
+	\begin{itemize}
+		\item le loyer mensuel hors charges (loyer HC) ;
+		\item les charges ;
+		\item la taxe locative sur le ramassage des ordures ménagères.
+	\end{itemize}
+	
+	Le tableau ci-après contient les informations en euros relatives à la location de ces deux appartements pour le mois de janvier.\\
+	\begin{center}
+	\renewcommand{\arraystretch}{2}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		&loyer HC& charges& taxe locative &loyer mensuel net\\
+		\hline
+		T1& 360 &&&461\\ 
+		\hline
+		T2 &&&54,60&\\
+		\hline
+		total&&&& 1043\\
+		\hline
+	\end{tabular}\\
+	\end{center}
+	La taxe locative représente 10 \% du loyer HC de l’appartement T1 et 12 \% de l’appartement T2.
+	\begin{enumerate}
+		\item 
+		\begin{enumerate}
+			\item Calculer le montant du loyer HC de l’appartement T2.(On écrira les détails des calculs)
+			\item Compléter le tableau en indiquant les opérations effectuées sur votre copie.
+			(c) Pour l’appartement T1, calculer la proportion des charges par rapport au loyer mensuel
+			net, exprimée en pourcentage arrondi à 0,1 \% près.
+		\end{enumerate}
+		\item Si un locataire de l’appartement T2 reçoit une aide de 260 \euro par mois, quelle est, en pourcentage arrondi à 0,01 \% près, la part de cette aide par rapport au loyer HC ?
+		
+	\end{enumerate}
+\newpage
+\textbf{Exercice 3}\\
+		\textsf{\small{\textsc{\textbf{partie a}}}}\\
+		On considère la suite $\left(u_{n}\right)$ définie par $u_{0} = 250$ et pour tout entier naturel $n$, $ u_{n+1} = 0,72u_{n} +420$.
+	
+	\begin{enumerate}
+		\item Calculer $u_2$.
+		
+		\item Soit $\left(v_{n}\right)$  la suite définie pour tout entier naturel $n$ par $v_{n} = u_{n} - 1500$. 
+		\begin{enumerate}
+			\item Démontrer que la suite $\left(v_{n}\right)$ est une suite géométrique dont on précisera le premier terme et la raison. 
+			\item Exprimer $v_{n}$ en fonction de $n$.
+			\item En déduire que, pour tout nombre entier naturel $n$, $u_{n} = 1500 -1250\times  0,72^n$.
+		\end{enumerate} 
+	
+	\end{enumerate}
+		\textsf {\textbf{\textsc{partie b}}}\\
+	Une municipalité a décidé de proposer un abonnement mensuel à un service de location de vélos.
+	
+	Au mois de janvier 2018, 250 personnes se sont abonnées à ce service.
+	
+	Une étude statistique a permis de modéliser l'évolution du nombre d'abonnements pour les prochains mois à l'aide de la suite $\left(u_{n}\right)$ définie dans la partie A.
+	
+	\begin{enumerate}
+		\item On considère l'algorithme suivant :
+		\begin{center}
+			\begin{tabular}{|l|}
+				\hline
+					\begin{minipage}{.3\linewidth}
+					
+					$U \gets \np{250}$
+					
+					$N \leftarrow  0$
+					
+					Tant que  $U \leqslant \np{1435}$
+					
+					\begin{itemize}
+						\item[] $U \leftarrow 0,72 \times U + 420$
+						\item[] $N \leftarrow N+1$
+					\end{itemize}
+					Fin Tant que
+				\end{minipage}\\
+			\hline	
+			\end{tabular}
+		
+				
+		\end{center}
+		\begin{enumerate}
+			\item Donner une interprétation de la valeur $N=9$ obtenue à la fin de l'exécution de cet algorithme.
+		\item Écrire cet algorithme en Python.
+		\end{enumerate}
+	
+		\item Selon ce modèle, donner une estimation du nombre d'abonnés au bout de 12 mois.
+		\item Est-il possible d'envisager nombre d'abonnés supérieur à \np{2000} ?
+	\end{enumerate}
+
+\end{document}
+  

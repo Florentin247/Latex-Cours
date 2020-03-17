@@ -1,0 +1,895 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\frenchbsetup{StandardLists=true}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{framed}
+\usepackage{fancyhdr}
+\usepackage[left=1.3cm,right=1.3cm,top=1.8cm,bottom=1.2cm]{geometry}
+\usepackage{array} 
+\usepackage{fancyhdr} 
+\usepackage{fancybox}
+\usepackage{pst-tree}
+\usepackage[framed]{ntheorem}
+\usepackage{tabularx}
+\usepackage{pstricks-add}
+\usepackage{pstricks,pst-plot,pst-eucl}
+\usepackage{eurosym}
+\usepackage{pst-tree}
+\usepackage[np]{numprint}
+\usepackage{pifont}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{pgf,tikz}
+\usepackage[tikz]{bclogo}
+\usepackage{pgfkeys}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+\usetikzlibrary{arrows}
+\usepackage{listingsutf8}
+\lstset{%
+	language=python,%
+	basicstyle=\ttfamily,%
+}
+
+\rfoot{\small -\thepage-}
+\cfoot{}
+
+\def\R{{\mathbb R}}
+\def\Q{{\mathbb Q}}
+\def\Z{{\mathbb Z}}
+\def\D{{\mathbb D}}
+\def\N{{\mathbb N}}
+\def\C{{\mathbb C}}
+
+\pagestyle{fancy}
+\newcommand{\nwc}{\newcommand}
+\nwc{\dsp}{\displaystyle}
+\nwc{\ct}{\centerline}
+\nwc{\bge}{\begin{equation}}\nwc{\ene}{\end{equation}}
+\nwc{\bgar}{\begin{array}}\nwc{\enar}{\end{array}}
+\nwc{\bgit}{\begin{itemize}}\nwc{\enit}{\end{itemize}}
+\nwc{\bgen}{\begin{enumerate}}\nwc{\enen}{\end{enumerate}}
+
+\nwc{\la}{\left\{}\nwc{\ra}{\right\}}
+\nwc{\lp}{\left(}\nwc{\rp}{\right)}
+\nwc{\lb}{\left[}\nwc{\rb}{\right]}
+
+\nwc{\bgsk}{\bigskip}
+\nwc{\vsp}{\vspace{0.1cm}}
+\nwc{\vspd}{\vspace{0.2cm}}
+\nwc{\vspt}{\vspace{0.3cm}}
+\nwc{\vspq}{\vspace{0.4cm}}
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\alph{subsubsection}}
+\renewcommand{\labelitemi}{$\bullet$}
+\newcommand{\VE}[1]{\overrightarrow{#1}}
+%\renewcommand{\r}{($O$ ; $\vec{i}$ , $\vec{j}$)}
+\renewcommand{\arraystretch}{0.7}
+\tikzstyle{mybox} = [draw=black, very thick, rectangle, rounded corners, inner sep=20pt, inner ysep=20pt] 
+\tikzstyle{fancytitle} =[draw=black, very thick, rectangle, rounded corners, fill=white, text=black] % fill obligé sinon ne recouvre pas boite du dessous
+\usepackage{array,multirow,makecell}
+\setcellgapes{1pt}
+\newcommand{\Syst}[2]{\left\{\begin{array}{ccc} #1\\ #2 \end{array}\right.}
+
+\makegapedcells
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash }b{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash }b{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash }b{#1}}
+\theoremstyle{break}
+\theorembodyfont{\upshape}
+\newtheorem{Prop}{Propri\'et\'e}
+\newtheorem{Def}{D\'efinition}
+\newtheorem{Rem}{Remarque}
+\newtheorem{exo}{Exercice}
+\newtheorem{Meth}{Methode}
+\newtheorem{cpreuve}{Preuve}
+\newtheorem{Th}{Théorème}
+\newtheorem{Act}{Activité}
+\theorembodyfont{\small \sffamily }
+\newtheorem{Ex}{Exemple}
+\newtheorem{Preu}{Preuve}
+\everymath{\displaystyle}
+\pagestyle{fancy}
+\fancyhead[L]{1STI2D}
+\fancyhead[C]{COURS TRIGONOMETRIE }
+\fancyhead[R]{2019/2020}
+\rfoot{\small -\thepage-}
+\cfoot{}
+
+
+
+\begin{document}
+	
+	\vspace*{1cm}
+	
+	\begin{center}
+		\shadowbox{\begin{large}
+				\textcolor{black}{TRIGONOMÉTRIE}
+			\end{large}}
+		\end{center}
+	\tableofcontents
+		\section{Un peu d'histoire}
+		\textit{Il faut remonter jusqu’aux babyloniens, 2000 ans avant notre ère, pour trouver les premières traces de tables de données astronomiques. \\
+			Car à la base, la trigonométrie est une géométrie appliquée à l’étude du monde, de l’univers et est indissociable de l’astronomie. On attribue à Hipparque de Nicée (-190 ; -120) les premières tables trigonométriques. Elles font correspondre l’angle au centre et la longueur de la corde interceptée dans le cercle. Le grec Claude Ptolémée (90 ? ; 160 ?) poursuit dans l’Almageste les travaux d’Hipparque avec une meilleure précision et introduit les premières formules de trigonométrie.\\
+			 Plus tard, l’astronome et mathématicien Regiomontanus (1436 ; 1476), de son vrai nom Johann Müller développe la trigonométrie comme une branche indépendante des mathématiques. Il serait à l’origine de l’usage systématique du terme sinus.\\
+			  Au XVIe siècle, le français François Viète (1540 ; 1607), conseiller d’Henri IV, fera évoluer la trigonométrie pour lui donner le caractère qu’on lui connaît aujourd’hui.\\
+			   De nos jours, la trigonométrie trouve des applications très diverses, particulièrement dans les sciences physiques. La propogation des ondes, par exemple, est transcrite par des fonctions trigonométriques .}
+		\section{Enroulement de la droite des réels sur le cercle trigonométrique}
+		\subsection{Le cercle trigonométrique}
+		
+		\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Définition}
+				Le plan étant rapporté à un repère orthonormé $(O ; \overrightarrow{i}, \overrightarrow{j})$, \textbf{le cercle trigonométrique} est le cercle $C$ :
+				\begin{itemize}
+					\item de centre $O$ et de \textbf{rayon $1$}
+					\item sur lequel on choisit un sens de parcours appelé \textbf{sens direct ou sens positif (le sens contraire des aiguilles d'une montre)}.
+				\end{itemize} 
+		\end{bclogo}
+			
+		\begin{center}
+			\psset{unit=2cm,arrowsize=7pt}
+			\begin{pspicture}(-1.3,-1.3)(1.3,1.4)
+			\rput(-0.15,-0.15){$O$}
+			\psline(-1.2,0)(1.2,0)
+			\psline[linewidth=1.4pt]{->}(0,0)(1,0)\rput(0.5,-0.15){$\vec{i}$}
+			\psline(0,-1.2)(0,1.2)
+			\psline[linewidth=1.4pt]{->}(0,0)(0,1)\rput(-0.15,0.5){$\vec{j}$}
+			\pscircle(0,0){1}
+			%
+			\psarc{->}(0,0){1.3}{20}{65}\rput(1.1,1.){\LARGE$+$}
+			\psarc{<-}(0,0){1.3}{-65}{-20}\rput(1.1,-1.){\LARGE$-$}
+			\end{pspicture}
+		\end{center}
+		\subsection{Enroulement de la droite réelle}
+		Étant donné le cercle trigonométrique $\mathcal{C}$ de centre O, dans le repère orthonormé direct (O,I, J), on considère la droite $(IA)$  tangente à $\mathcal{C}$ passant par I, A étant le point de coordonnées A(1;1).\\
+		Sur cette droite, on considère le repère (I,A), ce qui permet
+		d’établir une graduation. A chaque point de cette droite
+		correspond un nombre réel et à chaque nombre réel
+		correspond un point de la droite (0 correspond au point I,
+		1 au point A).\\
+		La droite (IA) représente donc l’ensemble $\R$ des nombres
+		réels.\\
+		Ensuite, on « enroule » cette droite réelle (IA) sur le cercle
+		trigonométrique soit dans le sens direct soit dans le sens indirect. (voir graphiques ci-dessous).\\
+			\begin{minipage}{8cm}
+		\psset{unit=1.5cm}
+		\begin{center}
+			\begin{pspicture}(-1.2,-1.5)(1.2,2.5)
+			\newrgbcolor{bleu}{0.1 0.05 .5}
+			\newrgbcolor{prune}{.6 0 .48}
+			\def\pshlabel#1{\footnotesize #1}
+			\def\psvlabel#1{\footnotesize #1}
+			\psaxes[linewidth=.75pt,labels=none,ticks=none]{->}(0,0)(-1.4,-1.4)(1.4,1.4)
+			\psaxes[linewidth=1.5pt,linecolor=red]{->}(0,0)(1,1)
+			\uput[dl](0,0){\footnotesize{O}}\uput[dr](1,0){\footnotesize{ $I$}}\uput[ul](0,1){\footnotesize{$J$}}\uput[d](.5,0){\footnotesize{\red $\VE{i}$}}\uput[l](0,.5){\footnotesize{\red $\VE{j}$}}
+			\psline[linewidth=1pt, linecolor=bleu]{->}(1,-1.5)(1,2.8)
+			\psline[linewidth=1.5pt, linecolor=prune](1,0)(1,2.18)
+			\psbezier[linewidth=1pt,linestyle=dashed, linecolor=prune,arrowscale=1.5]{->}(1,2.18)(.4,2.18)(-.4,1.8)(-.57242,.819952)
+			\psarc[linewidth=1pt, linecolor=bleu](0,0){1}{124.9} {360}
+			\psarc[linewidth=1.5pt,linecolor=prune](0,0){1}{0}{124.92}
+			\psdot[linecolor=prune](-.57242,.819952)
+			\psline[linewidth=.75pt](.92,1)(1.08,1)
+			\uput[dr](1,2.8){\bleu{$\mathcal{D}$}}
+			\uput[r](1,1){\bleu{$A$}}
+			\uput[l](1,1){\footnotesize{1}}
+			\uput[r](1,2.18){$x$}
+			\uput[ul](-.57,.82){$M$}
+			\uput[dl](-.75,-.75){\bleu{$\mathcal{C}$}}
+			\end{pspicture}
+	\end{center}
+	\end{minipage}
+	\psset{unit=0.7cm}
+		\begin{minipage}{7cm}
+			\begin{pspicture}(-5,-6.8)(8,7)
+			\psaxes[labels=none,dx=2,dy=2]{->}(0,0)(-5,-6)(8,7)
+			%\psgrid[subgriddiv=1,griddots=10,gridlabels=0](-5,-6)(8,7)
+			\pscircle[linecolor=red](0,0){2}
+			\rput(-0.3,-0.3){\textcolor{red}{$O$}}
+			\psline[linecolor=green,linewidth=0.07](2,0)(2,-6)
+				\psline[linecolor=blue,linestyle=dotted,linewidth=0.07](2,0)(2,6)
+			%spirale
+			\parametricplot[plotpoints=200,linecolor=blue]{0}{6.8}
+			{2.72 t 5 div exp t 57.3 mul cos mul 2 mul
+				2.72 t 5 div exp t 57.3 mul sin mul 2 mul}
+			\parametricplot[plotpoints=200,linecolor=blue,linestyle=dashed]{6.8}{7.2}
+			{2.72 t 5 div exp t 57.3 mul cos mul 2 mul
+				2.72 t 5 div exp t 57.3 mul sin mul 2 mul}
+			%points spirale
+			\pstGeonode[labelColor=blue,PosAngle={45,90,90,130,165,190,200,230,280},PointName={1,2,3,\pi,4,5,6,2\pi,2\pi+1},linecolor=blue](1.50,1.87){S1}(-0.23,2.77){S2}(-2.15,2.34){S3}(-2.38,2.18){Sp}(-3.46,0.87){S4}(-3.81,-1.08){S5}(-3.19,-2.96){S6}(-2.87,-3.42){S2p}(-1.33,-4.67){S}
+			\pstGeonode[PointName=none,linecolor=blue](-1.81,-4.39){A}(0.03,-5.14){A}(2.01,-5.15){A}(3.89,-4.47){A}(5.43,-3.22){A}(6.53,-1.55){A}(7.09,0.36){A}(7.11,2.35){A}(6.61,4.29){A}
+			%points cercle
+			\pstGeonode[labelColor=red,PosAngle={225,280,0,320,45,100,165,145},PointName={1,2,3,\pi,4,5,6,2\pi},linecolor=red,PointNameSep=0.4](1.08,1.68){C1}(-0.83,1.82){C2}(-1.98,0.28){C3}(-2,0){Cp}(-1.31,-1.51){C4}(0.57,-1.92){C5}(1.92,-0.56){C6}(2,0){C2p}
+			%pointilles
+			\pscurve[linestyle=dashed](1.50,1.87)(1.25,1.8)(1.08,1.68)
+			\pscurve[linestyle=dashed](-0.23,2.77)(-0.6,2.5)(-0.83,1.82)
+			\pscurve[linestyle=dashed](-2.15,2.34)(-2.4,1.2)(-1.98,0.28)
+			\pscurve[linestyle=dotted,linewidth=0.07,linecolor=purple](-2.38,2.18)(-2.5,1)(-2,0)
+			\psbezier[linestyle=dashed](-3.46,0.87)(-3,-0.4)(-2,-1.15)(-1.31,-1.51)
+			\psbezier[linestyle=dashed](-3.81,-1.08)(-3,-2)(-1,-2.4)(0.57,-1.92)
+			\pscurve[linestyle=dashed](-3.19,-2.96)(0,-2.8)(1.5,-1.8)(1.92,-0.56)
+			\pscurve[linestyle=dotted,linewidth=0.07,linecolor=purple](-2.87,-3.42)(0,-3)(1.5,-2)(2,0)
+			\pscurve[linestyle=dotted,linewidth=0.07,linecolor=purple](-1.33,-4.67)(0,-4.3)(1.5,-3.2)(2.5,-1)(2,1)(1.08,1.68)
+			\end{pspicture}
+		\end{minipage}
+
+		
+	\begin{bclogo}[couleur = red!25, arrondi = 0.1,logo=\bcbook]{Propriété}
+			\begin{itemize}
+				\item Pour tout réel $x$, le point d'abscisse $x$ sur la droite $(IA)$ vient s'appliquer sur un point $M$ \textbf{unique} de $C$ appelé\textbf{ image du réel $x$ sur le cercle.}\\
+				\item Tout point $N$ du cercle trigonométrique est l'image d'un réel $x'$. Il est alors aussi l'image de tous les réels $x'+2\pi$, $x'+4\pi$, ....., $x'-2\pi$, $x'-4\pi$ c'est à dire $x'+k\times 2\pi$ avec $k\in \mathbb{Z}$. ($2\pi$ étant la longueur d'un tour de cercle).
+				
+			\end{itemize}
+		\end{bclogo}
+		\begin{Ex}\begin{itemize}
+				\item $0$ a pour image $I(1;0)$,de même $2\pi$ $4\pi$,$6\pi$ ... ont aussi pour image I.\\
+				\item  $\dfrac{\pi}{2}$ a pour image $J(0;1)$, $\pi$ a pour image $I'(-1;0)$, $\dfrac{3\pi}{2}$ a pour image $J'(0;-1)$, $-\dfrac{\pi}{2}$ a pour image $I'(0;-1)$
+				\item Le point $J(0;1)$ est aussi l'image de $\dfrac{\pi}{2}$ mais aussi de $\dfrac{5\pi}{2}$ et de $-\dfrac{3\pi}{2}$.
+			\end{itemize}
+			\newpage
+		\end{Ex}
+		\begin{Meth}[Repérage de points sur le cercle trigonométrique]
+			On a placer sur le cercle trigonométrique suivant des points.\\
+			\begin{center}
+			\begin{center}
+				\psset{unit=4cm}
+				\begin{pspicture}(-1.2,-1.2)(1.2,1.2)
+				\newrgbcolor{bleu}{0.1 0.05 .5}
+				\newrgbcolor{prune}{.6 0 .48}
+				\newrgbcolor{rose}{.95 .8 .9}
+				\def\pshlabel#1{\footnotesize #1}
+				\def\psvlabel#1{\footnotesize #1}
+				\psaxes[linewidth=.75pt,labels=none,ticks=none]{->}(0,0)(-1.2,-1.2)(1.2,1.2)
+				\psaxes[linewidth=1.5pt,linecolor=red]{->}(0,0)(1,1)
+				\uput[dl](0,0){\footnotesize{O}}\uput[dr](1,0){\footnotesize{\prune $I$}}\uput[ul](0,1){\footnotesize{\prune $J$}}
+				\pscircle[linewidth=1.25pt, linecolor=bleu,linestyle=solid](0,0){1} 
+				\psset{linecolor=prune,linewidth=.5pt,linestyle=dashed,labelsep=4pt}
+				\rput{0}(0,0){\multido{\n=45+90,\i=1+1}{4}{\cnode*(1;\n){2pt}{A\i}}}
+				\rput{0}(0,0){\multido{\n=30+30,\i=1+1}{12}{\cnode*(1;\n){2pt}{B\i}}}
+				\ncline{A1}{A2}  \ncline{A2}{A3}  \ncline{A3}{A4}  \ncline{A4}{A1}
+				\ncline{B1}{B5}  \ncline{B5}{B7}  \ncline{B7}{B11}  \ncline{B11}{B1}
+				\ncline{B2}{B4}  \ncline{B4}{B8} \ncline{B8}{B10} \ncline{B10}{B2} 
+				\nput{10}{A1}{\footnotesize{$A~\textcolor{blue}{\dfrac{\pi}{4}}$}}\nput{170}{A2}{\footnotesize{$\textcolor{blue}{\dfrac{3\pi}{4}}~B$}}\nput{-170}{A3}{\footnotesize{$\textcolor{red}{\dfrac{-3\pi}{4}}~C$}}\nput{-10}{A4}{\footnotesize{$D~\textcolor{red}{\dfrac{-\pi}{4}}$}}
+				\nput{0}{B1}{\footnotesize{$E~\textcolor{blue}{\dfrac{\pi}{6}}$}}\nput{180}{B5}{\footnotesize{$\textcolor{blue}{\dfrac{5\pi}{6}}~F$}}\nput{-180}{B7}{\footnotesize{$\textcolor{red}{\dfrac{-5\pi}{6}}~G$}}\nput{0}{B11}{\footnotesize{$H~\textcolor{red}{\dfrac{-\pi}{6}}$}}
+				\nput{25}{B2}{\footnotesize{$K~\textcolor{blue}{\dfrac{\pi}{3}}$}}\nput{145}{B4}{\footnotesize{$\textcolor{blue}{\dfrac{2\pi}{3}}~L$}}\nput{-105}{B8}{\footnotesize{$\textcolor{red}{\dfrac{-2\pi}{3}}~M$}}\nput{-105}{B10}{\footnotesize{$N~\textcolor{red}{\dfrac{-\pi}{3}}$}}
+					\uput[ur](0,1){\footnotesize{$J$}}\uput[ul](-1,0){\footnotesize{$I'$}}\uput[dl](0,-1){\footnotesize{$J'$}}
+				\end{pspicture}
+			\end{center}
+			\end{center}
+			
+			\begin{enumerate}
+				\item Associer à chacun des points le nombre réel de l'intervalle $]-\pi;\pi]$ dont \textcolor{blue}{il est le point image.}
+				\item Associer à chacun des points le nombre réel de l'intervalle $[0;2\pi[$ dont \textcolor{red}{il est le point image.}
+				\item  Placer sur le cercle les points $M', N'$ et $P'$ associés respectivement aux réels $\dfrac{19\pi}{3}$, $\dfrac{-21\pi}{4}$ et $ \dfrac{53\pi}{3}$
+				
+				\textit{\textbf{1 tour} 2\pi / \dfrac{4\pi}{2} / \dfrac{6\pi}{3} / \dfrac{8\pi}{4} / \dfrac{12\pi}{6}}
+
+			\begin{itemize}
+				\item on cherche la mesure principale de : \dfrac{19\pi}{3}\par
+				on commence par diviser le numérateur par le dénominateur sans \pi.\par
+				~~~~~~~~~~~~~~~$\dfrac{19}{3} \approx 6.3$ on encadre $6.3$ par 2 chiffres pair ici $6$ et $8$ $6\pi<\dfrac{19\pi}{3}<8\pi$	\par
+				~~~~~~~~~~~~~~~~~~~~~~$\dfrac{18\pi}{3}<\dfrac{19\pi}{3}<\dfrac{24\pi}{3}$
+				~~~~~~~~~~~~~~~$\dfrac{19\pi}{3}=\dfrac{18\pi}{3}+\dfrac{\pi}{3}$\par
+				~~~~~~~~~~~~~~~Donc $\dfrac{\pi}{3}$ Est la mesure principale.
+		\end{itemize}
+			\end{enumerate}
+		\end{Meth}
+	\newpage
+		\section{Radian}	
+		\subsection{Définition}
+			\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Définition}
+		\begin{minipage}{12cm}
+			
+				Pour tout point M sur le cercle trigonométrique, on définit un angle géométrique $\widehat{IOM}$. Cet angle géométrique intercepte l'arc $\overset{\frown}{IM}$ du cercle trigonométrique.\\
+				La mesure de l'angle géométrique $\widehat{IOM}$ est de 1 radian lorsque la mesure de l'arc $\overset{\frown}{IM}$ est de 1 rayon.\\
+			\end{minipage}
+		\hfill
+		\begin{minipage}{6cm}
+							\psset{unit=1.5cm}
+										\begin{pspicture}(-1.2,-1.2)(1.2,1.2)
+						\newrgbcolor{bleu}{0.1 0.05 .5}
+						\newrgbcolor{prune}{.6 0 .48}
+						\newrgbcolor{rose}{.95 .8 .9}
+						\def\pshlabel#1{\footnotesize #1}
+						\def\psvlabel#1{\footnotesize #1}
+						\pswedge[linecolor=rose,linewidth=.5pt,fillstyle=solid,fillcolor=rose]{.4}{0}{57.2958}
+						\psaxes[linewidth=.75pt,labels=none,ticks=none]{->}(0,0)(-1.2,-1.2)(1.2,1.2)
+						\psaxes[linewidth=1.5pt,linecolor=red]{->}(0,0)(1,1)
+						\uput[dl](0,0){\footnotesize{O}}\uput[dr](1,0){\footnotesize{$I$}}\uput[ul](0,1){\footnotesize{ $J$}}\uput[d](.5,0){\footnotesize{\red $\VE{i}$}}\uput[l](0,.5){\footnotesize{\red $\VE{j}$}}
+						\rput{57.2958}{\psline[linewidth=1.25pt,linecolor=prune](0,0)(1,0)\rput[bl]{*0}(1.05,0.05){\prune $M$}}
+						\uput[r](.3,.2){\footnotesize{\prune{1 rad}}}
+						\psarc[linecolor=prune]{-}(0,0){.4}{0}{57.2958}
+						\psarc[linecolor=bleu,linewidth=1pt]{-}(0,0){1}{57.29}{360}
+						\psarc[linecolor=prune,linewidth=1.25pt]{-}(0,0){1}{0}{57.2958}
+						\end{pspicture}
+									\end{minipage}
+		\end{bclogo}
+		\subsection{Conversion}
+		Le périmètre d'un cercle de rayon 1 est 2$\pi$.
+		Donc $2\pi$ radians équivaut à $360^{\circ}$.\\ 
+		
+		Soit 1 radian correspond à  $\frac{360^{\circ}}{2\pi}$ ou 1 radian $\approx57,30^{\circ}$.\\
+		On retiendra : $\pi$ radians correspond à $180^{\circ}$\\
+		\begin{Meth}[Convertir des mesures d'angle]
+			Convertir les mesures d'angles donnés en radians ou en degrés.\\
+		
+				\renewcommand{\arraystretch}{1.8}
+				\begin{tabular}{|c|*{11}{p{1.2cm}|}}
+					\hline
+					
+					Mesures en degrés&15&30&45&60&90&125&135&180&270&300&360\\
+					
+					\hline
+					
+					Mesures  en radians&$\dfrac{\pi}{12}$&$\dfrac{\pi}{6}$&$\dfrac{\pi}{4}$&$\dfrac{\pi}{3}$&$\dfrac{\pi}{2}$&$\dfrac{25\pi}{36}$&$\dfrac{3\pi}{4}$&$\pi$&$\dfrac{3\pi}{2}$&$\dfrac{5\pi}{3}$&\\
+					
+					\hline
+				\end{tabular}
+		(Pour trouver facilement par la suite toutes les valeurs, on peut faire un produit en crois.)	
+		\end{Meth}
+	
+		\section{Angle orienté }
+		\subsection{Mesures d'angle orienté }
+	
+			\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Définition}
+		
+		\begin{minipage}{11cm} Soit $x$ un réel et $M$ un point du cercle trigonométrique repéré par $x$.
+						
+						On dit que $x$ est une mesure en radians de l'angle orienté $\left( \VE{OI}, \VE{OM}\right)$.
+					
+			\end{minipage}
+			\hfill
+			\begin{minipage}{4.8cm}
+				\psset{unit=2cm}
+				\begin{pspicture}(-1.2,-1.2)(1.2,1.2)
+				\newrgbcolor{bleu}{0.1 0.05 .5}
+				\newrgbcolor{prune}{.6 0 .48}
+				\newrgbcolor{rose}{.95 .8 .9}
+				\def\pshlabel#1{\footnotesize #1}
+				\def\psvlabel#1{\footnotesize #1}
+				\pswedge[linecolor=rose,linewidth=.5pt,fillstyle=solid,fillcolor=rose]{.4}{0}{50}
+				\psaxes[linewidth=.75pt,labels=none,ticks=none]{->}(0,0)(-1.2,-1.2)(1.2,1.2)
+				\psaxes[linewidth=1.5pt,linecolor=red]{->}(0,0)(1,1)
+				\uput[dl](0,0){\footnotesize{O}}\uput[dr](1,0){\footnotesize{\prune $I$}}\uput[ul](0,1){\footnotesize{\prune $J$}}\uput[d](.5,0){\footnotesize{\red $\VE{i}$}}\uput[l](0,.5){\footnotesize{\red $\VE{j}$}}
+				\pscircle[linewidth=1.25pt, linecolor=bleu](0,0){1} 
+				\rput{50}{\psline[linewidth=1.25pt,linecolor=prune](0,0)(1,0)\rput[bl]{*0}(1,0){\prune $M$}}
+				\uput[r](.3,.2){$x$}
+				\psarc[linecolor=prune]{->}(0,0){.4}{0}{50}
+				\psarc[linecolor=prune]{->}(0,0){1.3}{30}{60}
+				\rput(1,1){\prune +}
+				\end{pspicture}
+			\end{minipage}
+			
+			\medskip
+			\end{bclogo}
+	
+		\begin{Rem}
+			L'angle orienté $(\overrightarrow{OI},\overrightarrow{OM})$ a une infinité de mesures.\\
+			Si $x $ est une de ses mesures  alors $x+2\pi $ , $x+4\pi $ , $x-2\pi $ et plus généralement $x+2k\pi$ avec $k\in\mathbb{Z}$  sont aussi des mesures de $(\overrightarrow{OI},\overrightarrow{OM})$.\\
+			Par convention on note alors $\left( \VE{OI}, \VE{OM}\right)= x +2k\pi$ où $k$ est un entier relatif et on dit que $\left( \VE{OI}, \VE{OM}\right)$ à pour mesure $x$ radians à $2\pi$ près.\\
+			On peut aussi  écrire: mes $(\VE{OI},\VE{OM}) $ $\equiv \alpha$  $[2\pi]$ ou plus simplement:\\
+				$(\VE{OI},\VE{OM})$  $\equiv$ $ \alpha$    $[2\pi]$  qui se lit: \textbf{La mesure de l'angle orienté $(\VE{OI},\VE{OM})$ est égal à $\alpha$ modulo $2\pi$}
+		\end{Rem}
+	\newpage
+		\subsection{Mesure principale d'un angle orienté}
+			\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Définition}
+			Parmi toutes les mesures d'un angle orienté $(\VE{OI}, \VE{OM})$, il existe une unique mesure de l'angle appartenant à l'intervalle $\left] -\pi;\pi\right] $. Cette mesure s'appelle  appelée la \textbf{mesure principale} de $(\VE{OI}, \VE{OM})$.
+		\end{bclogo}
+		\begin{Meth}[Savoir trouver une mesure principale d'un angle orienté:]
+			\begin{enumerate}
+				\item Parmi les nombres suivants quels sont ceux qui peuvent être des mesures principales d'angles.
+				\begin{multicols}{4}
+					\begin{enumerate}
+						\item $\dfrac{5\pi}{2}$
+						\item $-\dfrac{7\pi}{12}$
+						\item $\dfrac{-11\pi}{12}$
+						\item $\dfrac{7\pi}{4}$
+					\end{enumerate}
+				\end{multicols}
+				\item Déterminer la mesure principale associée à chacune des mesures suivantes:
+				\begin{multicols}{4}
+					\begin{enumerate}
+						\item $\dfrac{47\pi}{3}$
+						\item $-\dfrac{61\pi}{6}$
+						\item $\dfrac{-23\pi}{5}$
+						\item $\dfrac{-131\pi}{4}$
+					\end{enumerate}
+				\end{multicols}
+			\end{enumerate}
+		\end{Meth}
+	
+		\section{Cosinus et sinus d'un nombre réel}
+		\subsection{Définition}
+		\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Définition}
+		\begin{minipage}{0.5\textwidth}
+			
+				Dans le plan rapporté a un repère orthonormé direct $(O;\overrightarrow{OI},\overrightarrow{OJ})$ soit $M$ le point du cercle trigonométrique $\mathcal{C}$ image du réel $x$. On définit:\\
+				\begin{itemize}
+					\item le cosinus de $x$  qui est l'abscisse de $M$. Il est noté $\cos(x)$ ou $\cos x$.
+					\item le sinus de $x$  qui est l'ordonnée de $M$. Il est noté $\sin(x)$ ou $\sin x$.
+				\end{itemize}
+				
+		
+		\end{minipage}
+	\begin{minipage}{5.8cm}
+		\begin{center}
+		\psset{unit=2cm}
+		\begin{pspicture}(-1.2,-1.2)(1.2,1.2)
+		\newrgbcolor{bleu}{0.1 0.05 .5}
+		\newrgbcolor{prune}{.6 0 .48}
+		\newrgbcolor{rose}{.95 .8 .9}
+		\def\pshlabel#1{\footnotesize #1}
+		\def\psvlabel#1{\footnotesize #1}
+		\psaxes[linewidth=.75pt,labels=none,ticks=none]{-}(0,0)(-1.2,-1.2)(1.2,1.2)
+		\psaxes[linewidth=.75pt]{->}(0,0)(1,1)
+		\uput[dl](0,0){\footnotesize{O}}\uput[dr](1,0){\footnotesize{$I$}}\uput[ul](0,1){\footnotesize{$J$}}
+		\pscircle[linewidth=1.25pt, linecolor=bleu](0,0){1} 
+		\rput{50}{\psline[linewidth=1.25pt,linecolor=prune](0,0)(1,0)}
+		\psline[linewidth=1pt,linecolor=prune,linestyle=dashed](0,.766)(.642,.766)(.642,0)
+		\uput[ur](.642,.766){\prune $M$}\uput[d](.642,0){$\cos x$}\uput[l](0,.766){$\sin x$}
+		\uput[r](.3,.2){$x$}
+		\psarc[linecolor=prune]{->}(0,0){.4}{0}{50}
+		\end{pspicture}
+		\end{center}
+	\end{minipage}  	\end{bclogo}
+		\subsection{Propriétés}
+		$\forall x \in \R$ on a les propriétés suivantes:
+		\begin{bclogo}[couleur = red!25, arrondi = 0.1,logo=\bcbook]{Propriétés}
+		
+				\begin{minipage}{5cm}
+					\begin{itemize}
+						\item $-1\leqslant \cos x\leqslant1$
+						\item $-1\leqslant \sin x\leqslant1$
+						\item $\cos^2 x +\sin^2x=1$
+					\end{itemize} 
+				\end{minipage}
+			\end{bclogo}
+		\subsection{Valeurs remarquables}
+		\begin{minipage}{10cm}
+			\begin{tabular}{|l|c|c|c|c|c|}
+				\hline
+				\small
+				&&&&&\\
+				$x$&$~~0~~$&$~~\dfrac{\pi}{6}~~$&$~~\dfrac{\pi}{4}~~$&$~~\dfrac{\pi}{3}~~$&$~~\dfrac{\pi}{2}~~$\\
+				&&&&&\\
+				\hline
+				&&&&&\\
+				$\cos x$&$1$&$\dfrac{\sqrt{3}}{2}$&$\dfrac{\sqrt{2}}{2}$&$\dfrac{1}{2}$&$0$\\
+				&&&&&\\
+				\hline
+				&&&&&\\
+				$\sin x$&$0$&$\dfrac{1}{2}$&$\dfrac{\sqrt{2}}{2}$&$\dfrac{\sqrt{3}}{2}$&$1$\\
+				&&&&&\\
+				\hline
+			\end{tabular}
+		\end{minipage}
+		\begin{minipage}{8cm}
+	\begin{center}
+			\psset{unit=4cm}
+			\begin{pspicture}(-.1,-.2)(1.1,1.1)
+			\newrgbcolor{bleu}{0.1 0.05 .5}
+			\newrgbcolor{prune}{.6 0 .48}
+			\newrgbcolor{rose}{.95 .8 .9}
+			\def\pshlabel#1{\footnotesize #1}
+			\def\psvlabel#1{\footnotesize #1}
+			\psaxes[linewidth=.75pt,labels=none,ticks=none]{-}(0,0)(-.1,-.1)(1.1,1.1)
+			\psaxes[linewidth=1pt]{->}(0,0)(1,1)
+			\uput[dl](0,0){\footnotesize{O}}
+			\psarc[linecolor=bleu,linewidth=1.25pt](0,0){1}{0}{90}
+			\psset{linewidth=1pt,linecolor=prune,linestyle=dashed}
+			\psline(.866,0)(.866,.5)(0,0.5)\psline(.707,0)(.707,.707)(0,0.707)\psline(0.5,0)(.5,.866)(0,0.866)
+			\uput[15](.866,.5){\prune $\dfrac{\pi}{6}$}\uput[d](.866,0){\footnotesize{$\dfrac{\sqrt{3}}{2}$}}\uput[l](0,.5){\footnotesize{$\dfrac{1}{2}$}}
+			\uput[30](.707,.707){\prune $\dfrac{\pi}{4}$}\uput[d](.707,0){\footnotesize{$\dfrac{\sqrt{2}}{2}$}}\uput[l](0,.707){\footnotesize{$\dfrac{\sqrt{2}}{2}$}}
+			\uput[45](.5,.866){\prune $\dfrac{\pi}{3}$}\uput[d](.5,0){\footnotesize{$\dfrac{1}{2}$}}\uput[l](0,.866){\footnotesize{$\dfrac{\sqrt{3}}{2}$}}
+			\uput[ur](0,1){\prune $\dfrac{\pi}{2}$}\uput[l](0,1){\footnotesize{$1$}}\uput[d](1,0){\footnotesize{$1$}}
+			\end{pspicture}
+			\end{center}
+		\end{minipage}
+		
+		\newpage
+	\begin{Meth}[Savoir trouver la valeur exacte d'un sinus ou d'un cosinus]
+		Dans chacun des cas donner la valeur exacte des nombres suivants:
+		\begin{multicols}{4}
+			\begin{enumerate}
+				\item $\cos(2020\pi)$
+				\item $\sin(-\dfrac{\pi}{2})$
+				\item $\cos(\dfrac{2\pi}{3})$
+				\item $\sin(\dfrac{7\pi}{6})$
+			\end{enumerate}
+		\end{multicols}
+\end{Meth}		
+		\subsection{Relations trigonométriques et angles associés}
+			\begin{bclogo}[couleur = red!25, arrondi = 0.1,logo=\bcbook]{Propriétés}	
+		\begin{minipage}{9cm}
+			Pour tout nombre réel $x$,  
+			\[\la\bgar{ll}
+			\cos(-x) = \cos x \vspd\\
+			\sin(-x) = -\sin x
+			\enar\right.
+			\]
+			\[
+			\la\bgar{ll}
+			\dsp \cos\lp\frac{\pi}{2}-x\rp = \sin x \vspd\\
+			\dsp \sin\lp\frac{\pi}{2}-x\rp = \cos x
+			\enar\right.
+			\hspace{0.6cm}
+			\la\bgar{ll}
+			\dsp \cos\lp\frac{\pi}{2}+x\rp = -\sin x \vspd\\
+			\dsp \sin\lp\frac{\pi}{2}+x\rp = \cos x
+			\enar\right.
+			\]
+			\[ \la\bgar{ll}
+			\cos\lp\pi-x\rp = -\cos x \vspd\\
+			\sin\lp\pi-x\rp = \sin x
+			\enar\right.
+			\hspace{0.6cm}
+			\la\bgar{ll}
+			\cos\lp\pi+x\rp = -\cos x \vspd\\
+			\sin\lp\pi+x\rp = -\sin x
+			\enar\right.
+			\]
+		\end{minipage}
+	\hfill
+		\begin{minipage}{7cm}
+		\psset{unit=2.5cm}%{xunit=5cm,yunit=5cm}
+		\begin{pspicture}(-1.3,-1.5)(1.3,1.5)
+		
+		\pscircle(0,0){1}
+		\psline[linewidth=0.8pt](-1.2,0)(1.2,0)
+		\psline[linewidth=0.8pt](0,-1.2)(0,1.2)
+		\psarc[linewidth=0.6pt]{->}(0,0){0.4}{0}{19}
+		\put(0.45,0.05){\large{$x$}}
+		
+		\psline[linewidth=0.8pt](-0.94,-0.3)(0.94,.3)
+		\psline[linewidth=0.8pt](-0.94,0.3)(0.94,-.3)
+		\psline[linewidth=0.8pt](-0.3,0.94)(.3,-0.94)
+		\psline[linewidth=0.8pt](0.3,0.94)(-.3,-0.94)
+		
+		\psline[linewidth=0.5pt,linestyle=dashed](0.94,-0.3)(0.94,0.3)
+		\psline[linewidth=0.5pt,linestyle=dashed](-0.94,-0.3)(-0.94,0.3)
+		\psline[linewidth=0.5pt,linestyle=dashed](-0.94,0.32)(0.94,0.32)
+		\psline[linewidth=0.5pt,linestyle=dashed](-0.94,-0.32)(0.94,-0.32)
+		\psline[linewidth=0.5pt,linestyle=dashed](-0.32,0.94)(0.32,0.94)
+		\psline[linewidth=0.5pt,linestyle=dashed](-0.32,-0.94)(0.32,-0.94)
+		\psline[linewidth=0.5pt,linestyle=dashed](-0.32,0.94)(-0.32,-0.94)
+		\psline[linewidth=0.5pt,linestyle=dashed](0.32,0.94)(0.32,-0.94)
+		
+		\put(1.1,-.03){\large{$0$}}
+		\put(1.1,0.4){\large{$x$}}
+		\put(1,-0.45){\large{$-x$}}
+		\put(-1.5,0.35){\large{$\pi-x$}}
+		\put(-1.5,-0.35){\large{$\pi+x$}}
+		\put(-1.4,0.){\large{$\pi$}}
+		\put(-0.7,1.2){\large{$\dsp\frac{\pi}{2}+x$}}
+		\put(0.25,1.2){\large{$\dsp\frac{\pi}{2}-x$}}
+		\put(-.05,1.35){\large{$\dsp\frac{\pi}{2}$}}
+		
+		
+		\put(1,-0.15){$\mathbf{\cos x}$}
+		\put(-0.1,1.05){$\mathbf{\sin x}$}
+		\end{pspicture}	
+	\end{minipage}
+
+	
+		
+		\end{bclogo}
+		\begin{Rem}
+			\begin{itemize}
+				\item Il faut savoir retrouver ces formules à partir d'un dessin
+				\item Les relations $\cos(\dfrac{\pi}{2}-x)=\sin(x)$ et 	$\sin(\dfrac{\pi}{2}-x)=\cos(x)$ sont très importantes car elles permettent de transformer un sinus en cosinus et vice versa.
+			\end{itemize}
+		\end{Rem}
+		\begin{Meth}[Savoir utiliser les angles associés]
+		\begin{enumerate}
+			\item Soit $x$ un nombre réel, exprimer les nombres suivants en fonction de $\cos(x)$ ou $sin(x)$
+			\begin{enumerate}
+				\item A=$\cos(\dfrac{\pi}{2}-x)+\cos(2\pi+x)+2\sin(\pi+x)$
+				\item$ B=3\cos(\pi+x)+5sin(\dfrac{\pi}{2}-x)+2\sin(-x)$
+			\end{enumerate}
+			\item On admet que $\cos(\dfrac{\pi}{5})=\dfrac{1+\sqrt{5}}{4}$
+			\begin{enumerate}
+				\item En déduire la valeur exacte de $\sin(\dfrac{\pi}{5})$
+				\item  Donner ensuite la valeur exacte de cosinus et sinus des nombres réels suivants:
+				\begin{multicols}{5}
+					\begin{enumerate}
+						\item $\dfrac{4\pi}{5}$
+						\item $-\dfrac{\pi}{5}$
+						\item $\dfrac{6\pi}{5}$
+						\item $\dfrac{3\pi}{5}$
+						\item $\dfrac{a\pi}{5}$
+					\end{enumerate}
+				\end{multicols}
+			\end{enumerate}
+		\end{enumerate}
+	\end{Meth}
+\newpage
+		\subsection{Équations trigonométriques}
+		\begin{bclogo}[couleur = red!25, arrondi = 0.1,logo=\bcbook]{Propriétés}
+			Le cercle trigonométrique et la configuration des angles associés nous permettent de résoudre des équations 
+			du type $\cos x = \cos a$ et $\sin x = \sin a$ où $a$ est un réel connu.
+		\begin{itemize}
+			\item \textsf{\'Equation} $\cos x =\cos a$
+			
+			\begin{minipage}{11cm}
+				Soit $a$ un réel donné. Les solutions dans $\R$ de l'équation $\cos x =\cos a$ sont :\[ 
+					\begin{cases}
+					x &= a + 2k \pi\\
+					x &= -a + 2k \pi
+					\end{cases}
+					\text{ où }\;k\;\text{ est un entier relatif.}
+					\]
+				
+				
+			\end{minipage}
+			\hfill
+			\begin{minipage}{4.5cm}
+				\begin{flushright}
+					\psset{unit=1.8cm}
+					\begin{pspicture}(-1.2,-1.1)(1.2,1.2)
+					\newrgbcolor{bleu}{0.1 0.05 .5}
+					\newrgbcolor{prune}{.6 0 .48}
+					\newrgbcolor{rose}{.95 .8 .9}
+					\newrgbcolor{grisb}{.85 .85 .9}
+					\psaxes[linewidth=.75pt,labels=none,ticks=none]{-}(0,0)(-1.2,-1.1)(1.2,1.2)
+					\psaxes[linewidth=1pt,labels=none,ticks=none]{->}(0,0)(1,1)
+					\uput[dl](0,0){\footnotesize{O}}\uput[dr](1,0){\footnotesize{\bleu $I$}}\uput[ul](0,1){\footnotesize{\bleu $J$}}
+					\pscircle[linewidth=1.25pt, linecolor=bleu](0,0){1} 
+					\rput{50}{\psline[linewidth=1.25pt,linecolor=prune](0,0)(1,0)}
+					\rput{-50}{\psline[linewidth=1.25pt,linecolor=prune](0,0)(1,0)}
+					\uput[ur](.642,.766){\prune $M(a)$}\uput[dr](.642,-.766){\prune $N(-a)$}
+					\psline[linewidth=.5pt,linecolor=prune,linestyle=dashed](.642,.766)(.642,-.766)
+					\psline[linewidth=1.5pt,linecolor=red](0,0)(.642,0)
+					\uput[d](.33,0){\red $\cos a$}
+					\end{pspicture}
+				\end{flushright}
+			\end{minipage}
+			\item \textsf{\'Equation} $\sin x =\sin a$
+			
+			\begin{minipage}{11cm}
+				Soit $a$ un réel donné. Les solutions dans $\R$ de l'équation $\sin x =\sin a$ sont :\[ 
+					\begin{cases}
+					x &= a + 2k \pi\\
+					x &=\pi -a + 2k \pi
+					\end{cases}
+					\text{ où }\;k\;\text{ est un entier relatif.}
+					\]
+				
+			\end{minipage}
+			\hfill
+			\begin{minipage}{4.5cm}
+				\begin{flushright}
+					\psset{unit=1.8cm}
+					\begin{pspicture}(-1.2,-1)(1.2,1.2)
+					\newrgbcolor{bleu}{0.1 0.05 .5}
+					\newrgbcolor{prune}{.6 0 .48}
+					\newrgbcolor{rose}{.95 .8 .9}
+					\newrgbcolor{grisb}{.85 .85 .9}
+					\psaxes[linewidth=.75pt,labels=none,ticks=none]{-}(0,0)(-1.2,-1.1)(1.2,1.2)
+					\psaxes[linewidth=1pt,labels=none,ticks=none]{->}(0,0)(1,1)
+					\uput[dl](0,0){\footnotesize{O}}\uput[dr](1,0){\footnotesize{\bleu $I$}}\uput[ul](0,1){\footnotesize{\bleu $J$}}
+					\pscircle[linewidth=1.25pt, linecolor=bleu](0,0){1} 
+					\rput{40}{\psline[linewidth=1.25pt,linecolor=prune](0,0)(1,0)}
+					\rput{140}{\psline[linewidth=1.25pt,linecolor=prune](0,0)(1,0)}
+					\uput[ur](.766,.642){\prune $M(a)$}\uput[ul](-.7,.642){\prune $N (\pi -a)$}
+					\psline[linewidth=.5pt,linecolor=prune,linestyle=dashed](-.766,.642)(.766,.642)
+					\psline[linewidth=1.5pt,linecolor=red](0,0)(0,.642)
+					\uput[l](0,.321){\red $\sin a$}
+					\end{pspicture}
+				\end{flushright}
+			\end{minipage}
+		\end{itemize}
+		
+			
+			
+		\end{bclogo}
+		
+	\begin{Meth}[Savoir résoudre des équations trigonométriques]
+		Résoudre dans $]-\pi; \pi]$, puis dans $\R$ et enfin dans $[0;2\pi[$ les équations suivantes :
+		\begin{multicols}{4}
+		\begin{enumerate}
+			\item $\cos x = \dfrac{\sqrt{2}}{2} $
+			\item $\sin x = -\dfrac{1}{2}$
+			\item $\cos (x) = \sin\left(\dfrac{3\pi}{4}\right) $
+			\item $\cos (2x) = \dfrac{1}{2}$ 
+			
+			\item $ \sin \left(x-\dfrac{\pi}{6}\right) = \dfrac{\sqrt{3}}{2}$ 
+				
+		\end{enumerate}
+		\end{multicols}
+				\end{Meth}
+		\begin{Meth} QCM (plusieurs réponses possibles)
+			\begin{enumerate}
+				\item  Soit $x\in[\pi ; 2\pi]$ tel que $\cos(x)=-\dfrac45$. Alors on a :
+				$$\sin(x) \leq 0 \qquad \sin^2(x)=\dfrac15 \qquad \sin(x)=0.6 \qquad \sin(x)=-\dfrac35$$
+				\item  Soit $x\in\left[\dfrac{\pi}2 ; \dfrac{3\pi}2\right]$ tel que $\sin(x)=\dfrac{21}{29}$. Alors on a :
+				$$\cos(x) \leq 0 \qquad \cos(x)=\sqrt{1-\sin^2(x)} \qquad \cos(x)=-\dfrac{20}{29} \qquad \cos(x)=\dfrac{20}{29}$$
+				\item  Soit $x\in\left[-\dfrac{\pi}2 ; \dfrac{\pi}2\right]$ tel que $\sin(x)=\dfrac{1}{4}$. Alors on a :
+				$$\cos(x) \leq 0 \qquad \cos(x)=\dfrac34 \qquad \cos(x)=-\dfrac{\sqrt{15}}{4} \qquad \cos(x)=\dfrac{\sqrt{15}}{4}$$
+			
+			
+			\end{enumerate}
+		
+		\end{Meth}
+	\newpage
+	\section{Fonctions cosinus et sinus}
+	\subsection{Définitions}
+		\begin{bclogo}[couleur = red!25, arrondi = 0.1,logo=\bcbook]{Définitions}
+	\begin{itemize}
+		\item La fonction cosinus, notée $\cos$,  est la fonction définie sur $\mathbb{R}$ par $\cos : x\mapsto \cos x$.
+		\item La fonction sinus, notée $\sin$,  est la fonction  définie sur $\mathbb{R}$ par $\sin : x\mapsto \sin x$.
+	\end{itemize}
+	\end{bclogo}
+	\subsection{Périodicité}
+		\begin{bclogo}[couleur = red!25, arrondi = 0.1,logo=\bcbook]{Périodicité}
+	Pour tout réel $x$, $\cos \left( x+2\pi \right)= \cos(x)$ et $\sin \left( x+2\pi \right)= \sin(x)$. On dit que les fonctions cosinus et sinus sont périodiques de période $2\pi$.
+\end{bclogo}
+	\begin{Rem}
+			La fonction cosinus ( ou la fonction sinus ) est entièrement connue dès qu'on connaît ses valeurs sur un intervalle $\left[ a ; a+ 2\pi \right[$ d'amplitude $2\pi$.\\
+		
+		D'un point de vue graphique, les courbes représentatives des fonctions cosinus ou sinus sont inchangées par la translation de vecteur $2\pi \VE{\imath}$
+	\end{Rem}
+
+	
+	\subsection{parité}
+	
+	\begin{bclogo}[couleur = red!25, arrondi = 0.1,logo=\bcbook]{Parité}
+		\begin{itemize}
+			\item Pour tout réel $x$, $\cos (-x)= \cos(x)$. On dit que la fonction cosinus est paire.
+			
+			La courbe représentative de la fonction cosinus admet l'axe des ordonnées pour axe de symétrie.
+			
+			\item Pour tout réel $x$, $\sin (-x)= -\sin(x)$. On dit que la fonction sinus est impaire.
+			
+			La courbe représentative de la fonction sinus admet l'axe l'origine du repère pour centre de symétrie.
+		\end{itemize}
+	\end{bclogo}
+\begin{Rem}
+		Il suffit d'étudier les fonctions cosinus et sinus sur l'intervalle $\left[ 0 ; \pi \right]$ pour les connaître sur $\left[ -\pi ; \pi \right]$ à l'aide de la parité et enfin sur $\R$ à l'aide de la périodicité.
+\end{Rem}
+
+	
+	\subsection{variation}
+	
+	\psset{xunit=.95cm,yunit=1cm} 
+	\begin{pspicture}(6.5,3)
+	\rput(3.25,3){Sur $\left[ 0 ; \pi \right]$}
+	\psset{linewidth=.5pt}
+	\psframe(6.5,2.5)\psline(0,1.5)(6.5,1.5) \psline(1.5,0)(1.5,2.5)
+	\rput(0.75,2){$x$} \rput(2,2){$0$} \rput(4,2){$\dfrac{\pi}{2}$} \rput(6,2){$\pi$}
+	\rput(0.75,.75){$\cos(x)$} \rput(2,1.2){\rnode{A}{$1$}} \rput(6,.3){\rnode{B}{$-1$}}
+	\psset{nodesep=5pt,arrows=->,linewidth=.75pt}
+	\ncline{A}{B} \ncput*{0}
+	\end{pspicture}
+	\hfill
+	\psset{xunit=.95cm,yunit=1cm} 
+	\begin{pspicture}(10.5,3)
+	\rput(5.25,3){Sur $\left[ -\pi ; \pi \right]$}
+	\psset{linewidth=.5pt}
+	\psframe(10.5,2.5)\psline(0,1.5)(10.5,1.5) \psline(1.5,0)(1.5,2.5)
+	\rput(0.75,2){$x$} \rput(2,2){$-\pi$} \rput(4,2){$-\dfrac{\pi}{2}$} \rput(6,2){$0$}\rput(8,2){$\dfrac{\pi}{2}$} \rput(10,2){$\pi$}
+	\rput(0.75,.75){$\cos(x)$} \rput(2,.3){\rnode{A}{$-1$}} \rput(6,1.2){\rnode{B}{$-1$}}\rput(10,.3){\rnode{C}{$-1$}}
+	\psset{nodesep=5pt,arrows=->,linewidth=.75pt}
+	\ncline{A}{B} \ncput*{0}\ncline{B}{C} \ncput*{0}
+	\end{pspicture}
+	
+	\medskip
+	
+	\psset{xunit=.95cm,yunit=1cm} 
+	\begin{pspicture}(6.5,2.5)
+	\psset{linewidth=.5pt}
+	\psframe(6.5,2.5)\psline(0,1.5)(6.5,1.5) \psline(1.5,0)(1.5,2.5)
+	\rput(0.75,2){$x$} \rput(2,2){$0$} \rput(4,2){$\dfrac{\pi}{2}$} \rput(6,2){$\pi$}
+	\rput(0.75,.75){$\sin(x)$} \rput(2,.3){\rnode{A}{$0$}} \rput(4,1.2){\rnode{B}{$1$}}\rput(6,.3){\rnode{C}{$0$}}
+	\psset{nodesep=5pt,arrows=->,linewidth=.75pt}
+	\ncline{A}{B} \ncline{B}{C} 
+	\end{pspicture}
+	\hfill
+	\psset{xunit=.95cm,yunit=1cm} 
+	\begin{pspicture}(10.5,2.5)
+	\psset{linewidth=.5pt}
+	\psframe(10.5,2.5)\psline(0,1.5)(10.5,1.5) \psline(1.5,0)(1.5,2.5)
+	\rput(0.75,2){$x$} \rput(2,2){$-\pi$} \rput(4,2){$-\dfrac{\pi}{2}$} \rput(6,2){$0$}\rput(8,2){$\dfrac{\pi}{2}$} \rput(10,2){$\pi$}
+	\rput(0.75,.75){$\sin(x)$} \rput(2,1.2){\rnode{A}{$0$}} \rput(4,.3){\rnode{B}{$-1$}}\rput(8,1.2){\rnode{C}{$1$}}\rput(10,.3){\rnode{D}{$0$}}
+	\psset{nodesep=5pt,arrows=->,linewidth=.75pt}
+	\ncline{A}{B} \ncline{B}{C} \ncput*{0}  \ncline{C}{D}
+	\end{pspicture}
+	
+	\subsection{courbes}
+	
+	\subsubsection{fonction cosinus}
+	
+	\psset{unit=1cm}
+	\begin{pspicture}(-8.5,-1.2)(8.5,1.4)
+	\newrgbcolor{bleu}{0.1 0.05 .5}
+	\newrgbcolor{prune}{.6 0 .48}
+	\def\pshlabel#1{\footnotesize #1}
+	\def\psvlabel#1{\footnotesize #1}
+	\psaxes[labelsep=.8mm,linewidth=.75pt,ticksize=-2pt 2pt,trigLabels=true,trigLabelBase=2,dx=\psPiH,xunit=\psPi]{->}(0,0)(-2.7,-1.2)(2.7,1.5)
+	\psplot[plotpoints=800,linecolor=bleu,linewidth=1pt]{-8.5}{8.5}{x RadtoDeg cos}
+	\psplot[plotpoints=400,linecolor=bleu,linewidth=1.5pt]{-\psPi}{\psPi}{x RadtoDeg cos}
+	\psline[linecolor=prune,linewidth=.5pt,linestyle=dashed](-\psPi,-1)(-\psPi,1.2)
+	\psline[linecolor=prune,linewidth=.5pt,linestyle=dashed](\psPi,-1)(\psPi,1.2)
+	\psline[linecolor=prune,linewidth=.5pt]{<->}(-\psPi,1.2)(\psPi,1.2)
+	\uput[u](0,1.2){\prune{$2\pi$}}
+	\end{pspicture}
+	
+	\subsubsection{fonction sinus}
+	
+	\psset{unit=1cm}
+	\begin{pspicture}(-8.5,-1.2)(8.5,1.4)
+	\newrgbcolor{bleu}{0.1 0.05 .5}
+	\newrgbcolor{prune}{.6 0 .48}
+	\def\pshlabel#1{\footnotesize #1}
+	\def\psvlabel#1{\footnotesize #1}
+	\psaxes[labelsep=.8mm,linewidth=.75pt,ticksize=-2pt 2pt,trigLabels=true,trigLabelBase=2,dx=\psPiH,xunit=\psPi]{->}(0,0)(-2.7,-1.2)(2.7,1.5)
+	\psplot[plotpoints=800,linecolor=bleu,linewidth=1pt]{-8.5}{8.5}{x RadtoDeg sin}
+	\psplot[plotpoints=400,linecolor=bleu,linewidth=1.5pt]{-\psPi}{\psPi}{x RadtoDeg sin}
+	\psline[linecolor=prune,linewidth=.5pt,linestyle=dashed](-\psPi,0)(-\psPi,1.2)
+	\psline[linecolor=prune,linewidth=.5pt,linestyle=dashed](\psPi,0)(\psPi,1.2)
+	\psline[linecolor=prune,linewidth=.5pt]{<->}(-\psPi,1.2)(\psPi,1.2)
+	\uput[u](0,1.2){\prune{$2\pi$}}
+	\end{pspicture}
+	\section {Fonction $t\mapsto A\cos(\omega t+\varphi)$ et  $t\mapsto A\cos(\omega t+\varphi)$}
+	 En physique, de nombreux phénomènes sont liés à la propagation d’onde: le son, la lumière, ...Les grandeurs associées à ces ondes peuvent être mathématisées par des fonctions sinusoïdales du type $t\mapsto A\cos(\omega t+ \varphi)$ et $t\mapsto A\sin(\omega t+ \varphi)$\\
+	 On a représenté ci dessous la fonction $t\mapsto3\cos(0.5t+\dfrac\pi2)$
+	 	
+	 	\psset{xunit=0.5cm,yunit=1cm}
+	 	\begin{pspicture*}(-20,-4)(20,4)
+	 	\psset{algebraic=true}
+	 		\newrgbcolor{bleu}{0.1 0.05 .5}
+	 	\psaxes[trigLabels=true,trigLabelBase=2,dx=\psPiH,xunit=\psPi]{->}(0,0)(-10,-4)(10,4)
+	 	\psplot[plotpoints=800,linecolor=bleu,linewidth=1.5pt]{-20}{20}{3*cos(0.5*x+\psPi/2)}
+	 	
+	 	
+	 	
+	 	\end{pspicture*}
+	 \subsection{Amplitude}
+	 	\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Définition}
+	L’amplitude  d’une fonction périodique est sa valeur
+	 maximale.\end{bclogo}
+ 	\begin{bclogo}[couleur = red!25, arrondi = 0.1,logo=\bcbook]{Propriété}
+ 		L’amplitude des fonctions   $t\mapsto A\cos(\omega t+ \varphi)$ et $t\mapsto A\sin(\omega t+ \varphi)$  est $A$.
+	\end{bclogo}
+\subsection{Phase}
+\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Définition}
+ $\omega t +\varphi$ est appelé la \textbf{phase instantanée du signal}.\\
+ Si $t= 0$, $\varphi$ est appelée \textbf{la phase à l’origine du signal}.\\
+ $\omega$ est appelée \textbf{la pulsation du signal}
+ \end{bclogo}
+\begin{Rem}
+	En physique, la phase s’exprime en radians et la pulsation en radians par seconde.
+\end{Rem}.
+\subsection{Période et fréquence}
+\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Définition}
+\textbf{	La période T} d’une fonction est l’intervalle pour lequel la courbe de la fonction se reproduit à l’identique.\\
+La fréquence $f$ est le nombre de périodes par seconde . On a $f=\dfrac1T$
+\end{bclogo}
+\begin{Rem}
+En physique, la période $T$ s’exprime en secondes et la fréquence $f$ en Hertz(Hz)
+\end{Rem}.
+\begin{bclogo}[couleur = red!25, arrondi = 0.1,logo=\bcbook]{Propriété}
+La période T des fonctions $t\mapsto A\cos(\omega t+ \varphi)$ et $t\mapsto A\sin(\omega t+ \varphi)$ est $\dfrac{2\pi}{\omega}=\2\pi\times f$
+\end{bclogo}
+
+	\begin{Meth}[Savoir déterminer les valeurs $\omega$, $\varphi$ et $A$ à partir d'un graphique]
+	Déterminer la fonction $f\mapsto A\cos(\omega t+\varphi)$ dont la courbe est donnée ci dessous\\
+
+	\psset{xunit=1cm,yunit=1cm}
+	\begin{pspicture*}(-10,-4)(10,4)
+	\psset{algebraic=true}
+		\newrgbcolor{bleu}{0.1 0.05 .5}
+	\psaxes[trigLabels=true,trigLabelBase=4,dx=\psPiH,xunit=\psPi]{->}(0,0)(-10,-4)(10,4)
+		\psgrid[subgriddiv=2,gridlabels=3pt,gridwidth=0.5pt,griddots=10,subgriddots=10](-10,-4)(10,4)
+	\psplot[plotpoints=800,linecolor=bleu,linewidth=1.5pt]{-10}{10}{2*cos(4*x+\psPi/4)}
+	
+	
+	
+	\end{pspicture*}
+	\end{Meth}	
+	\end{document}

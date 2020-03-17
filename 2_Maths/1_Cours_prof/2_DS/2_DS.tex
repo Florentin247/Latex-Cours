@@ -1,0 +1,250 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\frenchbsetup{StandardLists=true}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{framed}
+\usepackage{fancyhdr}
+\usepackage[left=1.3cm,right=1.3cm,top=1.8cm,bottom=1.2cm]{geometry}
+\usepackage{array} 
+\usepackage{fancyhdr} 
+\usepackage{fancybox}
+\usepackage{pst-tree}
+\usepackage[framed]{ntheorem}
+\usepackage{tabularx}
+\usepackage{pstricks-add}
+\usepackage{eurosym}
+%\usepackage{pst-tree}
+\usepackage[np]{numprint}
+\usepackage{pifont}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{pgf,tikz}
+\usepackage[tikz]{bclogo}
+\usepackage{pgfkeys}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+\usetikzlibrary{arrows}
+
+
+\rfoot{\small -\thepage-}
+\cfoot{}
+
+\def\R{{\mathbb R}}
+\def\Q{{\mathbb Q}}
+\def\Z{{\mathbb Z}}
+\def\D{{\mathbb D}}
+\def\N{{\mathbb N}}
+\def\C{{\mathbb C}}
+
+\pagestyle{fancy}
+
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\alph{subsubsection}}
+\renewcommand{\labelitemi}{$\bullet$}
+\newcommand{\VE}[1]{\overrightarrow{#1}}
+%\renewcommand{\r}{($O$ ; $\vec{i}$ , $\vec{j}$)}
+\renewcommand{\arraystretch}{1}
+\tikzstyle{mybox} = [draw=black, very thick, rectangle, rounded corners, inner sep=20pt, inner ysep=20pt] 
+\tikzstyle{fancytitle} =[draw=black, very thick, rectangle, rounded corners, fill=white, text=black] % fill obligé sinon ne recouvre pas boite du dessous
+\usepackage{array,multirow,makecell}
+\setcellgapes{1pt}
+\makegapedcells
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash }b{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash }b{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash }b{#1}}
+\theoremstyle{break}
+\theorembodyfont{\upshape}
+\newtheorem{Prop}{Propri\'et\'e}
+\newtheorem{Def}{D\'efinition}
+\newtheorem{Rem}{Remarque}
+\newtheorem{exo}{Exercice}
+\newtheorem{Meth}{Methode}
+\newtheorem{cpreuve}{Preuve}
+\newtheorem{Th}{Théorème}
+\newtheorem{Act}{Activité}
+\theorembodyfont{\small \sffamily }
+\newtheorem{Ex}{Exemple}
+\newtheorem{Preu}{Preuve}
+\everymath{\displaystyle}
+\pagestyle{fancy}
+\lhead[]{\small NOM : .......}
+\chead[]{\textsc{\shadowbox{\begin{large}
+				\textcolor{black}{DEVOIR SURVEILLE n°2}
+\end{large}}}}
+\rhead[]{\small {}}
+\fancyhead[R]{2019/2020}
+\lfoot{}
+\rfoot{\small -\thepage-}
+
+\begin{document}
+	\textbf{Il sera tenu compte du soin apporté à la rédaction et à la présentation dans l'évaluation des copies.
+		Toutes les réponses devront être justifiées.}
+\begin{exo}[AUTOMATISMES. 10 min] 
+\textbf{SANS CALCULATRICE}. A Compléter sur le sujet (aucun détail de calcul n'est imposé)\\
+{\renewcommand{\arraystretch}{2}
+\begin{tabular}{|p{1cm}|p{10cm}|p{5.5cm}| }
+	\hline
+&Enoncé&Réponse\\
+\hline
+1&Mettre sous forme d'une fraction irréductible $A= 2-\dfrac74$&\\
+\hline
+2&Mettre sous forme d'une fraction irréductible $B= \dfrac{12}5\times\dfrac{20}9$&\\
+\hline
+3&Compléter $\dfrac25\times \cdots=3$&\\
+\hline
+4&Développer $-3x(1-2x)$&\\
+\hline
+5&Factoriser $(-3x+1)(1-2x)-(1-2x)^2$&\\
+\hline
+6&On sait que $f(x)=x^2-4x$ .Calculer l'image de $-2$&\\
+\hline
+\end{tabular}}
+
+\end{exo}
+\begin{exo}
+	On considère la suite définie sur $\N^*$ par  :$u_n= -n^2+2n+15$.
+	\begin{enumerate}
+	\item A l'aide de votre calculatrice, émettre une conjecture sur les variations de la suite $(u_n)$.
+	\item 
+	\begin{enumerate}
+		\item Pour tout $n>0$, exprimer $u_{n+1}$ en fonction de $n$.  
+		\item Montrer que pour tout $n>0$,  $u_{n+1}-u_n=1-2n$. 
+		\item Démontrer la conjecture sur les variations faite à la question 1.
+	\end{enumerate}
+	\end{enumerate}
+\end{exo}
+\begin{exo}
+		Au premier janvier 2 010, Bob a reçu 200 000 $\geneuro$ en héritage. Il décide de placer cette somme   et trouve un placement au taux de $6\%$. Mais chaque année il doit retirer 9 000 $\geneuro$ pour payer les impôts dus à ce placement. \\
+	On appelle $C_n$ le capital acquis au 1er janvier de l'année $2010+n$  avec  $C_0=200~000$ 
+	\begin{enumerate}
+		\item Quel est le montant du capital au premier janvier 2011? 
+		\item Expliquer pourquoi la suite $(C_n)$ vérifie la relation de récurrence  : $C_{n+1}=1,06C_n-9000$
+		\item Soit l'algorithme suivant:\\
+		\begin{tabular}{|l|}
+			\hline
+			$n \leftarrow 0$\\
+			$u \leftarrow 200000$\\
+			Tant que $u<240000$\\
+			\hspace{0.3cm}
+			\begin{tabular}{|l}
+			$n \leftarrow n+1$\\
+			$u \leftarrow1,06u-9000$
+			\end{tabular}\\
+			Fin Tant que\\
+			afficher $n$\\
+			\hline
+		\end{tabular}\\
+	
+	Expliquer ce que permet de trouver cet algorithme ?
+		\item Bob veut acheter une maison à 280 000$\geneuro$. En quelle année, aura-t-il la somme nécessaire à cet achat ?
+	\end{enumerate}
+\end{exo}
+\begin{exo}
+	
+	On prend une feuille de papier dont l' épaisseur est de l'ordre de 0,1 mm.
+	On plie une première fois cette feuille de papier en deux, puis de nouveau  en deux et l' on continue ainsi.\\
+	On suppose qu'on peut la plier autant de fois que l'on veut.\\
+Combien de pliages seront nécessaires pour que l'épaisseur de la feuille pliée dépasse la hauteur de la statue de la liberté de New York, sachant qu'elle mesure $93$m.
+\end{exo}
+\begin{exo}
+	Déterminer la forme algébrique des nombres complexes suivants:\textbf{(détails des calculs attendus)}
+	\begin{multicols}{3}
+			\begin{enumerate}
+				\item $z_A=(2+3i)-5(4-5i)$
+				\item $z_B=(4-5i)^2$
+				\item $z_C=\dfrac1{2-3i}$
+			\end{enumerate}
+	\end{multicols}
+
+\end{exo}
+
+\newpage
+\begin{exo}[AUTOMATISMES. 10 min] 
+	\textbf{SANS CALCULATRICE}. A Compléter sur le sujet (aucun détail de calcul n'est imposé)\\
+	{\renewcommand{\arraystretch}{2}
+		\begin{tabular}{|p{1cm}|p{10cm}|p{5.5cm}| }
+			\hline
+			&Enoncé&Réponse\\
+			\hline
+			1&Mettre sous forme d'une fraction irréductible $A= 2-\dfrac74$&$A=\dfrac14$\\
+			\hline
+			2&Mettre sous forme d'une fraction irréductible $B= \dfrac{12}5\times\dfrac{20}9$&$B=\dfrac16{4}$\\
+			\hline
+			3&Compléter $\dfrac25\times \cdots=3$&$\dfrac25\times \dfrac{15}{2}=3$\\
+			\hline
+			4&Développer $E=-3x(1-2x)$&$E=6x^2-3x$\\
+			\hline
+			5&Factoriser $F=(-3x+1)(1-2x)-(1-2x)^2$&$F=-x(1-2x)$\\
+			\hline
+			6&On sait que $f(x)=x^2-4x$ .Calculer l'image de $-2$&$f(-2)=12$\\
+			\hline
+		\end{tabular}}
+		
+	\end{exo}
+	\begin{exo}
+		On considère la suite définie sur $\N^*$ par  :$u_n= -n^2+2n+15$.
+		\begin{enumerate}
+			\item A l'aide de votre calculatrice, $u_1=16, u_2=15, u_3=12$....il semble que la suite soit décroissante. On peut également utiliser le nuage de points.
+			\item 
+			\begin{enumerate}
+				\item Pour tout $n>0$,  $u_{n+1}=-(n+1)^2+2(n+1)+15=-n^2+16$.
+				\item Pour tout $n>0$,  $u_{n+1}-u_n=-n^2+16-(-n^2+2n+15)=-2n+1$. 
+				\item Pour tout $n>0$,  $u_{n+1}-u_n=-2n+1$. Or $n \geq 1$ donc $-2n+1 \leq -1$ donc $-2n+1$ est négatif, donc la suite $(u_n)$ est décroissante.
+			\end{enumerate}
+		\end{enumerate}
+	\end{exo}
+	\begin{exo}
+		Au premier janvier 2 010, Bob a reçu 200 000 $\geneuro$ en héritage. Il décide de placer cette somme   et trouve un placement au taux de $6\%$. Mais chaque année il doit retirer 9 000 $\geneuro$ pour payer les impôts dus à ce placement. \\
+		On appelle $C_n$ le capital acquis au 1er janvier de l'année $2010+n$  avec  $C_0=200~000$ 
+		\begin{enumerate}
+			\item Le montant du capital au premier janvier 2011 est égal à $C_1 = 200000*1.06-9000=203~000 $$\geneuro$
+			\item Chaque année le placement rapporte $6\%$ il faut donc multiplier la somme acquise par 1.06. Dans le même temps, Bob retire chaque année $9000 \geneuro$; On a donc pour tout  $n >0$, $C_{n+1}=1,06C_n-9000$
+			\item Soit l'algorithme suivant:\\
+			\begin{tabular}{|l|}
+				\hline
+				$n \leftarrow 0$\\
+				$u \leftarrow 200000$\\
+				Tant que $u<240000$\\
+				\hspace{0.3cm}
+				\begin{tabular}{|l}
+					$n \leftarrow n+1$\\
+					$u \leftarrow1,06u-9000$
+				\end{tabular}\\
+				Fin Tant que\\
+				afficher $n$\\
+				\hline
+			\end{tabular}\\
+			
+			Cet algorithme affiche le rang $n$ pour lequel $C_n$ sera supérieur ou égal à 240000.
+			\item Il s'agit de trouver $n$ pour lequel à $C_n > 280 000$. Pour $n=16$ on a $C_n=277018$ et pour $n=17$ on obtient $C_n=284639$. Bob pourra donc acheter sa maison en $2010+17=2037$.
+		\end{enumerate}
+	\end{exo}
+	\begin{exo}
+		
+		On prend une feuille de papier dont l' épaisseur est de l'ordre de 0,1 mm.
+		On plie une première fois cette feuille de papier en deux, puis de nouveau  en deux et l' on continue ainsi.\\
+		On suppose qu'on peut la plier autant de fois que l'on veut.\\
+		On pose $e_0=0.1$; Au premier pliage $e_1=2*0.1$. Au deuxième pliage $e_2=2^2 *0.1$. Au nième pliage $e_n=2^n * 0.1$.
+		On cherche à savoir pour quel $n$, $e_n > 93 *10^3$ avec la calculatrice on trouve $n=18$.
+		Il faudra donc 18 pliages  pour que l'épaisseur de la feuille pliée dépasse la hauteur de la statue de la liberté de New York.
+	\end{exo}
+	\begin{exo}
+		Déterminer la forme algébrique des nombres complexes suivants:\textbf{(détails des calculs attendus)}
+		
+			\begin{enumerate}
+				\item $z_A=(2+3i)-5(4-5i)=-18+28i$
+				\item $z_B=(4-5i)^2=16-40i-25=-9-40i$
+				\item $z_C=\dfrac1{2-3i}=\dfrac{2+3i}{(2-3i)(2+3i)}=\dfrac{2+3i}{(4-9i^2)=\dfrac{2+3i}{(13)=\dfrac{2}13+\dfrac3{13}i$
+			\end{enumerate}
+		
+		
+	\end{exo}
+\end{document}

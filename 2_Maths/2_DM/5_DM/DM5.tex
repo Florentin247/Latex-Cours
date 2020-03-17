@@ -1,0 +1,318 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+%\frenchbsetup{StandardLists=true}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{framed}
+\usepackage{fancyhdr}
+\usepackage[left=1.3cm,right=1.3cm,top=1.8cm,bottom=1.2cm]{geometry}
+\usepackage{array} 
+\usepackage{fancyhdr} 
+\usepackage{fancybox}
+\usepackage{pst-tree}
+\usepackage[framed]{ntheorem}
+\usepackage{tabularx}
+\usepackage{pstricks-add}
+\usepackage{eurosym}
+\usepackage{pst-tree}
+\usepackage[np]{numprint}
+\usepackage{pifont}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{amsthm}
+%\usepackage{pgf,tikz}
+%\usepackage[tikz]{bclogo}
+\usepackage{pgfkeys}
+\usepackage{mathrsfs}
+%\usepackage{multicol}
+%\usetikzlibrary{arrows}
+
+
+\usepackage{listingsutf8}
+\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{trees}
+
+\usepackage{colortbl}
+
+
+
+\lstset{%
+	language=python,%
+	basicstyle=\ttfamily,%
+}
+
+\rfoot{\small -\thepage-}
+\cfoot{}
+
+\def\R{{\mathbb R}}
+\def\Q{{\mathbb Q}}
+\def\Z{{\mathbb Z}}
+\def\D{{\mathbb D}}
+\def\N{{\mathbb N}}
+\def\C{{\mathbb C}}
+
+\pagestyle{fancy}
+
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\alph{subsubsection}}
+\renewcommand{\labelitemi}{$\bullet$}
+\newcommand{\VE}[1]{\overrightarrow{#1}}
+%\renewcommand{\r}{($O$ ; $\vec{i}$ , $\vec{j}$)}
+\renewcommand{\arraystretch}{0.7}
+\tikzstyle{mybox} = [draw=black, very thick, rectangle, rounded corners, inner sep=20pt, inner ysep=20pt] 
+\tikzstyle{fancytitle} =[draw=black, very thick, rectangle, rounded corners, fill=white, text=black] % fill obligé sinon ne recouvre pas boite du dessous
+%\usepackage{array,multirow,makecell}
+%\setcellgapes{1pt}
+\newcommand{\Syst}[2]{\left\{\begin{array}{ccc} #1\\ #2 \end{array}\right.}
+
+\makegapedcells
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash }b{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash }b{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash }b{#1}}
+\theoremstyle{break}
+\theorembodyfont{\upshape}
+\newtheorem{Prop}{Propri\'et\'e}
+\newtheorem{Def}{D\'efinition}
+\newtheorem{Rem}{Remarque}
+\newtheorem{exo}{Exercice}
+\newtheorem{Meth}{Methode}
+\newtheorem{cpreuve}{Preuve}
+\newtheorem{Th}{Théorème}
+\newtheorem{Act}{Activité}
+\theorembodyfont{\small \sffamily }
+\newtheorem{Ex}{Exemple}
+\newtheorem{Preu}{Preuve}
+\everymath{\displaystyle}
+\pagestyle{fancy}
+\fancyhead[L]{Florentin Lespinasse ~~~~~~~~~1STI2D4}
+\fancyhead[C]{$N^o5$}
+\fancyhead[R]{2019/2020}
+\rfoot{\small -\thepage-}
+\cfoot{}
+
+
+\renewcommand{\arraystretch}{1.5}
+\setlength{\tabcolsep}{0.5cm}
+
+\begin{document}
+
+\begin{center}
+   \shadowbox{\begin{large}
+      \textcolor{black}{DM de Mathématiques}
+   \end{large}}
+\end{center}
+
+
+\begin{exo}\\
+	Deux machines A et B d’une usine fabriquent des puces électroniques. A en produit 40\%; 5\% des puces fabriquées par A sont défectueuses, 2\% des puces produites par B sont défectueuses. On prélève une puce au hasard. Quelle est la probabilité qu’elle ait été produite par A sachant qu’elle est défectueuse?
+
+\begin{table}[ht]
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+							& A 	& B 	& Total \\
+           \hline
+         				Deffectueux & \cellcolor{gray} 0.020 & 0.012 & 0.032  \\
+           \hline
+            $\overline{Defectueux}$ & 0.380 & 0.588 & 0.968  \\
+           \hline
+            Total & 0.4 & 0.6 & 1  \\
+           \hline
+
+        \end{tabular}
+    \end{table}
+
+La probabilité que la pièce choisie provienne de l'usine A et qu'elle soit déffectueuse est de: 
+$P(A \cap D) = \frac{0.02}{1}$
+
+
+\end{exo}
+\begin{exo}\\
+	On se donne un arbre de probabilité pondéré :
+
+
+\begin{enumerate}
+	\item Compléter l'arbre avec les valeurs manquantes.
+
+% Set the overall layout of the tree
+\tikzstyle{level 1}=[level distance=3.5cm, sibling distance=3.5cm]
+\tikzstyle{level 2}=[level distance=3.5cm, sibling distance=2cm]
+% Define styles for bags and leafs
+\tikzstyle{bag} = [text width=4em, text centered]
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+
+% The sloped option gives rotated edge labels. Personally
+% I find sloped labels a bit difficult to read. Remove the sloped options
+% to get horizontal labels. 
+\begin{tikzpicture}[grow=right, sloped]
+\node[bag] { }
+    child {
+        node[bag] {C}
+            child {
+                node[end, label=right:
+                    {$\overline{I}$}] {}
+                edge from parent
+                node[above] {}
+                node[below] {$0.3$}
+            }
+            child {
+                node[end, label=right:
+                    {I}] {}
+                edge from parent
+                node[above] {$0.7$}
+                node[below] {}
+            }
+            edge from parent
+            node[above] {}
+            node[below] {$0.3$}
+    }
+    child {
+        node[bag] {B}
+        child {
+                node[end, label=right:
+                    {$\overline{I}$}] {}
+                edge from parent
+                node[above] {}
+                node[below] {$0.2$}
+            }
+            child {
+                node[end, label=right:
+                    {I}] {}
+                edge from parent
+                node[above] {$0.8$}
+                node[below] {}
+            }
+        edge from parent
+            node[above] {$0.1$}
+            node[below] {}
+    }
+	child {
+		node[bag] {A}
+		child {
+                node[end, label=right:
+                    {$\overline{I}$}] {}
+                edge from parent
+                node[above] {}
+                node[below] {$0.9$} 
+            }
+            child {
+                node[end, label=right:
+                    {I}] {}
+                edge from parent
+                node[above] {$0.1$}
+                node[below] {}
+            }
+        edge from parent
+            node[above] {$0.6$}
+            node[below] {}
+}
+
+\end{tikzpicture}
+
+	\item Ici , $p(A),~p(B),~p(C)$ sont les 3 premières branches de l'arbre. 	
+		$p(A) = \frac{0.6}{1}$ ~~~~~~~ $p(B) = \frac{0.1}{1}$ ~~~~~~~ $p(C) = \frac{0.3}{1}$
+	\item On peut lire que \\
+		$p_A(I) = 0.1$ ~~~~~~~ $p_A(\overline{I}) = 0.9$ ~~~~~~~ $p_B(I) = 0.8$ ~~~~~~~ $p_C(I) = 0.7$
+
+	\item On en déduit donc que \\
+		$p(A\cap I) = p(A)*p_A(I) = 0.6*0.1 = 0.06$	\\
+		$p(B\cap I) = p(B)*p_B(I) = 0.1*0.8 = 0.08$ \\
+		$p(C\cap I) = p(C)*p_C(I) = 0.3*0.7 = 0.21$ \\ 
+		$p(I)$ est égal à la somme des probabilitées de l'obtenir. Ici, $p(A\cap I)$,$p(B\cap I)$ et $p(C\cap I)$\par  
+	Donc $0.06+0.08+0.21 = 0.29+0.06 = 0.35$
+	\item Pour calculer $p_I(A)$, on utilise la formule:\\
+	$p_I(A) = \frac{p(A\cap I)}{p(I)}$ \\
+	On connaît déjà $p(A\cap I)$ qui vaut $0.06$ et $p(I)$ qui vaut $0.35$ on applique la formule:\\
+	$p_I(A) = \frac{0.06}{0.35} \approx 0.1714 $ \\
+
+\end{enumerate}
+	
+\end{exo}
+\begin{exo}
+L'iode 131 est très utilisé à petites doses dans l'imagerie médicale, par exemple la scintigraphie.\\
+On étudie l'évolution au cours du temps d'un échantillon de noyaux d'iode 131 comportant $v_0 = 10^6$ noyaux à l'instant $t = 0$. On note $(v_n)$ le nombre de noyaux au bout de $n$ jours. Statistiquement le nombre de noyaux d'iode 131 diminue chaque jour de 8,3\%.
+
+	\begin{enumerate}
+		
+		\item On cherche $v_{1}$ et $v_{2}$\\
+				On sait que il y a une baisse de 8.3\% noyaux par jour.
+				\ding{216} $ 1 - \frac{8}{100} = 1-0.083 = 0.917$
+
+				$v_1 = v_0*0.917$~~~~
+				$v_1 = 10^6*0.917$~~~~
+				$v_1 = 917000$ \par
+				
+				$v_2 = v_1*0.917$~~~~
+				$v_2 = 917000*0.917$~~~~
+				$v_2 = 840889$\par
+		\item Exprimer $v_{n+1}$ en fonction de $v_{n}$. En déduire la nature de la suite $\left(u_{n}\right)$. \par
+			$v_n$ est une suite géométrique de raison $r = 0.917 $ et de premier terme $v_0 = 10"$ car on multiplie toujours par le résultat précedent. \par
+			Donc \forall~$_n$~ \in~\mathbb{N}: ~~
+			$v_n_+_1 = v_n*0.917$\par
+			
+		
+
+		\item  Déterminer le nombre de noyaux d'iode 131 présents au bout de 5 jours. 
+				Au bout de 5 jours, donc $v_4$ il y aura 707094.310321 noyaux d'iode 131.
+	
+		\item On considère la fonction Python ci-dessous:\\
+			\begin{lstlisting}
+		def iode():
+		  n=0
+		  u=10**6
+		  while u>10**6/2:
+		    n=n+1
+		    u=0.917*u
+		  return(u)
+		\end{lstlisting}
+			\begin{enumerate}
+			\item À quoi correspond la valeur $n$ retournée par cette fonction ? \par
+				La valeur $n$ correspond au nombre de jours écoulé. sachant que le $1^{er}$ jour est noté $v_0$ donc pour avoir le nombre de jour correct, on ajoute 1 à la valeure $n$.
+			 
+			\item Si on exécute cette fonction, quelle valeur obtient-on ?\par 
+				On obtient la valeur $v_8 = 499982.3636883308$ \\
+
+			\item Déterminer à partir de combien de jours la population de noyaux aura diminué au moins de moitié.
+			Cette durée s'appelle la demi-vie de l'iode 131.
+
+			\`A partir de $n = 8$ on dépasse la demi-vie de l'iode 131. Donc cela ignifie que au bout de 9 jours la population de noyaux aura diminué au moins de moitiée. \\
+			
+			\item Pour le Césium 137, le nombre de noyaux diminue chaque année de 2,3\,\%.
+			
+			Quelles modifications faut-il apporter à l'algorithme précédent pour trouver la demi-vie du césium 137 sachant que la population au départ est de $10^8$~noyaux ?
+
+			Il faut changer le poucentage de baisse des noyaux, \ding{216} $0.23 = 1-0.023 = 0.977$ et la valeur de départ de $u$.
+
+			 \begin{lstlisting}
+        def iode137():
+          n=0
+          u=10**8
+          while u>10**8/2:
+            n=n+1
+            u=0.977*u
+          print(u)
+        \end{lstlisting}
+	Au bout de 30 jours, le césium 137 aura ateint sa demi-vie.
+
+
+		\end{enumerate} 
+	\end{enumerate}
+	
+	
+
+	
+	
+\end{exo}
+
+	
+
+
+\end{document}
+  

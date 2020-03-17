@@ -1,0 +1,165 @@
+\documentclass[12pt, a4paper, french]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{color}
+
+\theorembodyfont{\upshape}
+
+\newtheorem{Prop}{Propri\'et\'e}
+\newtheorem{Def}{D\'efinition}
+\newtheorem{Rem}{Remarque}
+\newtheorem{exo}{Exercice}
+\newtheorem{Meth}{Methode}
+\newtheorem{cpreuve}{Preuve}
+\newtheorem{Th}{Théorème}
+
+\theorembodyfont{\small \sffamily }
+
+\newtheorem{Ex}{Exemple}
+\newtheorem{Preu}{Preuve}
+
+\renewcommand{\arraystretch}{}
+
+\usepackage{babel} % sans option, babel choisit la langue en fonction de celle définie dans la classe du document
+\usepackage[babel=true]{csquotes} % csquotes va utiliser la langue définie dans babel
+\usepackage{cancel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{framed}
+\usepackage{fancyhdr}
+\usepackage[left=1.3cm,right=1.2cm,top=2cm,bottom=1.5cm]{geometry}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{fancybox}
+\usepackage{pst-tree}
+\usepackage[framed]{ntheorem}
+\usepackage{eurosym}
+\usepackage[np]{numprint}
+\usepackage{pifont}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{pgf,tikz}
+\usepackage{pgfkeys}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+
+\usetikzlibrary{arrows}
+
+\usepackage[tikz]{bclogo}
+
+\rfoot{\small -\thepage-}
+
+\cfoot{}
+
+\def\R{{\mathbb R}}
+\def\Q{{\mathbb Q}}
+\def\Z{{\mathbb Z}}
+\def\D{{\mathbb D}}
+\def\N{{\mathbb N}}
+\def\C{{\mathbb C}}
+
+\pagestyle{fancy}
+\fancyhead[L]{1STI2D4}
+\fancyhead[C]{Devoir Maison}
+\fancyhead[R]{26 novembre 2019}
+
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\alph{subsubsection}}
+\renewcommand{\labelitemi}{$\bullet$}
+\renewcommand{\arraystretch}{1.5}
+
+
+
+\begin{document}
+  \begin{center}
+        \shadowbox{\begin{large}
+                \textcolor{black}{Dm n$^o$3 }
+        \end{large}}
+    \end{center}
+    \vspace{0.5 cm}
+\begin{Exo}
+\item \underline{\textbf{Exercice 1}}
+	\begin{enumerate}\par
+		\item \`A l'aide de la calculatrice je calcule les 3 permiers termes de la suite.\\
+			u$_n$ = \dfrac{3\times n-1}{n-2}\\ \\ \\  
+			u$_3$ = \dfrac{3\times 3-1}{3-2} \Leftrightarrow \dfrac{9-1}{1} \Leftrightarrow \dfrac{8}{1} \Leftrightarrow 8\\ \\ \\
+			u$_4$ = \dfrac{3\times 4-1}{4-2} \Leftrightarrow \dfrac{12-1}{2} \Leftrightarrow \dfrac{11}{2}\\ \\ \\
+			u$_5$ = \dfrac{3\times 5-1}{5-2} \Leftrightarrow \dfrac{15-1}{3} \Leftrightarrow \dfrac{14}{3}\\ \\
+		La~suite (u$_n$) semble d\'ecroissante car u$_3$ > u$_4$ > u$_5$ \par
+	
+		\item On cherche pour \forall~n \geq 3~u$_{n+1}$ $-$ u$_n$ \par 
+			u$_{n+1}$ $-$ u$_n$ = \dfrac{3\times (n+1)-1}{(n+1)-2} - \dfrac{3\times n-1}{n-2}\\ \\ \\
+			\Leftrightarrow \dfrac {(3n+3-1)}{n+1-2} - \dfrac {(3n-1)}{n-2} \\ \\ \\
+			\Leftrightarrow \dfrac {(3n+2)(n-2)}{(n-1)(n-2)} - \dfrac {(3n-1)(n-1)}{(n-2)(n-1)} \\ \\ \\
+			\Leftrightarrow \dfrac {3n^2-6n+2n-4}{(n-1)(n-2)} - \dfrac{3n^2-3n-n+1}{(n-1)(n-2)}\\ \\ \\
+			\Leftrightarrow \dfrac {3n^2-6n+2n-4-3n^2+4n-1}{(n-1)(n-2)}\\ \\ \\
+			\Leftrightarrow \dfrac {\cancel{3n^2}\cancel{-4n} -4~\cancel{-3n^2} \cancel{+4n} -1}{(n-1)(n-2)}\\ \\ \\
+			\Leftrightarrow \dfrac {-5}{(n-1)(n-2)}\\ 
+		
+			Donc pour {n\geq3}~on~a~bien~u$_{n+1}$ $-$ u$_n$ = \dfrac {-5}{(n-1)(n-2)} \par 
+			$n$ ne peut pas \^etre \'egal \`a moins de 3 car si $n$=1 :$(1-1)=0$, si $n$=2 :$(2-2)=0$. Une multiplication par $0$ fait toujours $0$. Le num\'erateur ne peut \^etre \'egal \`a $0$.\\ \\
+
+		\item Le num\'erateur est n\'egatif, diviser un nombre positif par un nombre n\'egatif est toujours n\'egatif donc la suite u$_n$ = $\dfrac{3\times n-1}{n-1}$~est~toujours~d\'ecroissante.
+	\end{enumerate}
+\newpage
+\item \underline{\textbf{Exercice 2}}
+	\begin{enumerate}\par
+		\item	$z$ = $x$~+~2~+$i$($-ix$~+~$x$)~+~2$i$~$-$~5$ix$ \\
+				$z$ = $x$~+~2~+($-i^2x$)~+~$ix$~+~2$i$~$-$~5$ix$ \\
+				$z$ = $x$~+~2~+~$x$~+~$ix$~+~2$i$~$-$~5$ix$ \\
+				$z$ = 2$x$~+~2~+~2$i$~$-$~4$ix$ \\
+				$z$ = 2$x$~+~2~+~$i$(2~$-$~4$x$) \\	\\
+				Partie r\'eelle : 2$x$ + 2~~~~~~~~~~~~~~~~~~
+				Partie imaginaire : $i$(2~$-$~4$x$)
+			\begin{flushleft}
+				Pour que $z$ soit un nombre r\'eel il faut trouver quand $i$(2~$-$~4$x$) = 0.\par
+					0 = 2$i$~$-$~4$ix$
+				\Leftrightarrow	4ix = 2i\par
+		$x$ = \dfrac{2i}{4i} \Leftrightarrow \dfrac{i}{2i} \Leftrightarrow \dfrac{i(-2i)}{2i (-2i)} \Leftrightarrow \dfrac{-2i^2}{-4i^2} \Leftrightarrow \dfrac{2}{4} \Leftrightarrow \dfrac{1}{2} \Leftrightarrow 0.5
+			\end{flushleft}
+
+				Donc $z$ est un nombre r\'eel pour $x$ = 0.5.
+\item \begin{flushleft}
+			Pour que $z$ soit un nombre imaginaire il faut trouver quand 2$x$~+~2 = 0.\par
+				0 = 2$x$~+~2 \Leftrightarrow -2x = 2 \Leftrightarrow x = \dfrac {2}{-2} \Leftrightarrow -1 
+\end{flushleft}
+
+			Donc $z$ est un nombre imaginaire pour $x$ = $-$1.	
+	\end{enumerate}	
+\item \underline{\textbf{Exercice 3}}
+	\begin{enumerate}\par
+		\item On doit d\'emontrer que $z_1$ = $\overline{z_2}$
+			\begin{flushleft}
+				$z_1$ = \dfrac{3-i}{5+7i}~~~~et~~~~$z_2$ = \dfrac{3+i}{5-7i}\par
+				$z_2$ = \dfrac{(3+i)(5+7i)}{(5-7i)(5+7i)} \Leftrightarrow \dfrac{15 + 21i + 5i + 7i^2}{25 - 49i^2} \Leftrightarrow \dfrac{15 + 26i - 7}{25 + 49} \Leftrightarrow \dfrac{8 + 26i}{74} \Leftrightarrow \dfrac{4}{37} + \dfrac {13}{37}i \par
+			$\overline{z_2}$ = \dfrac{4}{37} - \dfrac {13}{37}i 
+			\end{flushleft}
+
+			\begin{flushleft}
+				$z_1$ = \dfrac{(3-i)(5-7i)}{(5+7i)(5-7i)} \Leftrightarrow \dfrac{15 - 21i - 5i + 7i^2}{25 - 49i^2} \Leftrightarrow \dfrac{15 - 26i - 7}{25 + 49} \Leftrightarrow \dfrac{8 - 26i}{74} \Leftrightarrow \dfrac{4}{37} - \dfrac {13}{37}i \\
+
+			$z_1$ = \dfrac{4}{37} - \dfrac {13}{37}i \par
+			\end{flushleft}
+            Donc $z_1$ = $\overline{z_2}$
+
+		\item $z_1$ $+$ $z_2$ est un r\'eel car $z_1$ est n\'egatif. On applique la r\`egle des signes et donc les imaginaires s'anulent.
+			\begin{flushleft}
+				\left ( \dfrac{4}{37} + \dfrac{4}{37} \right ) + \left ( \dfrac{13}{37} - \dfrac{13}{37} \right )i = \dfrac{8}{37}
+			\end{flushleft}
+		
+		\item $z_1$ $-$ $z_2$ est un imaginaire pur car tout les r\'eels sont positifs. On applique la r\`egle des signes donc les r\'eels s'anulent.
+			\begin{flushleft}
+				\left ( \dfrac{4}{37} - \dfrac{4}{37} \right ) + \left ( \dfrac{13}{37} + \dfrac{13}{37} \right )i = \dfrac{26}{37}i
+			\end{flushleft}
+
+
+	\end{enumerate}	
+\end{Exo}
+
+
+\end{document}

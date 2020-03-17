@@ -1,0 +1,8 @@
+\babel@toc {nil}{}
+\beamer@sectionintoc {2}{Historia}{3}{1}{1}
+\beamer@subsectionintoc {2}{1}{El Matador}{5}{1}{1}
+\beamer@subsectionintoc {2}{2}{El Toro }{6}{1}{1}
+\beamer@sectionintoc {3}{Los tercios}{7}{1}{2}
+\beamer@subsectionintoc {3}{1}{Primero tercio}{8}{1}{2}
+\beamer@subsectionintoc {3}{2}{Segundo tercio}{9}{1}{2}
+\beamer@subsectionintoc {3}{3}{Tercero tercio}{10}{1}{2}

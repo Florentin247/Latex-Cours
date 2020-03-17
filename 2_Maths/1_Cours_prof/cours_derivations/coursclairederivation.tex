@@ -1,0 +1,562 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\frenchbsetup{StandardLists=true}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{framed}
+\usepackage{fancyhdr}
+\usepackage[left=1.3cm,right=1.3cm,top=1.8cm,bottom=1.2cm]{geometry}
+\usepackage{array} 
+\usepackage{fancyhdr} 
+\usepackage{fancybox}
+\usepackage{pst-tree}
+\usepackage[framed]{ntheorem}
+\usepackage{tabularx}
+\usepackage{pstricks-add}
+\usepackage{eurosym}
+%\usepackage{pst-tree}
+\usepackage[np]{numprint}
+\usepackage{pifont}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{pgf,tikz}
+\usepackage[tikz]{bclogo}
+\usepackage{pgfkeys}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+\usetikzlibrary{arrows}
+\usepackage{listingsutf8}
+\lstset{%
+	language=python,%
+	basicstyle=\ttfamily,%
+}
+
+\rfoot{\small -\thepage-}
+\cfoot{}
+
+\def\R{{\mathbb R}}
+\def\Q{{\mathbb Q}}
+\def\Z{{\mathbb Z}}
+\def\D{{\mathbb D}}
+\def\N{{\mathbb N}}
+\def\C{{\mathbb C}}
+
+\pagestyle{fancy}
+
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\alph{subsubsection}}
+\renewcommand{\labelitemi}{$\bullet$}
+\newcommand{\VE}[1]{\overrightarrow{#1}}
+%\renewcommand{\r}{($O$ ; $\vec{i}$ , $\vec{j}$)}
+\renewcommand{\arraystretch}{0.7}
+\tikzstyle{mybox} = [draw=black, very thick, rectangle, rounded corners, inner sep=20pt, inner ysep=20pt] 
+\tikzstyle{fancytitle} =[draw=black, very thick, rectangle, rounded corners, fill=white, text=black] % fill obligé sinon ne recouvre pas boite du dessous
+\usepackage{array,multirow,makecell}
+\setcellgapes{1pt}
+\newcommand{\Syst}[2]{\left\{\begin{array}{ccc} #1\\ #2 \end{array}\right.}
+
+\makegapedcells
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash }b{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash }b{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash }b{#1}}
+\theoremstyle{break}
+\theorembodyfont{\upshape}
+\newtheorem{Prop}{Propri\'et\'e}
+\newtheorem{Def}{D\'efinition}
+\newtheorem{Rem}{Remarque}
+\newtheorem{exo}{Exercice}
+\newtheorem{Meth}{Methode}
+\newtheorem{cpreuve}{Preuve}
+\newtheorem{Th}{Théorème}
+\newtheorem{Act}{Activité}
+\theorembodyfont{\small \sffamily }
+\newtheorem{Ex}{Exemple}
+\newtheorem{Preu}{Preuve}
+\everymath{\displaystyle}
+\pagestyle{fancy}
+\fancyhead[L]{1STI2D}
+\fancyhead[C]{COURS SUITES }
+\fancyhead[R]{2019/2020}
+\rfoot{\small -\thepage-}
+\cfoot{}
+
+\fancyhead[C]{\shadowbox{\begin{large}
+			\textcolor{black}{COURS DÉRIVATION1}
+		\end{large}}}
+\fancyhead[R]{2019/2020}
+\rfoot{\small -\thepage-}
+\cfoot{}
+
+\begin{document}
+
+	
+	\begin{center}
+		\shadowbox{\begin{large}
+				\textcolor{black}{DÉRIVATION: Première partie}
+		\end{large}}
+	\end{center}
+\tableofcontents
+
+\section{Un peu d'histoire}
+Regarder les sites suivants:\\
+\textit{https://maths.discip.ac-caen.fr/IMG/pdf/histoire des  derivees.pdf}\\
+\textit{https://youtu.be/X6S9R8sN6do}
+\section{Nombre dérivé}
+\subsection{Taux de variation d'une fonction }
+	\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Définition}
+	On considère une fonction $f$ définie sur un intervalle $I$ non vide ainsi que deux réels $a$ et $h$ avec $h\neq 0$ tels que $a\in I$ et $a+h\in I$.
+	Le {taux de variations} de $f$ en $a$  est le nombre défini par :
+	\begin{center}
+		\boldmath
+		$\tau_a(h)=\frac{f(a+h)-f(a)}{h}$
+		\unboldmath
+	\end{center}
+	
+	\end {bclogo}
+	\begin{Rem}[Interprétation graphique]
+		Soit $\mathscr{C}_f$ la courbe représentative de $f$ et soit $A$ et $M$ les points de $\mathscr{C}_f$ de coordonnées respectives :$A(a;f(a))$ et $M(a+h;f(a+h))$.\\
+	Le taux de variation de $f$ entre $a$ et $a+h$ correspond au \textbf{coefficient directeur} de la droite $(AM)$.\\
+	\end{Rem}
+
+Illustration:Graphique 1
+	\begin{center}
+		\psset{xunit=1cm,yunit=1cm,algebraic=true}
+		\def\xmin {-1.5}
+		\def\xmax {5}
+		\def\ymin {-1}
+		\def\ymax {5}
+		\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+		\psgrid[subgriddiv=2,gridlabels=3pt,gridwidth=0.5pt,griddots=10,subgriddots=10](\xmin,\ymin)(\xmax,\ymax)
+		\psaxes[labels=none]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)
+		\pcline[linewidth=1pt]{->}(0,0)(1,0) \uput[d](0.2,0){\small $\vec i$}
+		\pcline[linewidth=1pt]{->}(0,0)(0,1) \uput[l](0,0.5){\small $\vec j$}
+		\psplot[linewidth=1pt]{\xmin}{\xmax}{-0.2*(x+1)*(x-7)}
+		\psline[linecolor=red](-2.75,0)(7.3,6.03)
+	\psline[linestyle=dashed,linecolor=red](0.5,1.95)(0.5,0)
+	\psline[linestyle=dashed,linecolor=red](2.5,3.15)(2.5,0)
+	\psline[linestyle=dashed,linecolor=red](0.5,1.95)(0,1.95)
+	\psline[linestyle=dashed,linecolor=red](2.5,3.15)(0,3.15)
+	\psline[linecolor=red]{->}(0.5,1.95)(2.5,1.95)
+	\psline[linecolor=red]{->}(2.5,1.95)(2.5,3.15)
+	\psdots[dotstyle=+](0.5,1.95)(2.5,3.15)
+	\uput[u](0.5,1.95){A}
+	\uput[u](2.5,3.15){M}
+	\uput[l](0,1.95){$f(a)$}
+	\uput[l](0,3.15){$f(a+h)$}
+	\uput[d](0.5,0){$a$}
+	\uput[d](2.5,0){$a+h$}
+		\uput[d](1.5,1.95){$h$}
+			\uput[r](2.5,2.6){$f(a+h)-f(a)$}
+		\end{pspicture*}
+	\end{center}
+		\begin{Meth}[ Savoir calculer un taux de variation ]
+		\begin{enumerate}
+				\item Soit la fonction f définie sur $\R$ par $f(x)=2x^2+1$.  Calculer le taux de variation de $f$ en $a = 1$
+		\item Soit la fonction g définie sur $\R$ par $f(x)=3x+2$.
+		Calculer le taux de variation de $f$ en $a = -1$
+	\end{enumerate}
+	\end{Meth}
+\subsection{Nombre dérivé }
+	\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Définition}
+	On dit que \textbf{$f$ est dérivable en $a$} si la limite du taux de variation lorsque $h$ tend vers 0 est un réel un réel $l$.\\
+	Cette limite lorsqu'elle existe, est notée $f'(a)$ et est appelée \textbf{nombre dérivé de $f$ en $a$}
+On a :\boldmath\[ f'(a)=\lim_{h\to0}\tau_a(h)=\lim_{h\to0}\frac{f(a+h)-f(a)}{h}=l \]\unboldmath
+\end{bclogo}
+\begin{Rem}
+	En physique, la vitesse $v(t)$ en un point de date $t$ est le nombre dérivé de la fonction $x =f(t)$. On note $v(t) =f'(t) =\dfrac{\text{d}x}{\text{d}t}.$
+\end{Rem}
+\begin{Meth}[Savoir montrer qu'une fonction est dérivable en a et déterminer le nombre dérivé $f'(a)$ ]
+\begin{itemize}
+	\item On calcule le taux de variations de la fonction en $a$;
+	\item On détermine sa limite lorsque $h$ tend vers 0.
+	\item Si la limite est finie alors la fonction est dérivable et on obtient $f'(a)$.\\
+	Sinon la fonction n'est pas dérivable en $a$.
+\end{itemize}
+	\begin{enumerate}
+		\item Soit la fonction $f$ définie sur $\R $ par $f(x)=3x^2-5$.\\Démontrer que $f$ est dérivable en 3 et calculer $f'(3)$.
+		\item Soit la fonction $g$ définie sur $\R$ par $f(x)=x^2+x+1$. Déterminer le nombre dérivé de $g$ en 1.
+	\end{enumerate}
+\end{Meth}
+\subsection{Nombre dérivé et tangente à une courbe}
+En reprenant le graphique 1 , lorsque $h$ va tendre vers $0$ le point $M$ se rapproche du point $A$ et la droite $(AM)$ tend vers une \textbf{position limite qui s'appelle la tangente à la courbe au point d'abscisse $a$}.\\
+Illustration:
+\begin{center}
+	\psset{xunit=1cm,yunit=1cm,algebraic=true}
+	\def\xmin {-1.5}
+	\def\xmax {5}
+	\def\ymin {-1}
+	\def\ymax {5}
+	\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+	\psgrid[subgriddiv=2,gridlabels=3pt,gridwidth=0.5pt,griddots=10,subgriddots=10](\xmin,\ymin)(\xmax,\ymax)
+	\psaxes[labels=none]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)
+	\pcline[linewidth=1pt]{->}(0,0)(1,0) \uput[d](0.2,0){\small $\vec i$}
+	\pcline[linewidth=1pt]{->}(0,0)(0,1) \uput[l](0,0.5){\small $\vec j$}
+	\psplot[linewidth=1pt]{\xmin}{\xmax}{-0.2*(x+1)*(x-7)}
+	\psplot[linecolor=red]{\xmin}{\xmax}{x+1.45}
+		\psplot[linecolor=red,linestyle=dashed]{\xmin}{\xmax}{0.6*x+1.65}
+			\psplot[linecolor=red,linestyle=dashed]{\xmin}{\xmax}{0.37*x+1.76}
+				\psplot[linecolor=red,linestyle=dashed]{\xmin}{\xmax}{0.16*x+1.87}
+	\psline[linestyle=dashed,linecolor=red](0.5,1.95)(0.5,0)
+	\psline[linestyle=dashed,linecolor=red](0.5,1.95)(0,1.95)
+
+	\psdots[dotstyle=+](0.5,1.95)
+	\uput[u](0.5,1.95){A}
+	\uput[l](0,1.95){$f(a)$}
+	\uput[d](0.5,0){$a$}
+	\end{pspicture*}
+\end{center}
+	\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Définition}
+		Si $f$ est dérivable en $a$ , la tangente $\mathscr{T}_a$ à la courbe représentative $\mathscr{C}_f$ de $f$ en $a$ est la droite:\begin{enumerate}
+			\item qui a pour coefficient directeur $f'(a)$
+			\item qui passe par le point $A$ de coordonnées $(a;f(a))$.
+		\end{enumerate} 
+\end{bclogo}
+\begin{center}
+	\psset{xunit=1cm,yunit=1cm,algebraic=true}
+	\def\xmin {-1.5}
+	\def\xmax {5}
+	\def\ymin {-1}
+	\def\ymax {5}
+	\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+	\psgrid[subgriddiv=2,gridlabels=3pt,gridwidth=0.5pt,griddots=10,subgriddots=10](\xmin,\ymin)(\xmax,\ymax)
+	\psaxes[labels=none]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)
+	\pcline[linewidth=1pt]{->}(0,0)(1,0) \uput[d](0.2,0){\small $\vec i$}
+	\pcline[linewidth=1pt]{->}(0,0)(0,1) \uput[l](0,0.5){\small $\vec j$}
+	\psplot[linewidth=1pt]{\xmin}{\xmax}{-0.2*(x+1)*(x-7)}
+	\psplot[linecolor=red]{\xmin}{\xmax}{x+1.45}
+
+	\psline[linestyle=dashed,linecolor=red](0.5,1.95)(0.5,0)
+	\psline[linestyle=dashed,linecolor=red](0.5,1.95)(0,1.95)
+	
+	\psdots[dotstyle=+](0.5,1.95)
+	\uput[u](0.5,1.95){A}
+	\uput[l](0,1.95){$f(a)$}
+	\uput[d](0.5,0){$a$}
+	\end{pspicture*}
+\end{center}
+	\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Proposition}
+	Soit $f$ une fonction dérivable en $a$.\\
+	La tangente à  $\mathcal{C}$ au point d'abscisse $a$ a pour équation : $$y=f'(a)(x-a)+f(a)$$
+\end{bclogo}
+\begin{Meth}
+[ Calculer le coefficient directeur d'une tangente et trouver l'équation de la tangente]
+	Soit $f$ la fonction définie sur $\mathbb{R}$ par $f(x)=x^2$. Déterminer le coefficient directeur de la tangente à la courbe de $f$ au point d'abscisse 4 puis donner l'équation de la tangente à la courbe au point d'abscisse 4.
+\end{Meth}
+\begin{Meth}[Lire un nombre dérivé sur un graphique.]
+Sur le dessin ci dessous on a représenté la courbe d'une fonction $f$ ainsi que 3 tangentes à la courbe de $f$. Déterminer graphiquement $f'(1)$, $f'(-1)$  et $f'(2)$\\
+\begin{center}
+		\psset{xunit=1cm,yunit=1cm,algebraic=true}
+	\def\xmin {-1.5}
+	\def\xmax {5}
+	\def\ymin {-1}
+	\def\ymax {5}
+	\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+	\psgrid[subgriddiv=2,gridlabels=3pt,gridwidth=0.5pt,griddots=10,subgriddots=10](\xmin,\ymin)(\xmax,\ymax)
+	\psaxes[labels=none]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)
+	\pcline[linewidth=1pt]{->}(0,0)(1,0) \uput[d](0.2,0){\small $\vec i$}
+	\pcline[linewidth=1pt]{->}(0,0)(0,1) \uput[l](0,0.5){\small $\vec j$}
+	\psplot[linewidth=1pt]{\xmin}{\xmax}{0.5*(x^3-3*x^2+6)}
+	\psplot[linecolor=red]{\xmin}{\xmax}{4.5*x+5.5}
+		\psplot[linecolor=red]{\xmin}{\xmax}{-1.5*x+3.5}
+			\psplot[linecolor=red]{\xmin}{\xmax}{1}
+				\psdots[dotstyle=+](1,2)(-1,1)(2,1)
+		
+	\end{pspicture*}
+\end{center}	
+\end{Meth}
+
+\section{Fonction dérivée}
+\subsection{Définition}
+	\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Définition}
+Soit $f$ une fonction définie sur un intervalle I de $\R$.
+Lorsque le nombre dérivé de $f$ existe pour toutes les valeurs $x$ de I, on dit que $f$ est dérivable sur I.
+La fonction qui à $x$ associe son nombre dérivé $f'(x)$ s’appelle la fonction dérivée de $f$ (ou la dérivée
+de $f$ ) et elle se note $f’$.
+	\begin{center}
+		\begin{tabular}{lccl}
+			$f':$&$I $&$\longrightarrow$&$\mathbb{R}$\\	
+			&$x$&$\mapsto$&$f'(x)$\\
+		\end{tabular}
+	\end{center}	
+\end{bclogo}
+\subsection{Dérivées des fonctions usuelles}
+Les fonctions dérivées des fonctions usuelles sont données dans le tableau ci dessous:
+\vspace*{0.5cm}\\
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|p{4cm}|}
+	\hline
+	Fonction $f$&Domaine de dérivabilité&Fonction dérivée $f'$&Exemples\\
+	\hline
+	&&&\\
+	$f(x)=k$ \newline avec $k$ réel&$\R$&$f'(x)=0$&Si $f(x)=-\dfrac{5}{3}$ alors $f$ est dérivable sur $\R$ et $f'(x)=0$ \\
+		&&&\\
+	\hline
+		&&&\\
+		$f(x)=mx+p$ \newline avec $m$ et $p$ réels&$\R$&$f'(x)=m$&Si $f(x)=2x-5$ alors $f$ est dérivable sur $\R$ et $f'(x)=2$ \\
+			&&&\\
+		\hline
+			&&&\\
+			$f(x)=x^2$ \newline  &$\R$&$f'(x)=2x$& \\
+			\hline			
+				$f(x)=x^3 $ \newline  &$\R$&$f'(x)=3x^2$& \\
+				\hline
+\end{tabular}
+\subsection{Dérivée et opérations}
+Soient u et v deux fonctions dérivables sur un même intervalle I. Alors :
+\vspace*{0.5cm}\\
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|p{4cm}|p{4cm}|p{8cm}|}
+	\hline
+	Fonction $f$&Fonction dérivée $f'$&Exemples\\
+	\hline
+	$ku$ \par avec k réel&$ku'$& si $f(x)=4x^2$ alors $f'(x)=4\times(2x)=8x$\\
+	\hline
+	$u+v$&$u'+v'$&Si $f(x)=-2x^3+6x^2-3x$ alors\newline $f'(x)=-2\times(3x^2)+6\times(2x)-3\times1=-6x^2+12x-3$\\
+
+	\hline
+\end{tabular}
+\end{center}
+\begin{Meth}[Déterminer la fonction dérivée d'un polynôme]
+	\begin{enumerate}
+		\item Soit la fonction $f$ définie sur $\R$ par  $f(x)=3x^2+2x+1$ par:\\
+				$f$ est un polynôme du second degré donc dérivable sur $\R$ et on a  :\\
+		$f'(x) =\cdots\cdots\cdots\cdots$
+		\item Soit la fonction $g$ définie sur $\R$ par $g(x)=-5x+2$. g est une fonction affine donc dérivable sur $\R$ et on a $g'(x)=\cdots\cdots\cdots\cdots$
+		\item Soit la fonction $h$ définie sur $\R$ apr $h(t)=2t^3+5t^2+3$. $h$ est un polynôme du troisième dégré donc dérivable sur $\R$ et on a $h'(t)=\cdots\cdots\cdots\cdots$
+	\end{enumerate}
+	\end{Meth}
+\begin{Meth}[Déterminer l'équation de la tangente à une courbe en un point donné]
+		 $f$ est la fonction définie sur $\R$ par $f(x) =-2x^2+4x$, et $\mathcal{C}_f$ est sa courbe représentative. 
+		 \begin{enumerate}
+		 	\item Donner une équation de la tangente T à $\mathcal{C}_f$ au point A d’abscisse 0.
+		 	\item Étudier la position relative de $\mathcal{C}_f$ par rapport à T.
+		 		 \end{enumerate}
+\end{Meth}
+
+\section{Du signe de la dérivée aux variations}
+~\\
+\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Proposition}
+	Soit $f$ une fonction dérivable sur une intervalle  $I$, alors :
+		\begin{itemize}
+		\item Si, pour tout $x$ de $I$, $f'(x)  \geq 0 $  alors $f$ est \textbf{ croissante} sur $I$ .
+		\item Si, pour tout $x$ de $I$, $f'(x) \leq 0 $  alors $f$ est \textbf{ décroissante} sur $I$ .
+		\item Si, pour tout $x$ de $I$, $f'(x) = 0 $ , alors $f$ est \textbf{ constante } sur $I$ .
+	\end{itemize}  
+	\end{bclogo}
+\begin{Meth}[Étudier les variations d'une fonction]
+	~\\
+	\begin{bclogo}[couleur=green!30,arrondi=0.1,logo=\bcbook]{MÉTHODE}	
+		\begin{itemize}
+				\item On calcule la fonction dérivée de $f$.
+		\item On factorise $f'(x)$ afin d'étudier son signe en utilisant ses connaissances sur les fonctions affines ou les polynômes du second et troisième degré.
+		\item On en déduit les variations de $f$ et on résume les résultats dans un tableau de variations.
+				\item On vérifie  la concordance entre le tableau et la courbe sur la calculatrice.
+	\end{itemize}
+\end{bclogo}
+	Étudier les variations de la fonction $g$   définie sur $\R$ par $g (x) =-3x^2+12x+1$
+\end{Meth}	
+\section{Extrema d'une fonction}
+\subsection{Définitions}
+\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Proposition}
+	Soit $f$ une fonction définie sur un intervalle $I$ et soit $c$ un réel de $I$ :
+	\begin{itemize}
+		\item Dire que $f(c)$ est un maximum\index{maximum} de $f$ signifie que pour tout  $x\in I$, $f(x)\leqslant f(c)$;
+		\item dire que $f(c)$ est un minimum\index{minimum} de $f$ signifie que pour tout $x\in I$, $f(x)\geqslant f(c)$.
+	\end{itemize}
+\end{bclogo}
+\begin{Ex}
+\begin{multicols}{2}
+	
+Ci-contre $\mathscr C$ est la représentation graphique d'une fonction définie sur $I=[-2;4]$. \newline
+		On constate que $f(-1)=0,7$ est un extremum local de $f$  (maximum local) car pour tout $x\in \left[ -2;0\right] $ on a $f(x)\leqslant 0,7=f(-1)$ . Par contre 0,7 n'est pas le maximum de $f$ sur $\left[ -2;4\right] $\newline
+	Par contre  $f(2)=-2$ est le minimum de $f$ sur $\left[ -2;4\right] $ car pour tout $x\in I$ on a $f(x)\geqslant -2$
+	
+	\begin{center}
+	\psset{xunit=1cm,yunit=1cm,algebraic=true}
+	\def\xmin {-3}
+	\def\xmax {5}
+	\def\ymin {-3}
+	\def\ymax {4}
+	\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+	\psgrid[subgriddiv=2,gridlabels=3pt,gridwidth=0.5pt,griddots=10,subgriddots=10](\xmin,\ymin)(\xmax,\ymax)
+	\psaxes[labels=none]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)
+	\pcline[linewidth=1pt]{->}(0,0)(1,0) \uput[d](0.2,0){\small $\vec i$}
+	\pcline[linewidth=1pt]{->}(0,0)(0,1) \uput[l](0,0.5){\small $\vec j$}
+		\def\F{0.2*x^3-0.3*x^2-1.2*x}
+		\psplot[linestyle=solid,plotpoints=1000]{-2}{4}{\F}
+		\uput[ur](3.4,1){$\mathscr C$}
+				\end{pspicture*}
+	\end{center}
+\end{multicols}
+\end{Ex}
+
+\begin{Meth}
+	Soit $g$ la fonction définie sur $\R$ par $g (x) =-x^3-x^2+x+1$.
+	\begin{enumerate}
+		\item Calculer $g'(x)$
+		\item Vérifier que -1 et $\dfrac13$ sont racines de $g'(x)$
+		\item En déduire le signe de $g'(x)$
+		\item Déterminer le tableau de variations de $g$.
+		\item Déterminer les extrema de la fonction $g$
+	\end{enumerate}
+	\end{Meth}
+
+	\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Définition}On considère une fonction $f$ dérivable sur un intervalle ouvert $I$ et $a$ est un réel de $I$.\newline
+	Si $f(a)$ est un extremum local de $f$, alors $f'(a)=0$\end{bclogo}
+
+\begin{multicols}{2}
+	\begin{Rem}
+		La réciproque de ce théorème est fausse. \newline 
+		Considérons par exemple le cas de la fonction cube, dont la dérivée s'annule en $0$ qui n'est pourtant pas un extremum local. 
+		\newline
+		Il faut ajouter une hypothèse pour avoir le résultat réciproque, comme suit :
+	\end{Rem}
+	\begin{center}
+		\psset{xunit=0.7cm , yunit=0.7cm}
+		\begin{pspicture*}(-2.6,-3.1)(4,3.1)
+		\def\xmin{-2.5} \def\xmax{4} \def\ymin{-3} \def\ymax{3}
+		\newrgbcolor{couleurcadre}{0.99 0.99 0.99}
+		\psframe[linewidth=0.3pt,linecolor=couleurcadre](-2.6,-3.1)(4,3.1)
+		\def\pshlabel#1{\psframebox*[framesep=1pt]{\small #1}}
+		\def\psvlabel#1{\psframebox*[framesep=1pt]{\small #1}}
+		\psclip{%
+			\psframe[linestyle=none](\xmin,\ymin)(\xmax,\ymax)
+		}
+		\newrgbcolor{couleur1}{0.6549 0.6549 0}
+		\newrgbcolor{couleur2}{0 0.3176 0.4745}
+		\newrgbcolor{couleur3}{0.0941 0.647 0.0196}
+		\def\F{x 3 exp}
+		\psplot[linecolor=blue,linestyle=solid,plotpoints=1000]{-1.5}{1.5}{\F}
+		\uput[ur](1,1){$\mathscr C : y=x^3$}
+		\endpsclip
+		\psaxes[labels=none,labelsep=1pt,Dx=1,Dy=1,Ox=0,Oy=0]{-}(0,0)(\xmin,\ymin)(\xmax,\ymax)
+		\uput[dl](0,0){0}
+		\pcline[linewidth=1pt]{->}(0,0)(1,0) \uput[d](0.5,0){\small $\vec i$}
+		\pcline[linewidth=1pt]{->}(0,0)(0,1) \uput[l](0,0.5){\small $\vec j$}
+		\end{pspicture*}
+	\end{center}
+\end{multicols}
+	\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Proposition}
+On considère une fonction $f$ dérivable sur un intervalle ouvert $I$ et $a$ un réel de $I$.\newline
+	Si $f'$ s'annule en $a$ \textbf{en changeant de signe}, alors $f(a)$ Nous admettrons ces deux propriétés.
+\end{bclogo}
+\begin{Meth}[Savoir étudier les variations d'une fonction]
+	Soit $g$ la fonction définie sur $\R$ par $g (x) =-x^3-x^2+x+1$.
+	\begin{enumerate}
+		\item Calculer $g'(x)$
+		\item Vérifier que -1 et $\dfrac13$ sont racines de $g'(x)$
+		\item En déduire le signe de $g'(x)$
+		\item Déterminer le tableau de variations de $g$.
+		\item Déterminer les extrema de la fonction $g$
+	\end{enumerate}
+\end{Meth}
+\begin{Meth}[Avec une courbe représentative]
+	
+	Soit $f$ une fonction définie et dérivable sur  $\R$. On note $f'$ la dérivée de la fonction $f$. 
+	
+	On donne ci-dessous la courbe $\mathcal{C}_{f}$ représentant la fonction $f$.
+	
+	\begin{itemize}
+		\item La courbe $\mathcal{C}_{f}$ passe par les points $A (- 2 ; 0)$, $B (1 ; 1)$, $C (4 ; 3,2)$ et $D \left( \dfrac{11}{2} ; \dfrac{25}{16} \right)$. 
+		\item L'axe des abscisses est tangent en $A$ à la courbe $\mathcal{C}_{f}$.
+		\item La courbe $\mathcal{C}_{f}$ admet une deuxième tangente parallèle à l'axe des abscisses au point $C$.  
+		\item La tangente à la courbe au point $B$ passe par le point $M \left( -4 ; -3 \right)$.
+	\end{itemize}
+	
+	\begin{center}	
+		\psset{unit=.5cm}
+		\begin{pspicture}(-12,-6)(14,8) 
+		\newrgbcolor{bleu}{0.1 0.05 .5}
+		\newrgbcolor{prune}{.6 0 .48}
+		\newrgbcolor{grisb}{.89 .88 .96}
+		\def\pshlabel#1{\footnotesize #1}
+		\def\psvlabel#1{\footnotesize #1}
+		\def\f{(x+2)^3*(6-x)/135}
+		\psgrid[gridwidth=0.25pt,gridcolor=darkgray,subgriddiv=0,gridlabels=0](0,0)(-12,-6)(14,8) 
+		\psset{unit=1cm}
+		\psaxes[labelsep=.8mm,linewidth=.75pt,ticksize=-2pt 2pt]{->}(0,0)(-6,-3)(7,4) 
+		\uput[dl](0,0) {\footnotesize {0}}
+		\uput[dl](7,0) {$x$}
+		\uput[dl](0,4) {$y$}
+		\psplot[algebraic=true,plotpoints=1000,linewidth=1.5pt, linecolor=bleu]{-5.3}{6.63}{\f}
+		\psline[linewidth=1pt, linecolor=prune]{<->}(-.5,-.2)(2.5,2.2)
+		\psline[linewidth=1pt, linecolor=prune]{<->}(3.25,3.2)(4.75,3.2)
+		\psdots [linewidth=1pt, linecolor=bleu,dotscale=.8](-2,0)(1,1)(4,3.2)(5.5,1.5625)
+		\uput[ul](-5.4,-3){\bleu{$\mathcal{C}_{f}$}}
+		\uput[u](-2,0){\bleu{$A$}}
+		\uput[ul](1,1){\bleu{$B$}}
+		\uput[u](4,3.2){\bleu{$C$}}
+		\uput[ur](5.5,1.5){\bleu{$D$}}
+		\end{pspicture}
+	\end{center}
+	
+	\`A partir du graphique et des données de l'énoncé, répondre aux questions suivantes.
+	\begin{enumerate}
+		\item Dresser sans justification le tableau de variations de la fonction $f$ sur $\R$.
+		\item Déterminer $f'(-2)$, $f'(4)$ et $f'(1)$.
+		\item Quel est l'ensemble solution de l'inéquation $f'(x) \geqslant 0$ ?
+		\item On donne $f'(5,5)= -2,5$. Calculer les coordonnées du point d'intersection de la tangente à la courbe 	$\mathcal{C}_{f}$ au point $D$ avec l'axe des ordonnées.
+		\item  Une des trois courbes ci-dessous est la représentation graphique de la fonction $f'$ . Déterminer laquelle.
+		
+		\medskip
+		\psset{unit=0.5cm}
+		\begin{pspicture}(-4,-5)(6,3) 
+		\newrgbcolor{bleu}{0.1 0.05 .5}
+		\def\pshlabel#1{\tiny #1}
+		\def\psvlabel#1{\tiny #1}
+		\def\f{(4-x)^2*(2+x)/32}
+		\psgrid[gridwidth=0.25pt,gridcolor=darkgray,subgriddiv=0,gridlabels=0](0,0)(-4,-4)(6,3) 
+		\psaxes[labelsep=.8mm,linewidth=.75pt,ticksize=-2pt 2pt,Dx=2,Dy=2]{->}(0,0)(-4,-4)(6,3) 
+		\uput[dl](0,0){\footnotesize{0}}
+		\uput[dl](6,0){\footnotesize{$x$}} \uput[dl](0,3){\footnotesize{$y$}}
+		\psplot[algebraic=true,plotpoints=500,linewidth=1.25pt, linecolor=bleu]{-4}{6}{\f}
+		\rput(1,-5){\footnotesize{Courbe $\mathcal{C}_{1}$}}
+		\end{pspicture}
+		\hfill	
+		\psset{unit=0.5cm}
+		\begin{pspicture}(-4,-5)(6,3) 
+		\newrgbcolor{bleu}{0.1 0.05 .5}
+		\def\pshlabel#1{\tiny #1}
+		\def\psvlabel#1{\tiny #1}
+		\def\f{(4-x)*(2+x)/4}
+		\psgrid[gridwidth=0.25pt,gridcolor=darkgray,subgriddiv=0,gridlabels=0](0,0)(-4,-4)(6,3) 
+		\psaxes[labelsep=.8mm,linewidth=.75pt,ticksize=-2pt 2pt,Dx=2,Dy=2]{->}(0,0)(-4,-4)(6,3) 
+		\uput[dl](0,0){\footnotesize{0}}
+		\uput[dl](6,0){\footnotesize{$x$}} \uput[dl](0,3){\footnotesize{$y$}}
+		\psplot[algebraic=true,plotpoints=500,linewidth=1.25pt, linecolor=bleu]{-4}{6}{\f}
+		\rput(1,-5){\footnotesize{Courbe $\mathcal{C}_{2}$}}
+		\end{pspicture}
+		\hfill
+		\psset{unit=0.5cm}
+		\begin{pspicture}(-4,-5)(6,3) 
+		\newrgbcolor{bleu}{0.1 0.05 .5}
+		\def\pshlabel#1{\tiny #1}
+		\def\psvlabel#1{\tiny #1}
+		\def\f{(16-4*x)*(x+2)^2/135}
+		\psgrid[gridwidth=0.25pt,gridcolor=darkgray,subgriddiv=0,gridlabels=0](0,0)(-4,-4)(6,3) 
+		\psaxes[labelsep=.8mm,linewidth=.75pt,ticksize=-2pt 2pt,Dx=2,Dy=2]{->}(0,0)(-4,-4)(6,3) 
+		\uput[dl](0,0){\footnotesize{0}}
+		\uput[dl](6,0){\footnotesize{$x$}} \uput[dl](0,3){\footnotesize{$y$}}
+		\psplot[algebraic=true,plotpoints=500,linewidth=1.25pt, linecolor=bleu]{-4}{6}{\f}
+		\rput(1,-5){\footnotesize{Courbe $\mathcal{C}_{3}$}}
+		\end{pspicture}
+	\end{enumerate}
+	
+	\bigskip
+\end{Meth}
+\end{document}
+
+
+
+
+
+
+ 

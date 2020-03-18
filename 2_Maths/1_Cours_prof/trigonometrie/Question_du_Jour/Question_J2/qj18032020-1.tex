@@ -1,0 +1,141 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\frenchbsetup{StandardLists=true}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{framed}
+\usepackage{fancyhdr}
+\usepackage[left=1.3cm,right=1.3cm,top=1.8cm,bottom=1.2cm]{geometry}
+\usepackage{array} 
+\usepackage{tabularx}
+\usepackage{fancybox}
+\usepackage{pst-tree}
+\usepackage[framed]{ntheorem}
+\usepackage{tabularx}
+\usepackage{pstricks-add}
+\usepackage{graphicx}
+\usepackage{eurosym}
+%\usepackage{pst-tree}
+\usepackage[np]{numprint}
+\usepackage{pifont}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{pgf,tikz}
+\usepackage[tikz]{bclogo}
+\usepackage{pgfkeys}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+\usetikzlibrary{arrows}
+
+
+\rfoot{\small -\thepage-}
+\cfoot{}
+
+\def\R{{\mathbb R}}
+\def\Q{{\mathbb Q}}
+\def\Z{{\mathbb Z}}
+\def\D{{\mathbb D}}
+\def\N{{\mathbb N}}
+\def\C{{\mathbb C}}
+
+\pagestyle{fancy}
+
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\alph{subsubsection}}
+\renewcommand{\labelitemi}{$\bullet$}
+\newcommand{\VE}[1]{\overrightarrow{#1}}
+%\renewcommand{\r}{($O$ ; $\vec{i}$ , $\vec{j}$)}
+\renewcommand{\arraystretch}{1}
+\tikzstyle{mybox} = [draw=black, very thick, rectangle, rounded corners, inner sep=20pt, inner ysep=20pt] 
+\tikzstyle{fancytitle} =[draw=black, very thick, rectangle, rounded corners, fill=white, text=black] % fill obligé sinon ne recouvre pas boite du dessous
+\usepackage{array,multirow,makecell}
+\setcellgapes{1pt}
+\makegapedcells
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash }b{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash }b{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash }b{#1}}
+\theoremstyle{break}
+\theorembodyfont{\upshape}
+\newtheorem{Prop}{Propri\'et\'e}
+\newtheorem{Def}{D\'efinition}
+\newtheorem{Rem}{Remarque}
+\newtheorem{exo}{Exercice}
+\newtheorem{Meth}{Methode}
+\newtheorem{cpreuve}{Preuve}
+\newtheorem{Th}{Théorème}
+\newtheorem{Act}{Activité}
+\theorembodyfont{\small \sffamily }
+\newtheorem{Ex}{Exemple}
+\newtheorem{Preu}{Preuve}
+\everymath{\displaystyle}
+\pagestyle{fancy}
+\lhead[]{\small }
+\chead[]{\textsc{\shadowbox{\begin{large}
+				\textcolor{black}{QUESTIONS du JOUR 2}
+\end{large}}}}
+\rhead[]{\small {}}
+\fancyhead[R]{2019/2020}
+\lfoot{}
+\rfoot{\small -\thepage-}
+
+\begin{document}
+
+
+
+A faire sans calculatrice , compléter sur le sujet et coller dans le cahier d'exercices . \\
+{\renewcommand{\arraystretch}{3}
+	\begin{tabular}{|p{2cm}|p{10cm}|p{4.5cm}| }
+		\hline
+		&Enoncé&Réponse\\
+		\hline
+		1&Résoudre dans $\left[ 0;2\pi\right[ $ l'équation:  $\cos(x) = \sin\dfrac{7\pi}{6}$&$\dfrac{2\pi}{3}$ et $\dfrac{4\pi}{3} $\\
+		\hline
+		\rotatebox{-45}{Correction}&&\\
+		\hline
+		2&Si la représentation graphique $\mathscr{C}$ d'une fonction $f$ passe par le point $A(2;5)$ et si $f'(2)=1$ alors l'équation de la tangente est?&$y=x+3$\\
+		
+		\hline
+		\rotatebox{-45}{Correction}&&\\
+		\hline
+		3&La courbe ci-dessous est la représentation graphique d'une fonction $f$. Quel est le signe de $f'(-2)$?&le signe est positif\\
+		
+		&\begin{minipage}{9.8cm}
+			\begin{center}
+				\psset{unit=0.8cm,algebraic=true}
+				\def\xmin {-2.7}
+				\def\xmax {2.7}
+				\def\ymin {-3}
+				\def\ymax {3}
+				\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+				\psgrid[subgriddiv=2,gridlabels=3pt,gridwidth=0.5pt,griddots=10,subgriddots=10](\xmin,\ymin)(\xmax,\ymax)
+				\psaxes{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)
+				
+				\psplot[linewidth=1pt,linestyle=dashed]{-2.8}{2.8}{x*x*x-3*x}
+				\uput[r](1.5,2){$\mathcal{C}_f$}
+				\psdot[dotstyle=+](1,1)
+				
+				\end{pspicture*}
+			\end{center}
+		\end{minipage}&\\
+		\hline
+		\rotatebox{-45}{Correction}&&\\
+		\hline
+		4&Quelle est la dérivée $g'$ de $g$ définie sur $\R$ par $g(x)=x^3-3x$?& $3x^2-3$ \\
+		\hline
+		\rotatebox{-45}{Correction}&&\\
+		\hline
+		
+			5&Soit $g'$ la dérivée trouvée à la question 4. Résoudre $g'(x)=0$ et en déduire sur quel(s) intervalle(s) $g$ est croissante & $x = \sqrt{1}$\\
+		\hline
+		\rotatebox{-45}{Correction}&&\\
+		\hline
+\end{tabular}}
+
+\end{document}

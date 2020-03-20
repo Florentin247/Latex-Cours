@@ -232,7 +232,7 @@
 				\item  $\dfrac{\pi}{2}$ a pour image $J(0;1)$, $\pi$ a pour image $I'(-1;0)$, $\dfrac{3\pi}{2}$ a pour image $J'(0;-1)$, $-\dfrac{\pi}{2}$ a pour image $I'(0;-1)$
 				\item Le point $J(0;1)$ est aussi l'image de $\dfrac{\pi}{2}$ mais aussi de $\dfrac{5\pi}{2}$ et de $-\dfrac{3\pi}{2}$.
 			\end{itemize}
-			
+			\newpage
 		\end{Ex}
 		\begin{Meth}[Repérage de points sur le cercle trigonométrique]
 			On a placer sur le cercle trigonométrique suivant des points.\\
@@ -255,19 +255,45 @@
 				\ncline{A1}{A2}  \ncline{A2}{A3}  \ncline{A3}{A4}  \ncline{A4}{A1}
 				\ncline{B1}{B5}  \ncline{B5}{B7}  \ncline{B7}{B11}  \ncline{B11}{B1}
 				\ncline{B2}{B4}  \ncline{B4}{B8} \ncline{B8}{B10} \ncline{B10}{B2} 
-				\nput{10}{A1}{\footnotesize{$A$}}\nput{170}{A2}{\footnotesize{$B$}}\nput{-170}{A3}{\footnotesize{$C$}}\nput{-10}{A4}{\footnotesize{$D$}}
-				\nput{0}{B1}{\footnotesize{$E$}}\nput{180}{B5}{\footnotesize{$F$}}\nput{-180}{B7}{\footnotesize{$G$}}\nput{0}{B11}{\footnotesize{$H$}}
-				\nput{25}{B2}{\footnotesize{$K$}}\nput{145}{B4}{\footnotesize{$L$}}\nput{-105}{B8}{\footnotesize{$M$}}\nput{-105}{B10}{\footnotesize{$N$}}
-				\uput[ur](0,1){\footnotesize{$J$}}\uput[ul](-1,0){\footnotesize{$I'$}}\uput[dl](0,-1){\footnotesize{$J'$}}
+				\nput{10}{A1}{\footnotesize{$A~\textcolor{blue}{\dfrac{\pi}{4}}$}}\nput{170}{A2}{\footnotesize{$\textcolor{blue}{\dfrac{3\pi}{4}}~B$}}\nput{-170}{A3}{\footnotesize{$\textcolor{red}{\dfrac{-3\pi}{4}}~C$}}\nput{-10}{A4}{\footnotesize{$D~\textcolor{red}{\dfrac{-\pi}{4}}$}}
+				\nput{0}{B1}{\footnotesize{$E~\textcolor{blue}{\dfrac{\pi}{6}}$}}\nput{180}{B5}{\footnotesize{$\textcolor{blue}{\dfrac{5\pi}{6}}~F$}}\nput{-180}{B7}{\footnotesize{$\textcolor{red}{\dfrac{-5\pi}{6}}~G$}}\nput{0}{B11}{\footnotesize{$H~\textcolor{red}{\dfrac{-\pi}{6}}$}}
+				\nput{25}{B2}{\footnotesize{$K~\textcolor{blue}{\dfrac{\pi}{3}}$}}\nput{145}{B4}{\footnotesize{$\textcolor{blue}{\dfrac{2\pi}{3}}~L$}}\nput{-105}{B8}{\footnotesize{$\textcolor{red}{\dfrac{-2\pi}{3}}~M$}}\nput{-105}{B10}{\footnotesize{$N~\textcolor{red}{\dfrac{-\pi}{3}}$}}
+					\uput[ur](0,1){\footnotesize{$J$}}\uput[ul](-1,0){\footnotesize{$I'$}}\uput[dl](0,-1){\footnotesize{$J'$}}
 				\end{pspicture}
 			\end{center}
 			\end{center}
 			
 			\begin{enumerate}
-				\item Associer à chacun des points le nombre réel de l'intervalle $]-\pi;\pi]$ dont il est le point image.
-				\item Associer à chacun des points le nombre réel de l'intervalle $[0;2\pi[$ dont il est le point image.
+				\item Associer à chacun des points le nombre réel de l'intervalle $]-\pi;\pi]$ dont \textcolor{blue}{il est le point image.}
+				\item Associer à chacun des points le nombre réel de l'intervalle $[0;2\pi[$ dont \textcolor{red}{il est le point image.}
 				\item  Placer sur le cercle les points $M', N'$ et $P'$ associés respectivement aux réels $\dfrac{19\pi}{3}$, $\dfrac{-21\pi}{4}$ et $ \dfrac{53\pi}{3}$
 				
+				\textit{\textbf{1 tour 2$\pi$ / $\dfrac{4\pi}{2}$ / $\dfrac{6\pi}{3}$ / $\dfrac{8\pi}{4}$ / $\dfrac{12\pi}{6}$}}
+
+			\begin{itemize}
+				\item on cherche la mesure principale de : $\dfrac{19\pi}{3}$\par
+				on commence par diviser le numérateur par le dénominateur sans $\pi$.\par
+				~~~~~~~~~~~~~~~$\dfrac{19}{3} \approx 6.3$ on encadre $6.3$ par 2 chiffres pair ici $6$ et $8$; $6\pi<\dfrac{19\pi}{3}<8\pi$	\par
+				~~~~~~~~~~~~~~~~~~~~~~$\dfrac{18\pi}{3}<\dfrac{19\pi}{3}<\dfrac{24\pi}{3}$
+				~~~~~~~~~~~~~~~$\dfrac{19\pi}{3}=\dfrac{18\pi}{3}+\dfrac{\pi}{3}$\par
+				~~~~~~~~~~~~~~~Donc $\dfrac{\pi}{3}$ Est la mesure principale.
+		\end{itemize}
+			\begin{itemize}
+				\item on cherche la mesure principale de : $\dfrac{-21\pi}{4}$\par
+				on commence par diviser le numérateur par le dénominateur sans $\pi$.\par
+				~~~~~~~~~~~~~~~$\dfrac{-21}{4} \approx -5.25$ on encadre $-5.25$ par 2 chiffres pair ici $-6$ et $-4$; $-6\pi<\dfrac{-21\pi}{4}<-4\pi$	\par
+				~~~~~~~~~~~~~~~~~~~~~~$\dfrac{-24\pi}{4}<\dfrac{-21\pi}{4}<\dfrac{-16\pi}{4}$
+				~~~~~~~~~~~~~~~$\dfrac{-21\pi}{4}=\dfrac{-24\pi}{4}+\dfrac{3\pi}{4}$\par
+				~~~~~~~~~~~~~~~Donc $\dfrac{3\pi}{4}$ Est la mesure principale.
+		\end{itemize}
+			\begin{itemize}
+				\item on cherche la mesure principale de : $\dfrac{53\pi}{3}$\par
+				on commence par diviser le numérateur par le dénominateur sans $\pi$.\par
+				~~~~~~~~~~~~~~~$\dfrac{53}{3} \approx 17.66666$ on encadre $17.6666$ par 2 chiffres pair ici $16$ et $18$; $16\pi<\dfrac{53\pi}{3}<18\pi$	\par
+				~~~~~~~~~~~~~~~~~~~~~~$\dfrac{48\pi}{3}<\dfrac{53\pi}{3}<\dfrac{54\pi}{3}$
+				~~~~~~~~~~~~~~~$\dfrac{53\pi}{3}=\dfrac{54\pi}{3}-\dfrac{\pi}{3}$\par
+				~~~~~~~~~~~~~~~Donc $\dfrac{\pi}{3}$ Est la mesure principale.
+		\end{itemize}
 			\end{enumerate}
 		\end{Meth}
 	\newpage
@@ -313,15 +339,15 @@
 				\begin{tabular}{|c|*{11}{p{1.2cm}|}}
 					\hline
 					
-					Mesures en degrés&&30&&&90&125&&&&300&360\\
+					Mesures en degrés&15&30&45&60&90&125&135&180&270&300&360\\
 					
 					\hline
 					
-					Mesures  en radians&$\dfrac{\pi}{12}$&&$\dfrac{\pi}{4}$&$\dfrac{\pi}{3}$&&&$\dfrac{3\pi}{4}$&$\pi$&$\dfrac{3\pi}{2}$&&\\
+					Mesures  en radians&$\dfrac{\pi}{12}$&$\dfrac{\pi}{6}$&$\dfrac{\pi}{4}$&$\dfrac{\pi}{3}$&$\dfrac{\pi}{2}$&$\dfrac{25\pi}{36}$&$\dfrac{3\pi}{4}$&$\pi$&$\dfrac{3\pi}{2}$&$\dfrac{5\pi}{3}$&\\
 					
 					\hline
 				\end{tabular}
-			
+		(Pour trouver facilement par la suite toutes les valeurs, on peut faire un produit en crois.)	
 		\end{Meth}
 	
 		\section{Angle orienté }
@@ -376,25 +402,27 @@
 				\item Parmi les nombres suivants quels sont ceux qui peuvent être des mesures principales d'angles.
 				\begin{multicols}{4}
 					\begin{enumerate}
-						\item $\dfrac{5\pi}{2}$
-						\item $-\dfrac{7\pi}{12}$
-						\item $\dfrac{-11\pi}{12}$
+						\item $\dfrac{5\pi}{2}$ 
+						\item $\fbox{$-\dfrac{7\pi}{12}$}$
+						\item $\fbox{$\dfrac{-11\pi}{12}$}$
 						\item $\dfrac{7\pi}{4}$
 					\end{enumerate}
 				\end{multicols}
+				Quand le numérateur est inférieur au dénominateur, c'est une mesure principale.\par
 				\item Déterminer la mesure principale associée à chacune des mesures suivantes:
 				\begin{multicols}{4}
 					\begin{enumerate}
-						\item $\dfrac{47\pi}{3}$
-						\item $-\dfrac{61\pi}{6}$
-						\item $\dfrac{-23\pi}{5}$
-						\item $\dfrac{-131\pi}{4}$
+						\item $\dfrac{47\pi}{3}$~$\rightarrow$~$-\dfrac{\pi}{3}$
+						\item $-\dfrac{61\pi}{6}$~$\rightarrow$~$-\dfrac{\pi}{6}$
+						\item $\dfrac{-23\pi}{5}$~$\rightarrow$~$\dfrac{2\pi}{3}$
+						\item $\dfrac{-131\pi}{4}$~$\rightarrow$~$\dfrac{-3\pi}{4}$
 					\end{enumerate}
 				\end{multicols}
 			\end{enumerate}
 		\end{Meth}
 	
 		\section{Cosinus et sinus d'un nombre réel}
+
 		\subsection{Définition}
 		\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Définition}
 		\begin{minipage}{0.5\textwidth}
@@ -825,56 +853,19 @@
 	\psline[linecolor=prune,linewidth=.5pt]{<->}(-\psPi,1.2)(\psPi,1.2)
 	\uput[u](0,1.2){\prune{$2\pi$}}
 	\end{pspicture}
-	\section {Fonction $t\mapsto A\cos(\omega t+\varphi)$ et  $t\mapsto A\cos(\omega t+\varphi)$}
-	 En physique, de nombreux phénomènes sont liés à la propagation d’onde: le son, la lumière, ...Les grandeurs associées à ces ondes peuvent être mathématisées par des fonctions sinusoïdales du type $t\mapsto A\cos(\omega t+ \varphi)$ et $t\mapsto A\sin(\omega t+ \varphi)$\\
-	 On a représenté ci dessous la fonction $t\mapsto3\cos(0.5t+\dfrac\pi2)$
-	 	
-	 	\psset{xunit=0.5cm,yunit=1cm}
-	 	\begin{pspicture*}(-20,-4)(20,4)
-	 	\psset{algebraic=true}
-	 		\newrgbcolor{bleu}{0.1 0.05 .5}
-	 	\psaxes[trigLabels=true,trigLabelBase=2,dx=\psPiH,xunit=\psPi]{->}(0,0)(-10,-4)(10,4)
-	 	\psplot[plotpoints=800,linecolor=bleu,linewidth=1.5pt]{-20}{20}{3*cos(0.5*x+\psPi/2)}
-	 	
-	 	
-	 	
-	 	\end{pspicture*}
-	 \subsection{Amplitude}
-	 	\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Définition}
-	L’amplitude  d’une fonction périodique est sa valeur
-	 maximale.\end{bclogo}
- 	\begin{bclogo}[couleur = red!25, arrondi = 0.1,logo=\bcbook]{Propriété}
- 		L’amplitude des fonctions   $t\mapsto A\cos(\omega t+ \varphi)$ et $t\mapsto A\sin(\omega t+ \varphi)$  est $A$.
-	\end{bclogo}
-\subsection{Phase}
-\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Définition}
- $\omega t +\varphi$ est appelé la \textbf{phase instantanée du signal}.\\
- Si $t= 0$, $\varphi$ est appelée \textbf{la phase à l’origine du signal}.\\
- $\omega$ est appelée \textbf{la pulsation du signal}
- \end{bclogo}
-\begin{Rem}
-	En physique, la phase s’exprime en radians et la pulsation en radians par seconde.
-\end{Rem}.
-\subsection{Période et fréquence}
-\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Définition}
-\textbf{	La période T} d’une fonction est l’intervalle pour lequel la courbe de la fonction se reproduit à l’identique.\\
-La fréquence $f$ est le nombre de périodes par seconde . On a $f=\dfrac1T$
-\end{bclogo}
-\begin{Rem}
-En physique, la période $T$ s’exprime en secondes et la fréquence $f$ en Hertz(Hz)
-\end{Rem}.
-\begin{bclogo}[couleur = red!25, arrondi = 0.1,logo=\bcbook]{Propriété}
-La période T des fonctions $t\mapsto A\cos(\omega t+ \varphi)$ et $t\mapsto A\sin(\omega t+ \varphi)$ est $\dfrac{2\pi}{\omega}=\2\pi\times f$
+
+La période T des fonctions $t\mapsto A\cos(\omega t+ \varphi)$ et $t\mapsto A\sin(\omega t+ \varphi)$ est $\dfrac{2\pi}{\omega}$
 \end{bclogo}
 
 	\begin{Meth}[Savoir déterminer les valeurs $\omega$, $\varphi$ et $A$ à partir d'un graphique]
 	Déterminer la fonction $f\mapsto A\cos(\omega t+\varphi)$ dont la courbe est donnée ci dessous\\
+	On précise que l'ordonnée à l'origine est $\sqrt{2}$ et que $\varphi\in[0;\pi]$
 
 	\psset{xunit=1cm,yunit=1cm}
 	\begin{pspicture*}(-10,-4)(10,4)
 	\psset{algebraic=true}
 		\newrgbcolor{bleu}{0.1 0.05 .5}
-	\psaxes[trigLabels=true,trigLabelBase=4,dx=\psPiH,xunit=\psPi]{->}(0,0)(-10,-4)(10,4)
+	\psaxes[trigLabels=true,trigLabelBase=2,dx=\psPiH,xunit=\psPi]{->}(0,0)(-10,-4)(10,4)
 		\psgrid[subgriddiv=2,gridlabels=3pt,gridwidth=0.5pt,griddots=10,subgriddots=10](-10,-4)(10,4)
 	\psplot[plotpoints=800,linecolor=bleu,linewidth=1.5pt]{-10}{10}{2*cos(4*x+\psPi/4)}
 	

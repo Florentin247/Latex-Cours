@@ -20,7 +20,7 @@
 \usepackage{pstricks-add}
 \usepackage{pstricks,pst-plot,pst-eucl}
 \usepackage{eurosym}
-\usepackage{pst-tree}
+%\usepackage{pst-tree}
 \usepackage[np]{numprint}
 \usepackage{pifont}
 \usepackage{mathrsfs}
@@ -234,6 +234,10 @@
 			\end{itemize}
 			\newpage
 		\end{Ex}
+
+%%%%
+%Méthode 1
+%%%%%%%%
 		\begin{Meth}[Repérage de points sur le cercle trigonométrique]
 			On a placer sur le cercle trigonométrique suivant des points.\\
 			\begin{center}
@@ -332,6 +336,10 @@
 		
 		Soit 1 radian correspond à  $\frac{360^{\circ}}{2\pi}$ ou 1 radian $\approx57,30^{\circ}$.\\
 		On retiendra : $\pi$ radians correspond à $180^{\circ}$\\
+
+%%%
+%Methode 2
+%%%%%%%
 		\begin{Meth}[Convertir des mesures d'angle]
 			Convertir les mesures d'angles donnés en radians ou en degrés.\\
 		
@@ -397,18 +405,23 @@
 			\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Définition}
 			Parmi toutes les mesures d'un angle orienté $(\VE{OI}, \VE{OM})$, il existe une unique mesure de l'angle appartenant à l'intervalle $\left] -\pi;\pi\right] $. Cette mesure s'appelle  appelée la \textbf{mesure principale} de $(\VE{OI}, \VE{OM})$.
 		\end{bclogo}
+
+%%%
+%Methode 3
+%%%%%%%
 		\begin{Meth}[Savoir trouver une mesure principale d'un angle orienté:]
 			\begin{enumerate}
 				\item Parmi les nombres suivants quels sont ceux qui peuvent être des mesures principales d'angles.
 				\begin{multicols}{4}
 					\begin{enumerate}
-						\item $\dfrac{5\pi}{2}$ 
+						\item $\dfrac{5\pi}{2}$
 						\item $\fbox{$-\dfrac{7\pi}{12}$}$
 						\item $\fbox{$\dfrac{-11\pi}{12}$}$
 						\item $\dfrac{7\pi}{4}$
 					\end{enumerate}
 				\end{multicols}
-				Quand le numérateur est inférieur au dénominateur, c'est une mesure principale.\par
+
+
 				\item Déterminer la mesure principale associée à chacune des mesures suivantes:
 				\begin{multicols}{4}
 					\begin{enumerate}
@@ -422,6 +435,7 @@
 		\end{Meth}
 	
 		\section{Cosinus et sinus d'un nombre réel}
+
 		\subsection{Définition}
 		\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Définition}
 		\begin{minipage}{0.5\textwidth}
@@ -510,14 +524,18 @@
 		\end{minipage}
 		
 		\newpage
+
+%%%
+%Methode 4
+%%%%%%%
 	\begin{Meth}[Savoir trouver la valeur exacte d'un sinus ou d'un cosinus]
 		Dans chacun des cas donner la valeur exacte des nombres suivants:
 		\begin{multicols}{4}
 			\begin{enumerate}
-				\item $\cos(2020\pi)$
-				\item $\sin(-\dfrac{\pi}{2})$
-				\item $\cos(\dfrac{2\pi}{3})$
-				\item $\sin(\dfrac{7\pi}{6})$
+				\item $\cos(2020\pi)$ $\Rightarrow$$1$
+				\item $\sin(-\dfrac{\pi}{2})$ $\Rightarrow$ $ $
+				\item $\cos(\dfrac{2\pi}{3})$ $\Rightarrow$ $ $
+				\item $\sin(\dfrac{7\pi}{6})$ $\Rightarrow$ $ $
 			\end{enumerate}
 		\end{multicols}
 \end{Meth}		
@@ -602,6 +620,10 @@
 				\item Les relations $\cos(\dfrac{\pi}{2}-x)=\sin(x)$ et 	$\sin(\dfrac{\pi}{2}-x)=\cos(x)$ sont très importantes car elles permettent de transformer un sinus en cosinus et vice versa.
 			\end{itemize}
 		\end{Rem}
+
+%%%
+%Methode 5
+%%%%%%%
 		\begin{Meth}[Savoir utiliser les angles associés]
 		\begin{enumerate}
 			\item Soit $x$ un nombre réel, exprimer les nombres suivants en fonction de $\cos(x)$ ou $sin(x)$
@@ -706,6 +728,10 @@
 			
 		\end{bclogo}
 		
+
+%%%
+%Methode 6
+%%%%%%%
 	\begin{Meth}[Savoir résoudre des équations trigonométriques]
 		Résoudre dans $]-\pi; \pi]$, puis dans $\R$ et enfin dans $[0;2\pi[$ les équations suivantes :
 		\begin{multicols}{4}
@@ -720,6 +746,10 @@
 		\end{enumerate}
 		\end{multicols}
 				\end{Meth}
+
+%%%
+%Methode 7
+%%%%%%%
 		\begin{Meth} QCM (plusieurs réponses possibles)
 			\begin{enumerate}
 				\item  Soit $x\in[\pi ; 2\pi]$ tel que $\cos(x)=-\dfrac45$. Alors on a :
@@ -852,7 +882,7 @@
 	\psline[linecolor=prune,linewidth=.5pt]{<->}(-\psPi,1.2)(\psPi,1.2)
 	\uput[u](0,1.2){\prune{$2\pi$}}
 	\end{pspicture}
-	\section {Fonction $t\mapsto A\cos(\omega t+\varphi)$ et  $t\mapsto A\cos(\omega t+\varphi)$}
+	\section {Fonction $t\mapsto A\cos(\omega t+\varphi)$ et  $t\mapsto A\sin(\omega t+\varphi)$}
 	 En physique, de nombreux phénomènes sont liés à la propagation d’onde: le son, la lumière, ...Les grandeurs associées à ces ondes peuvent être mathématisées par des fonctions sinusoïdales du type $t\mapsto A\cos(\omega t+ \varphi)$ et $t\mapsto A\sin(\omega t+ \varphi)$\\
 	 On a représenté ci dessous la fonction $t\mapsto3\cos(0.5t+\dfrac\pi2)$
 	 	
@@ -891,17 +921,22 @@ La fréquence $f$ est le nombre de périodes par seconde . On a $f=\dfrac1T$
 En physique, la période $T$ s’exprime en secondes et la fréquence $f$ en Hertz(Hz)
 \end{Rem}.
 \begin{bclogo}[couleur = red!25, arrondi = 0.1,logo=\bcbook]{Propriété}
-La période T des fonctions $t\mapsto A\cos(\omega t+ \varphi)$ et $t\mapsto A\sin(\omega t+ \varphi)$ est $\dfrac{2\pi}{\omega}=\2\pi\times f$
+La période T des fonctions $t\mapsto A\cos(\omega t+ \varphi)$ et $t\mapsto A\sin(\omega t+ \varphi)$ est $\dfrac{2\pi}{\omega}$
 \end{bclogo}
+
+%%%
+%Methode 8
+%%%%%%%
 
 	\begin{Meth}[Savoir déterminer les valeurs $\omega$, $\varphi$ et $A$ à partir d'un graphique]
 	Déterminer la fonction $f\mapsto A\cos(\omega t+\varphi)$ dont la courbe est donnée ci dessous\\
+	On précise que l'ordonnée à l'origine est $\sqrt{2}$ et que $\varphi\in[0;\pi]$
 
 	\psset{xunit=1cm,yunit=1cm}
 	\begin{pspicture*}(-10,-4)(10,4)
 	\psset{algebraic=true}
 		\newrgbcolor{bleu}{0.1 0.05 .5}
-	\psaxes[trigLabels=true,trigLabelBase=4,dx=\psPiH,xunit=\psPi]{->}(0,0)(-10,-4)(10,4)
+	\psaxes[trigLabels=true,trigLabelBase=2,dx=\psPiH,xunit=\psPi]{->}(0,0)(-10,-4)(10,4)
 		\psgrid[subgriddiv=2,gridlabels=3pt,gridwidth=0.5pt,griddots=10,subgriddots=10](-10,-4)(10,4)
 	\psplot[plotpoints=800,linecolor=bleu,linewidth=1.5pt]{-10}{10}{2*cos(4*x+\psPi/4)}
 	

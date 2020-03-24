@@ -1,0 +1,257 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\frenchbsetup{StandardLists=true}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{framed}
+\usepackage{fancyhdr}
+\usepackage[left=1.2cm,right=1.2cm,top=2cm,bottom=1cm]{geometry}
+\usepackage{array} 
+\usepackage{fancyhdr} 
+\usepackage{fancybox}
+\usepackage{pst-tree}
+\usepackage[framed]{ntheorem}
+\usepackage{tabularx}
+\usepackage{pstricks-add}
+\usepackage{eurosym}
+%\usepackage{pst-tree}
+\usepackage[np]{numprint}
+\usepackage{pifont}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{pgf,tikz}
+\usepackage{pgfkeys}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+\usetikzlibrary{arrows}
+\usepackage{tikz,tkz-tab}
+\usepackage[tikz]{bclogo}
+\rfoot{\small -\thepage-}
+\cfoot{}
+\usepackage[charter]{mathdesign}
+
+\usetikzlibrary{trees}
+\usetikzlibrary{shadows}
+\usetikzlibrary{backgrounds}
+\def\R{{\mathbb R}}
+%\def\Q{{\mathbb Q}}
+%\def\Z{{\mathbb Z}}
+%\def\D{{\mathbb D}}
+\def\N{{\mathbb N}}
+%\def\C{{\mathbb C}}
+
+\pagestyle{fancy}
+
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\alph{subsubsection}}
+\renewcommand{\labelitemi}{$\bullet$}
+\newcommand{\VE}[1]{\overrightarrow{#1}}
+%\renewcommand{\r}{($O$ ; $\vec{i}$ , $\vec{j}$)}
+\newcommand{\Coor}[3]{\begin{pmatrix} #1\\#2\\#3 \end{pmatrix}}
+\renewcommand{\arraystretch}{1.5}
+\tikzstyle{mybox} = [draw=black, very thick, rectangle, rounded corners, inner sep=20pt, inner ysep=20pt] 
+\tikzstyle{fancytitle} =[draw=black, very thick, rectangle, rounded corners, fill=white, text=black] % fill obligé sinon ne recouvre pas boite du dessous
+\usepackage{array,multirow,makecell}
+\setcellgapes{1pt}
+\makegapedcells
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash }b{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash }b{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash }b{#1}}
+\theoremstyle{break}
+\theorembodyfont{\upshape}
+\newtheorem{Prop}{Propri\'et\'e}
+\newtheorem{Def}{D\'efinition}
+\newtheorem{Rem}{Remarque}
+\newtheorem{exo}{Exercice}
+\newtheorem{Meth}{Methode}
+\newtheorem{cpreuve}{Preuve}
+\newtheorem{Th}{Théorème}
+\theorembodyfont{\small \sffamily }
+\newtheorem{Ex}{Exemple}
+\newtheorem{Preu}{Preuve}
+
+\pagestyle{fancy}
+\fancyhead[L]{1STI2D}
+\fancyhead[C]{\shadowbox{\begin{large}
+			\textcolor{black}{Activité:Variable Aléatoire,loi de probabilité et espérance}
+		\end{large}}}
+\fancyhead[R]{2019/2020}
+\rfoot{\small -\thepage-}
+\cfoot{}
+\begin{document}
+
+	
+Une urne contient 8 billes jaunes , 4 billes vertes et 2 billes
+bleues
+Une jeu consiste à extraire une
+bille de l’urne et à noter sa couleur puis à la  remettre dans l'urne.On tire alors une deuxième bille dont on note aussi la couleur. On suppose que les billes ne sont pas discernables au toucher.\\
+On considère les évenements \begin{itemize}
+	\item  $J_1$ :"la première bille est jaune" et $J_2$ :"la deuxième bille est jaune" 
+	\item $V_1$ :"la première bille est verte" et $V_2$ :"la deuxième bille est verte" 
+	\item  $B_1$ :"la première bille est bleue" et $B_2$ :"la deuxième bille est bleus"
+\end{itemize}
+\section{Variable aléatoire et loi de probabilité}
+\begin{enumerate}
+
+	\item Compléter  l' arbre pondéré ci dessous et les probabilités associées à chaque issue.
+	\tikzstyle{level 1}=[level distance=3.5cm, sibling distance=-4.5cm]
+	\tikzstyle{level 2}=[level distance=3.5cm, sibling distance=-1.5cm]
+	\tikzstyle{proba} = [rectangle,fill=white,pos=0.7,inner sep=0pt]
+	\tikzstyle{issue} = [circle,fill=black!20,,draw=none,circular drop shadow]
+	
+	\begin{tikzpicture}[grow=right]
+	\node at (-1,0){}
+	child{
+		node[issue](R){$J_1$}
+		child{node[issue](R1){$J_2$}
+			edge from parent
+			node[proba] {\scriptsize$\cdots\cdots$}}
+		child{node[issue](R2){$V_2$}
+			edge from parent
+			node[proba] {\scriptsize $\cdots\cdots$}}
+		child{node[issue](R3){$B_2$}
+			edge from parent
+			node[proba] {\scriptsize $\cdots\cdots$}}
+		edge from parent
+		node[proba] {\scriptsize $\cdots\cdots$}
+	}
+child{
+	node[issue](B){$V_1$}
+		child{node[issue](B1){$J_2$}
+		edge from parent
+		node[proba] {\scriptsize$\cdots\cdots$}}
+	child{node[issue](B2){$V_2$}
+		edge from parent
+		node[proba] {\scriptsize $\cdots\cdots$}}
+	child{node[issue](B3){$B_2$}
+		edge from parent
+		node[proba] {\scriptsize $\cdots\cdots$}}
+	edge from parent
+	node[proba] {\scriptsize $\cdots\cdots$}
+}
+	child{
+		node[issue](C){$B_1$}
+		child{node[issue](C1){$J_2$}
+			edge from parent
+			node[proba] {\scriptsize $\cdots$}}
+		child{node[issue](C2){$V_2$}
+			edge from parent
+			node[proba] {\scriptsize $\cdots$}}
+		child{node[issue](C3){$B_2$}
+			edge from parent
+			node[proba] {\scriptsize $\cdots$}}
+		edge from parent
+		node[proba] {\scriptsize$\cdots$}
+	};
+	\node[right=2cm] at (R1) {\footnotesize $P(J_1\cap J_2)=\cdots\cdots$};
+	\node[right=2cm] at (R3) {\footnotesize $P(J_1\cap B_2)=\cdots\cdots$};
+	\node[right=2cm] at (R2) {\footnotesize $P(J_1\cap V_2)=\cdots\cdots$};
+	\node[right=2cm] at (B1) {\footnotesize $P(V_1\cap J_2)=\cdots\cdots$};
+	\node[right=2cm] at (B3) {\footnotesize $P(V_1\cap B_2)=\cdots\cdots$};
+	\node[right=2cm] at (B2) {\footnotesize $P(V_1\cap V_2)=\cdots\cdots$};
+	\node[right=2cm] at (C1) {\footnotesize $P(B_1\cap J_2)=\cdots\cdots$};
+\node[right=2cm] at (C3) {\footnotesize $P(B_1\cap B_2)=\cdots\cdots$};
+\node[right=2cm] at (C2) {\footnotesize $P(B_1\cap V_2)=\cdots\cdots$};
+%gain
+	\node[right=7.5cm] at (R1) {$gain :\cdots\cdots$};
+\node[right=7.5cm] at (R3) {$gain :\cdots\cdots$};
+\node[right=7.5cm] at (R2) {$gain :\cdots\cdots$};
+\node[right=7.5cm] at (B1) {$gain : \cdots\cdots$};
+\node[right=7.5cm] at (B3) {$gain :\cdots\cdots$};
+\node[right=7.5cm] at (B2) {$gain :\cdots\cdots$};
+\node[right=7.5cm] at (C1) {$gain : \cdots\cdots$};
+\node[right=7.5cm] at (C3) {$gain :\cdots\cdots$};
+\node[right=7.5cm] at (C2) {$gain : \cdots\cdots$};
+	\end{tikzpicture}
+	\item On décide que suivant la couleur de la bille tirée ,la personne va soit gagner de l'argent soit en perdre suivant la règle suivante:
+
+			\begin{itemize}
+			\item Si la bille tirée est bleu elle gagne 3
+			euros
+			\item Si la bille tirée est verte elle  gagne
+			un euro.
+			\item Si la bille tirée est jaune elle perd 2 euros
+		
+		\end{itemize}
+ Compléter la colonne gain ci-dessus.
+ \\
+	\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Remarque}
+	 \textbf{A chaque issue, on associe donc un gain, on définit alors une variable aléatoire notée X.}
+	 \end{bclogo}
+	 Quelles sont les valeurs possibles que peut prendre X?\\
+	 $X(\Omega)=\{....................................................\}$
+	\item Pour chacune des valeurs possibles $x_1,x_2...$ que peut prendre X déterminer la probabilité associée.
+	Pour cela compléter le tableau ci-dessous:\\
+	\begin{center}
+	
+		\begin{tabular}{|C{3cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{2cm}|}
+				\hline
+				Valeurs $x_i$ & & &  & & & &Total \\
+				\hline
+				$P(X=x_i)=p_i$&&&&&&& \\
+				\hline
+			\end{tabular}
+			\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Remarque}
+			\textbf{Le tableau ci dessus s'appelle la loi de probabilité de X}
+		\end{bclogo}
+			\end{center}
+			Déterminer les probabilités suivantes :
+			\begin{multicols}{2}
+				\begin{enumerate}
+					\item $P(X \geqslant 0)=$
+					\item  $P(X \leqslant 4)=$
+					\item  $P(1 \leqslant X \leqslant 4)=$
+					\item P("d'obtenir un gain d'au plus deux euros")
+					\item P("d'être perdant")
+				\end{enumerate}
+			\end{multicols}
+			 \section{Espérance}
+				 Soit $X$ la variable aléatoire $X$ prenant les valeurs $x_1,x_2,...x_n$ avec les probabilités respectives
+		  $X$ $p_1,p_2\cdots p_n$.\\
+		    		
+		  	 On appelle \textbf{espérance} de la variable aléatoire $X$ le nombre $E(X)$ définie par:\\\fbox{$E(X)=x_1\times p_1+x_2\times p_2+\cdots+x_n\times p_n$} .Le jeu semble t-il intéressant?
+		 \\ \\
+		 Calculer l'espérance de la variable aléatoire $X$ définie au I)
+	\end{enumerate}
+			\section{Simulation de l'expérience aléatoire}
+			On s'intéresse au gain moyen que le joueur peut espérer remporter.Pour cela on simule plusieurs fois l'expérience aléatoire définie par ce jeu à l'aide d'une feuille de tableur.
+			Voici les résultats obtenus lorsque l'on simule 1000 fois l'expérience.
+			On n'a affiché que les résultats de la première et de la dernière simulation, ainsi que le total des gains des 1000 simulations.\\Dans le deuxième tableau on donne le nombre d'apparitions de chacun des gains possibles.\\
+			
+		
+	\includegraphics[scale=0.8]{tableau1.png}\\
+
+\includegraphics[scale=0.8]{tableau2.png}\\
+
+			\begin{enumerate}
+				\item Calculer la fréquence en \%  d'apparition de chacun des gains.\\
+					Pour cela compléter le tableau ci-dessous:\\
+					\begin{center}
+							\begin{tabular}{|C{3cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{2cm}|}
+								\hline
+							 Valeurs $x_i$ &$-4 $ & $-1 $ & $1 $ & $2 $ & $4 $ & $6 $ &Total \\
+							 \hline
+							 $f_i $en$ \%$&33&32.3&&&&1.9&\\
+							 \hline
+							\end{tabular}
+					\end{center}
+					\item Calculer la moyenne des gains . $\defrac{-862}{1000}$ = $0.852$
+					\item Comparer à la valeur obtenue pour l'espérance $E(X)$
+			\end{enumerate}
+	%	\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Remarque}[Loi de probabilité et distribution des fréquences : la loi \og des grands nombres \fg{}]
+		~\smallskip
+				
+	%		Pour une expérience donnée, dans le modèle défini par une loi de probabilité $P$, les distributions des fréquences calculées sur des séries de taille $n$ se rapprochent de $P$ quand $n$ devient grand.\\
+		
+	%	On dit que la distribution des fréquences $\left\lbrace f_{1} ; f_{2} ; ......... ; f_{r}\right\rbrace$ tend vers la loi de probabilité \\
+	%	$\left\lbrace p_{1} ; p_{2} ; ......... ; p_{r}\right\rbrace$
+%	\end{bclogo}
+
+  \end{document}

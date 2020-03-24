@@ -1,0 +1,447 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\frenchbsetup{StandardLists=true} % à inclure si on utilise \usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{framed}
+\usepackage{fancyhdr}
+\usepackage[left=1.2cm,right=1.2cm,top=1.8cm,bottom=1.3cm]{geometry}
+\usepackage{array} 
+\usepackage{fancyhdr} 
+\usepackage{fancybox}
+\usepackage{pst-tree}
+\usepackage[framed]{ntheorem}
+\usepackage{tabularx}
+\usepackage{pstricks,pstricks-add}
+\usepackage{eurosym}
+\usepackage{multicol}
+\usepackage{tikz,tkz-tab}
+\usepackage[tikz]{bclogo}
+\usepackage{mathrsfs}
+\usepackage{numprint}
+\usepackage{pifont}
+\rfoot{\small -\thepage-}
+\cfoot{}
+%papier millimétré
+\newcommand{\mili}[4]{\psgrid[subgriddiv=10, gridlabels=0, gridwidth=0.4pt, subgridwidth=0.4pt,gridcolor=brown!80,subgridcolor=brown!40](#1,#2)(#3,#4)}
+
+% Raccourcis diverses:
+\newcommand{\nwc}{\newcommand}
+\nwc{\dsp}{\displaystyle}
+\nwc{\ct}{\centerline}
+\nwc{\bgar}{\begin{array}}\nwc{\enar}{\end{array}}
+\nwc{\bgit}{\begin{itemize}}\nwc{\enit}{\end{itemize}}
+\nwc{\bgen}{\begin{enumerate}}\nwc{\enen}{\end{enumerate}}
+
+\nwc{\la}{\left\{}\nwc{\ra}{\right\}}
+\nwc{\lp}{\left(}\nwc{\rp}{\right)}
+\nwc{\lb}{\left[}\nwc{\rb}{\right]}
+
+\def\R{{\mathbb R}}
+%\def\Q{{\mathbb Q}}
+\def\Z{{\mathbb Z}}
+%\def\D{{\mathbb D}}
+\def\N{{\mathbb N}}
+%\def\C{{\mathbb C}}
+
+
+\nwc{\bgsk}{\bigskip}
+\nwc{\vsp}{\vspace{0.1cm}}
+\nwc{\vspd}{\vspace{0.2cm}}
+\nwc{\vspt}{\vspace{0.3cm}}
+\nwc{\vspq}{\vspace{0.4cm}}
+
+
+\def\epsi{\varepsilon}
+\def\vphi{\varphi}
+\def\lbd{\lambda}
+
+\def\Cf{\mathcal{C}_f}
+
+
+\pagestyle{fancy}
+\newcommand{\Oij}{$\left( {{\mathrm{O}};\vec i,\vec j} \right)$}
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\alph{subsubsection}}
+\newcommand{\VE}[1]{\overrightarrow{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\renewcommand{\arraystretch}{}
+
+\theoremstyle{break}
+\theorembodyfont{\upshape}
+\newtheorem{Prop}{Propri\'et\'e}
+\newtheorem{Def}{D\'efinition}
+\newtheorem{Rem}{Remarque}
+\newtheorem{corr}{Correction}
+
+
+\newtheorem{Th}{Théorème}
+\theorembodyfont{\small \sffamily }
+\newtheorem{Ex}{Exemple}
+\newtheorem{Preu}{Preuve}
+\theorembodyfont{\small	 \sffamily }
+\newtheorem{Meth}{\underline{Methode}}
+
+\pagestyle{fancy}
+\fancyhead[L]{1STI2D}
+\fancyhead[C]{COURS: PROBABILITES}
+\fancyhead[R]{2019/2020}
+\rfoot{\small -\thepage-}
+\cfoot{}
+
+\begin{document}
+
+	
+	\begin{center}
+		\shadowbox{\begin{large}
+				\textcolor{black}{VARIABLE ALÉATOIRE, LOI de Bernoulli}
+			\end{large}}
+		\end{center}
+	\tableofcontents
+
+\section{Un peu d'histoire}
+Le mot hasard vient de l'arabe , le mot aléatoire vient du latin aléa  et le mot probabilité du latin et s'oppose au mot certitude .\\
+ probabilitas «vraisemblance», du lat. probabilis, v. probable.\\
+Les probabilités sont aujourd'hui l'une des branches les plus importantes et les plus pointues des mathématiques. Pourtant,c'est en cherchant à résoudre des problèmes posés par les jeux de hasard que les mathématiciens donnent naissance aux probabilités.\\
+
+Les archéologues ont montré que ces jeux ont été pratiqués dans de nombreuses sociétés antiques. Pourtant, on ne trouve nul part trace de leur étude.\\
+
+En 1654, Blaise Pascal(1623 ; 1662) entretient avec Pierre de Fermat(1601 ; 1665) des correspondances sur le thème des jeux de hasard et d'espérance de gain qui les mènent à exposer une théorie nouvelle : les calculs de probabilités.Ils s’intéressent à la résolution de problèmes de dénombrement comme par exemple celui du Chevalier de Méré:« Comment distribuer équitablement la mise à un jeu de hasard interrompu avant la fin ? »\\
+Un autre traité, plus complet, sur les probabilités, est l'oeuvre d'un mathématicien suisse, Jacques Bernoulli (1662-1716).Son œuvre majeure est Ars Conjectandi publiée après sa mort à Bâle en 1713, avec une préface de son neveu Nicolas Bernoulli. Il y pose les principes du calcul des probabilités et introduit les nombres de Bernoulli.\\
+Cet ouvrage aborde un aspect nouveau, le lien entre probabilités et fréquences en cas de tirages répétés (d'un jeu de pile ou face). Il énonce et démontre \\
+
+On peut résumer ce théorème en le simplifiant : Pour un grand nombres de lancers de pièces (jeu de pile ou face) l'écart entre fréquence et probabilité tend vers zéro. C'est à dire que si l'on effectue beaucoup de lancers, la fréquence d'apparition du pile va tendre vers 1/2, c'est assez intuitif.\\
+\newpage
+\section{Variable aléatoire et loi de probabilité}
+\subsection{Variable aléatoire} 
+\subsubsection{Activité}
+
+Voir fiche 1 cahier exercices
+
+\subsubsection{Variable aléatoire : définition}
+\noindent On lance une pièce trois fois de suite. On note P ou F suivant que \og pile \fg{} ou \og face \fg{} apparaît.\\
+En considérant les issues équiprobables on a $\Omega=\left\lbrace FFF ; FFP ; FPF ; FPP ; PFF ; PFP ; PPF ; PPP\right\rbrace $.
+
+
+
+On associe à chaque issue un gain \og algébrique \fg{} (positif ou négatif) d'argent.
+\begin{itemize}
+	\item un gain de 5 \euro si l'on tire exactement 3 \og pile \fg{} ;
+	\item un gain de 3 \euro si l'on tire exactement 2 \og pile \fg{} ;
+	\item une perte de 4 \euro sinon.
+\end{itemize}
+On définit alors une autre fonction $Y$ de $\Omega$ dans $\mathbb{R}$ qui à tout issue de $\Omega$ associe le gain algébrique du joueur.\\
+$Y$ peut prendre 3 valeurs possibles : $y_1=-4$ ; $y_2=3$ et $y_3=5$.
+\begin{center}
+	\includegraphics[scale=1]{cours7.png} 
+\end{center}
+et la loi de probabilité de $Y$ est donnée par le tableau suivant :
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		$\text{~~~~}x_{i}\text{~~~~}$&$\text{~~~~}-4\text{~~~~}$&$\text{~~~~}3\text{~~~~}$&$\text{~~~~}5\text{~~~~}$\\
+		\hline
+		$P(Y=y_{i})$&$\dfrac{4}{8}$&$\dfrac{3}{8} $&$\dfrac{1}{8} $\\
+		\hline
+	\end{tabular}
+\end{center}
+	\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Définition variable aléatoire}
+	Soit $\Omega$ l'univers fini d'une expérience aléatoire (ensemble des issues de l'expérience aléatoire) et une loi de probabilité $P$ sur $\Omega$.
+	\begin{itemize}
+		\item On appelle  \textbf{variable aléatoire} toute fonction $X$ de $\Omega$  dans $\mathbb{R}$ qui , à toute issue de $\Omega$ fait correspondre un réel $x_i$
+		\item L'événement \og $X$ prend la valeur $x_{i}$ \fg{} noté $(X=x_{i})$, est l'ensemble des éléments de $\Omega$ qui ont pour image $x_i$ par $X$.
+		\item $X(\Omega)=\left\lbrace x_{1} ; ..... x_{n}\right\rbrace $ l'ensemble des valeurs prises par $X$.\\
+	\end{itemize}
+		\end{bclogo}
+	\begin{Rem}
+		Etant donné que la variable aléatoire $X$ prend un \textbf{nombre fini de valeurs} puisque $Car(\Omega)$ est fini, on parlera de variable aléatoire \textbf{discrète.}.\\
+		Plus tard, vous étudierez des variables aléatoires sur des univers infini . On parlera de variable aléatoire continue.
+	\end{Rem}
+\newpage
+	\begin{Ex}
+		Soit l'expérience aléatoire : "On lance un dé à six faces et on regarde le résultat et on considère le jeu suivant:
+		\begin{itemize}
+			\item Si le résultat est pair, on gagne 2$\geneuro$
+			\item Si le résultat est 1, on gagne 3$\geneuro$
+			\item Si le résultat est 3 ou 5, on perd 4$\geneuro$
+		\end{itemize}.
+		\begin{enumerate}
+			\item Quel est l'univers de cette expérience? $\Omega = \{1;2;3;4;5;6\}$ card($\Omega$)=6
+			\item On appelle $X$ la variable aléatoire correspondant au gain possible (il peut-être aussi négatif). Quelles sont les valeurs prises par $X$? $X$($\Omega$)=\{2;3;-4\}
+		\end{enumerate}
+	\end{Ex}
+	\subsection{Loi de probabilité d'une variable aléatoire}
+		\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Définition loi de probabilité}
+		On considère un ensemble fini $\Omega$ et une loi de probabilité $P$ sur $\Omega$. \\
+		Soit $X$ une variable aléatoire définie sur $\Omega$.\\
+		Soit $\left\lbrace x_{1} ; ..... x_{n}\right\rbrace $ l'ensemble des valeurs prises par $X$.\\
+		Lorsqu'à chaque valeur $x_{i}$  on associe la probabilité de l'événement $(X=x_{i})$, on définit 
+		la \textbf{loi de probabilité de la variable aléatoire} $\boldsymbol{X}$\\
+		On représente en général cette loi à l'aide d'un tableau du type :\\\begin{center}
+			\begin{tabular}{|>{\centering}p{3cm}|>{\centering}p{1cm}|>{\centering}p{1cm}|>{\centering}p{1cm}|>{\centering}p{1cm}|>{\centering}p{2cm}|}
+				\hline
+				\rule[-1ex]{0pt}{4ex} Valeurs $x_i$ & $x_1$ & $x_2$ & $\dots$ & $x_n$  & Total \tabularnewline\hline
+				\rule[-1ex]{0pt}{4ex} $P(X=x_i)$ & $ p_1$ & $ p_2 $ & $ \dots $ & $ p_n $  & $1$\tabularnewline\hline
+			\end{tabular}
+		\end{center}
+		\end{bclogo}
+\begin{Ex}
+	Reprendre l'exemple 1 et donner la loi de probabilité de $X$\\
+	\renewcommand{\arraystretch}{2}
+		\begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
+		\hline
+		$x_i$&2&3&-4\\
+		\hline
+		$P(X=x_i)$&$\dfrac{3}{6}$&$\defrac{1}{6}$&$\dfrac{2}{6}$ \\
+		\hline
+	\end{tabular}
+\end{Ex}
+	
+	
+\subsection{Espérance}
+		\begin{bclogo}[couleur = yellow!30,arrondi =0.1,logo =\bcbook]{Définition espérance} 
+		Soit $X$ une variable aléatoire définie sur un univers $\Omega$ muni d'une loi de probabilité $P$.\\
+		La loi de probabilité de $X$ est donnée par le tableau ci dessous:
+		\begin{center}
+			\renewcommand{\arraystretch}{1.5}
+			\begin{tabular}{|c|c|c|c|c|}
+				\hline
+				$x_i$&$x_1$&$x_2$&$\cdots\cdots$&$x_n$\\
+				\hline
+				$P(X=x_i)$&	$p_1$&	$p_2$&	$\cdots\cdots$&$p_n$\\
+				\hline
+			\end{tabular}
+		\end{center}
+		
+		\textbf{	L'espérance mathématique de $X$} est le nombre $E(X)$ définie par : 
+		$$ E(X)=\sum_{i=1}^nx_i\times p(X=x_i)= \sum_{i=1}^nx_ip_i= x_1p_1+x_2p_2+\dots +x_np_n $$
+		
+	\end{bclogo}
+	\begin{Ex}
+		Calculer l'espérance de $X$ avec les données de l'exemple 1.
+	\end{Ex}
+	\begin{Rem}
+		\begin{itemize}
+			
+			\item Lors d'un grand nombre d'expériences, le gain moyen d'un joueur se stabilise aux environs de $E(X)$.
+			\item On interprète l'espérance comme le gain moyen que peut espérer un joueur par partie, 
+			s'il joue un grand nombre de fois. On parlera donc de jeu favorable, défavorable ou équitable en 
+			fonction du signe de $E(X)$.
+		\end{itemize}
+	\end{Rem}
+		\begin{Meth}[Savoir étudier une variable aléatoire et déterminer sa loi de probabilité et son espérance]
+	Soit l'expérience suivante: \\
+		\begin{minipage}{0.6\textwidth}
+			Une roue de loterie est partagée en dix secteurs de quatre couleurs différentes (bleu, jaune, vert et rose), comme représenté sur la figure ci-contre.\\ Quand on lance cette roue, elle tourne, puis s'arrête librement devant le repère . On suppose que tous les secteurs ont la même probabilité de s'arrêter devant le repère.\\
+			Si la couleur de sortie est le bleu, on perçoit 15 \euro, si c'est le rose, on perçoit 10 \euro, si c'est le jaune, on perçoit 2 \euro et si c'est le vert, on ne perçoit rien.On appelle $X$ la variable aléatoire correspondant au gain possible. 
+		\end{minipage} 
+		\begin{minipage}{0.4\textwidth}
+			\includegraphics[scale=0.6]{cours5.png}
+		\end{minipage}
+	\begin{enumerate}
+		\item 	Quel est  l'univers $\Omega$ de cette expérience. card($\Omega$) = \{4\}
+		\item Donner $X(\Omega)$ l'ensemble des valeurs possibles prises par $X$ sa loi de probabilité.$X$($\Omega$)=\{15;10;2;0\}
+		\item Donner sous forme de tableau la loi de probabilité de $x$
+\begin{center}
+            \renewcommand{\arraystretch}{1.5}
+            \begin{tabular}{|c|c|c|c|c|c|}
+                \hline
+                $x_i$&$15$&$10$&$2$&$0$&Total\\
+                \hline
+                $P(X=x_i)$& $\dfrac{1}{10}$& $\dfrac{2}{10}$&  $\dfrac{3}{10}$&$\dfrac{4}{10}$&$1$\\
+                \hline
+            \end{tabular}
+        \end{center}
+		\item Calculer $E(X)$ et interpréter le résultat.
+	\end{enumerate}	
+
+	
+\end{Meth}
+	\section{Expérience aléatoire à deux épreuves indépendantes}
+	\subsection{Activité}
+Voir Activité 3 page 147 cahier exercices
+	\subsection{Expériences indépendantes}
+		\begin{bclogo}[couleur = yellow!30,arrondi =0.1,logo =\bcbook]{Définition expériences indépendantes} 
+			Deux expériences sont dites indépendantes si le résultat de l’une n’a aucune influence sur le résultat de l’autre.
+			
+			\end{bclogo}
+		Préciser dans chacun des cas si les 2 expériences sont indépendantes:
+		\begin{Ex}
+			Léa tente l’expérience suivante avec ses vêtements:Elle dépose dans un panier 4 chemisiers indiscernables au toucher: 1 blanc, 1 rouge et 2 verts.Dans un autre panier, elle y dépose 2 jupes également indiscernables au toucher: 1 blanche et 1 noire.Elle tire successivement et au hasard, un chemisier du premier panier et une jupe du deuxième panier.	
+		\end{Ex}
+	\begin{Ex}
+		Un sac contient 10 boules jaunes et 5 boules vertes . Alice tire une première boule dans le sac  et note sa couleur puis une seconde et note aussi sa couleur.
+	\end{Ex}
+	\begin{Ex}
+	Un sac contient 10 boules jaunes et 5 boules vertes . Pierre tire une première boule et note sa couleur puis la remet puis une seconde et note aussi sa couleur.
+\end{Ex}
+\subsection{Modélisation par un arbre pondéré}
+\begin{Ex} 
+Lire exemple 3 page 151 du livre
+\end{Ex}
+	\begin{bclogo}[couleur = red!30,arrondi =0.1,logo =\bcbook]{Rappel Propriétés Arbre pondéré} 
+Soit une expérience aléatoire que l'on modélise par un arbre pondéré:\textbf{Un arbre pondéré se construit et se lit de gauche à droite.}
+Les traits partant de la racine sont appelés branches primaires de l’arbre ; elles mènent à des nœuds.
+Les branches joignant deux nœuds sont dites secondaires.
+\begin{itemize}
+	\item Règle 1:
+	La somme des probabilités issues d’un même noeud est égale à 1.
+	\item Règle 2:Principe multiplicatif:
+	La probabilité d’un événement correspondant à un chemin est égale au produit des 
+	probabilités  portées par les branches de ce chemin.
+	\item Règle 3: 
+	La probabilité d’un événement est égale à la somme des probabilités des chemins qui aboutissent 
+	à sa réalisation.
+\end{itemize}
+
+\end{bclogo}
+\begin{Meth}[Savoir traduire une situation par un arbre et calculer des probabilités]
+	Une urne contient 2 boules gagnantes et 8 boules perdantes. Une expérience consiste à tirer au hasard 2 fois de suite une boule en la remettant à chaque fois dans l’urne.
+		Soit X la variable aléatoire égale au nombre de boules gagnantes.
+	\begin{enumerate}
+		\item Traduire la situation par un arbre pondéré
+		\item Calculer la probabilité $P(X=2)$ d’obtenir 2 boules gagnantes.
+		\item Calculer la probabilité $P(X\geqslant1)$ d’obtenir au moins 1 boules gagnantes.
+	\end{enumerate}
+\end{Meth}
+\section{Loi de Bernoulli}
+\subsection{Activité}
+Voir activité 4 p 147 cahier exercices
+\subsection{Épreuve de Bernoulli}
+\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Définition épreuve de Bernoulli}
+	On appelle \textbf{épreuve de Bernoulli} toute expérience aléatoire qui n’a que \textbf{2 issues possibles. }
+	L’une est appelée \textbf{« succès »} noté S et l’autre \textbf{« échec }» noté E ou $\bar{S }$
+\end{bclogo}
+\begin{Ex}
+	\begin{itemize}
+		\item On lance une pièce biaisée. La probabilité de faire pile est égale à 1/4 ; celle de faire face est égale à 3/4
+		On décide d’appeler succès l’événement S : « obtenir pile ». Comme il n’y a que 2 issues possibles : « pile » et « face », cette expérience aléatoire est une épreuve de Bernoulli. $p (S) = \dfrac{1}{4}$ et $p( \bar{S}) =\dfrac{3}{4}$
+		\item On lance un dé parfait à 6 faces et on s’intéresse à l’obtention du nombre 5. Bien qu’il y ait a priori 6 issues possibles à cette expérience, on peut considérer comme univers $\Omega = \{S ; \bar{S}\}$ , où S désigne l’événement « obtenir 5 ». On a $P( S)=\dfrac{1}{6}$  et $P(\bar{S} )=1-\dfrac{1}{6}=\dfrac{5}{6}$ .
+	\end{itemize}
+\end{Ex}
+\subsection{Schéma de Bernouilli.}
+Considérons une épreuve de Bernoulli. Notons $p$ la probabilité de l’événement « succès ». La probabilité de l’événement « échec » est donc $q=1-p$.
+\begin{bclogo}[couleur = yellow!30,arrondi =0.1,logo =\bcbook]{ Définition schéma de Bernoulli}
+	\textbf{Un schéma de Bernoulli est la répétition, dans les mêmes conditions, d’une même épreuve de Bernoulli ; ces épreuves étant identiques et indépendantes. }
+	
+\end{bclogo}
+
+\begin{Ex}
+	\begin{itemize}
+		\item Lancer n fois un dé ou une pièce.
+		\item Les tirages successifs, et avec remise dans une urne.
+		\item Un seul lancer simultané de n pièces (ou de n dés).
+		
+	\end{itemize}
+\end{Ex}
+
+\begin{Rem}
+	Une façon de représenter un schéma de Bernoulli est d’utiliser un arbre pondéré.\\
+	Exemple d’arbre représentant un schéma de Bernoulli pour n = 2\\
+	%:-+-+-+- Engendré par : http://math.et.info.free.fr/TikZ/Arbre/
+	\begin{center}
+		% Racine à Gauche, développement vers la droite
+		\begin{tikzpicture}[xscale=1,yscale=1]
+		% Styles (MODIFIABLES)
+		\tikzstyle{fleche}=[->,>=latex,thick]
+		\tikzstyle{noeud}=[fill=yellow,circle,draw]
+		\tikzstyle{feuille}=[fill=yellow,circle,draw]
+		\tikzstyle{etiquette}=[midway,fill=white,draw]
+		% Dimensions (MODIFIABLES)
+		\def\DistanceInterNiveaux{3}
+		\def\DistanceInterFeuilles{2}
+		% Dimensions calculées (NON MODIFIABLES)
+		\def\NiveauA{(0)*\DistanceInterNiveaux}
+		\def\NiveauB{(1)*\DistanceInterNiveaux}
+		\def\NiveauC{(2)*\DistanceInterNiveaux}
+		\def\InterFeuilles{(-1)*\DistanceInterFeuilles}
+		% Noeuds (MODIFIABLES : Styles et Coefficients d'InterFeuilles)
+		\node[noeud] (R) at ({\NiveauA},{(1.5)*\InterFeuilles}) {$\Omega$};
+		\node[noeud] (Ra) at ({\NiveauB},{(0.5)*\InterFeuilles}) {$S$};
+		\node[feuille] (Raa) at ({\NiveauC},{(0)*\InterFeuilles}) {$S$};
+		\node[feuille] (Rab) at ({\NiveauC},{(1)*\InterFeuilles}) {$\overline{S}$};
+		\node[noeud] (Rb) at ({\NiveauB},{(2.5)*\InterFeuilles}) {$\overline{S}$};
+		\node[feuille] (Rba) at ({\NiveauC},{(2)*\InterFeuilles}) {$S$};
+		\node[feuille] (Rbb) at ({\NiveauC},{(3)*\InterFeuilles}) {$\overline{S}$};
+		% Arcs (MODIFIABLES : Styles)
+		\draw[fleche] (R)--(Ra) node[etiquette] {$p$};
+		\draw[fleche] (Ra)--(Raa) node[etiquette] {$p$};
+		\draw[fleche] (Ra)--(Rab) node[etiquette] {$1-p$};
+		\draw[fleche] (R)--(Rb) node[etiquette] {$1-p$};
+		\draw[fleche] (Rb)--(Rba) node[etiquette] {$p$};
+		\draw[fleche] (Rb)--(Rbb) node[etiquette] {$1-p$};
+		\end{tikzpicture}
+	\end{center}
+	%:-+-+-+-+- Fin
+		On considère un schéma de Bernoulli avec n =3. La représentation de la situation avec un arbre est:\\	
+	
+	%:-+-+-+- Engendré par : http://math.et.info.free.fr/TikZ/Arbre/
+	\begin{center}
+		% Racine à Gauche, développement vers la droite
+		\begin{tikzpicture}[xscale=1,yscale=1]
+		% Styles (MODIFIABLES)
+		\tikzstyle{fleche}=[->,>=latex,thick]
+		\tikzstyle{noeud}=[fill=yellow,circle,draw]
+		\tikzstyle{feuille}=[fill=yellow,circle,draw]
+		\tikzstyle{etiquette}=[midway,fill=white,draw]
+		% Dimensions (MODIFIABLES)
+		\def\DistanceInterNiveaux{3}
+		\def\DistanceInterFeuilles{2}
+		% Dimensions calculées (NON MODIFIABLES)
+		\def\NiveauA{(0)*\DistanceInterNiveaux}
+		\def\NiveauB{(1)*\DistanceInterNiveaux}
+		\def\NiveauC{(2)*\DistanceInterNiveaux}
+		\def\NiveauD{(3)*\DistanceInterNiveaux}
+		\def\InterFeuilles{(-1)*\DistanceInterFeuilles}
+		% Noeuds (MODIFIABLES : Styles et Coefficients d'InterFeuilles)
+		\node[noeud] (R) at ({\NiveauA},{(3.5)*\InterFeuilles}) {$\Omega$};
+		\node[noeud] (Ra) at ({\NiveauB},{(1.5)*\InterFeuilles}) {$S$};
+		\node[noeud] (Raa) at ({\NiveauC},{(0.5)*\InterFeuilles}) {$S$};
+		\node[feuille] (Raaa) at ({\NiveauD},{(0)*\InterFeuilles}) {$S$};
+		\node[feuille] (Raab) at ({\NiveauD},{(1)*\InterFeuilles}) {$\overline{S}$};
+		\node[noeud] (Rab) at ({\NiveauC},{(2.5)*\InterFeuilles}) {$\overline{S}$};
+		\node[feuille] (Raba) at ({\NiveauD},{(2)*\InterFeuilles}) {$S$};
+		\node[feuille] (Rabb) at ({\NiveauD},{(3)*\InterFeuilles}) {$\overline{S}$};
+		\node[noeud] (Rb) at ({\NiveauB},{(5.5)*\InterFeuilles}) {$\overline{S}$};
+		\node[noeud] (Rba) at ({\NiveauC},{(4.5)*\InterFeuilles}) {$S$};
+		\node[feuille] (Rbaa) at ({\NiveauD},{(4)*\InterFeuilles}) {$S$};
+		\node[feuille] (Rbab) at ({\NiveauD},{(5)*\InterFeuilles}) {$\overline{S}$};
+		\node[noeud] (Rbb) at ({\NiveauC},{(6.5)*\InterFeuilles}) {$\overline{S}$};
+		\node[feuille] (Rbba) at ({\NiveauD},{(6)*\InterFeuilles}) {$S$};
+		\node[feuille] (Rbbb) at ({\NiveauD},{(7)*\InterFeuilles}) {$\overline{S}$};
+		% Arcs (MODIFIABLES : Styles)
+		\draw[fleche] (R)--(Ra) node[etiquette] {$p$};
+		\draw[fleche] (Ra)--(Raa) node[etiquette] {$p$};
+		\draw[fleche] (Raa)--(Raaa) node[etiquette] {$p$};
+		\draw[fleche] (Raa)--(Raab) node[etiquette] {$1-p$};
+		\draw[fleche] (Ra)--(Rab) node[etiquette] {$1-p$};
+		\draw[fleche] (Rab)--(Raba) node[etiquette] {$p$};
+		\draw[fleche] (Rab)--(Rabb) node[etiquette] {$1-p$};
+		\draw[fleche] (R)--(Rb) node[etiquette] {$1-p$};
+		\draw[fleche] (Rb)--(Rba) node[etiquette] {$p$};
+		\draw[fleche] (Rba)--(Rbaa) node[etiquette] {$p$};
+		\draw[fleche] (Rba)--(Rbab) node[etiquette] {$1-p$};
+		\draw[fleche] (Rb)--(Rbb) node[etiquette] {$1-p$};
+		\draw[fleche] (Rbb)--(Rbba) node[etiquette] {$p$};
+		\draw[fleche] (Rbb)--(Rbbb) node[etiquette] {$1-p$};
+		\end{tikzpicture}
+	\end{center}
+	%:-+-+-+-+- Fin	Il y a 8 chemins possibles au total.
+	
+	
+\end{Rem}
+\begin{Meth}[Reconnaitre un schéma de Bernoulli]
+	Pour chacune des expériences aléatoires suivantes dites si elle constitue une épreuve de Bernoulli? Si c'est le cas proposez un succès $S$ et sa probabilité $\mathbb{P}(S)$.
+	
+	\begin{enumerate}
+		\item Un stock contient $1\ \%$ de pièces défectueuses. On y prélève une pièce et on regarde si elle présente un défaut.
+		\item Selon l'INSEE, $45\ \%$ des familles française ont un seul enfant, $38\ \%$ en ont deux et $17\ \%$ en ont trois ou plus. On interroge au hasard un élève du lycée et on lui demande le nombre d'enfants de sa famille.
+	\end{enumerate}
+\end{Meth}
+\end{document}

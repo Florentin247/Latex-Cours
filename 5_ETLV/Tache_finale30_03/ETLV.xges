@@ -1,0 +1,28 @@
+<ges version='0.1'>
+  <project properties='properties;' metadatas='metadatas, name=(string)&quot;Nouveau\ projet&quot;, author=(string)&quot;&quot;, render-scale=(double)100, year=(string)2020;'>
+    <encoding-profiles>
+      <encoding-profile name='pitivi-profile' description='Profil de codage Pitivi' type='container' preset-name='oggmux' format='application/ogg' >
+        <stream-profile parent='pitivi-profile' id='0' type='video' presence='0' format='video/x-theora, framerate=(fraction)[ 1/2147483647, 2147483647/1 ], width=(int)[ 1, 2147483647 ], height=(int)[ 1, 2147483647 ]' preset-name='theoraenc' restriction='video/x-raw, framerate=(fraction)25/1, width=(int)1920, height=(int)1080, pixel-aspect-ratio=(fraction)1/1' pass='0' variableframerate='0' />
+        <stream-profile parent='pitivi-profile' id='1' type='audio' presence='0' format='audio/x-vorbis, rate=(int)[ 1, 200000 ], channels=(int)[ 1, 255 ]' preset-name='vorbisenc' restriction='audio/x-raw, rate=(int)44100, channels=(int)2' />
+      </encoding-profile>
+    </encoding-profiles>
+    <ressources>
+      <asset id='file:///home/pinguin/Latex/5_ETLV/Tache_finale30_03/ETLV_Nathan.R-Florentin.L.wav' extractable-type-name='GESUriClip' properties='properties, supported-formats=(int)2, duration=(guint64)210369002268;' metadatas='metadatas, container-format=(string)WAV, bitrate=(uint)1411200, audio-codec=(string)&quot;Uncompressed\ 16-bit\ PCM\ audio&quot;, title=(string)&quot;Audio\ ETLV&quot;, artist=(string)&quot;Lespinasse\ Florentin\ \&amp;\ Rambeau\ Nathan&quot;, datetime=(datetime)2020, genre=(string)Anglais, encoder=(string)&quot;Lavf58.29.100\ \(libsndfile-1.0.28\)&quot;, track-number=(uint)1, file-size=(guint64)37109474;' />
+    </ressources>
+    <timeline properties='properties, auto-transition=(boolean)true, snapping-distance=(guint64)822295117;' metadatas='metadatas, duration=(guint64)210369002268;'>
+      <track caps='video/x-raw(ANY)' track-type='4' track-id='0' properties='properties, async-handling=(boolean)false, message-forward=(boolean)true, caps=(string)&quot;video/x-raw\(ANY\)&quot;, restriction-caps=(string)&quot;video/x-raw\,\ width\=\(int\)1920\,\ height\=\(int\)1080\,\ framerate\=\(fraction\)25/1\,\ pixel-aspect-ratio\=\(fraction\)1/1&quot;, mixing=(boolean)true;' metadatas='metadatas;'/>
+      <track caps='audio/x-raw(ANY)' track-type='2' track-id='1' properties='properties, async-handling=(boolean)false, message-forward=(boolean)true, caps=(string)&quot;audio/x-raw\(ANY\)&quot;, restriction-caps=(string)&quot;audio/x-raw\,\ rate\=\(int\)44100\,\ channels\=\(int\)2&quot;, mixing=(boolean)true;' metadatas='metadatas;'/>
+      <layer priority='0' properties='properties, auto-transition=(boolean)true;' metadatas='metadatas, volume=(float)1;'>
+      </layer>
+      <layer priority='1' properties='properties, auto-transition=(boolean)true;' metadatas='metadatas, volume=(float)1;'>
+        <clip id='0' asset-id='file:///home/pinguin/Latex/5_ETLV/Tache_finale30_03/ETLV_Nathan.R-Florentin.L.wav' type-name='GESUriClip' layer-priority='1' track-types='2' start='0' duration='210369002268' inpoint='0' rate='0' properties='properties, name=(string)uriclip0, mute=(boolean)false, is-image=(boolean)false;' metadatas='metadatas;'>
+          <source track-id='1' children-properties='properties, GstVolume::mute=(boolean)false, GstVolume::volume=(double)1;'>
+            <binding type='direct' source_type='interpolation' property='volume' mode='1' track_id='1' values =' 0:0.10000000000000001  210369002268:0.10000000000000001 '/>
+          </source>
+        </clip>
+      </layer>
+      <groups>
+      </groups>
+    </timeline>
+</project>
+</ges>

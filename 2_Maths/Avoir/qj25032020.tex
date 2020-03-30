@@ -1,0 +1,103 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[upright]{fourier}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsfonts,amssymb, mathrsfs}
+\usepackage{fancybox}
+\usepackage{fancyhdr}
+%\usepackage{lmodern}
+\usepackage{alterqcm}
+\usepackage[%
+      a4paper,%
+      textwidth=16cm,%
+      top=2cm,%
+      bottom=2cm,%
+      headheight=25pt,%
+      headsep=12pt,%
+      footskip=25pt]{geometry}%
+\usepackage[frenchb]{babel}
+\parindent0pt
+
+
+\pagestyle{fancy}
+\fancyhead[L]{1STI2D}
+\fancyhead[C]{	\shadowbox{\begin{large}
+			{QUESTION DU JOUR}
+		\end{large}}}
+		\fancyhead[R]{2019/2020}
+		\lfoot{ 1STI2D}
+		\cfoot{}
+		\rfoot{\small -\thepage-}
+\begin{document}
+Déterminer la bonne réponse :\\
+\begin{alterqcm}
+ \AQquestion[br=2] {La forme factorisée de $f$ définie par  $f(x)=-3x^2+7x+40$ est}{%
+ {$-3(x-5)(x-\dfrac83)$},
+ {$-3(x+5)(x-\dfrac83)$},
+ {$-3(x-5)(x+\dfrac83)$},
+ 	{$+3(x-5)(x+\dfrac83)$}
+ }
+
+\AQquestion[br=3]{L'ensemble solution de l'équation $f(x)=0$ est}{%
+	{$\left\lbrace-5;\dfrac83 \right\rbrace $},
+	{$\left\lbrace5;\dfrac83 \right\rbrace$},
+	{$\left\lbrace-5;-\dfrac83 \right\rbrace$},
+		{$\left\lbrace5;-\dfrac83 \right\rbrace$}
+}
+
+\AQquestion[br=1]{L'équation $\cos(x)=\dfrac23$ dans $]-\pi ;\pi]$ admet  }{
+{0 solution},
+{1 solution},
+{2 solutions}
+}
+
+\AQquestion[br=3]{ Un angle a une mesure de $\dfrac{405\pi}{6}$ rad. Sa mesure principale est }{
+{$-\dfrac{\pi}{2}$},
+{$-\dfrac{3\pi}{2}$},
+{$\dfrac{5\pi}{6}$}
+}
+
+\AQquestion[br=3]{La partie réelle de $z=(2+i)^2$ est}{
+{$2$},
+{$4$},
+{$3$},
+{$1$}
+}
+\end{alterqcm}
+\newpage
+\begin{alterqcm}[correction=true]
+
+	\AQquestion[br=3] {La forme factorisée de $f$ définie par  $f(x)=-3x^2+7x+40$ est}{%
+		{$-3(x-5)(x-\dfrac83)$},
+		{$-3(x+5)(x-\dfrac83)$},
+		{$-3(x-5)(x+\dfrac83)$},
+		{$+3(x-5)(x+\dfrac83)$}
+	}
+	
+	\AQquestion[br=4]{L'ensemble solution de l'équation $f(x)=0$ est}{%
+		{\{$\left\lbrace-5;\dfrac83 \right\rbrace $\}},
+		{\{$\left\lbrace5;\dfrac83 \right\rbrace$\}},
+		{\{$\left\lbrace-5;-\dfrac83 \right\rbrace$\}},
+		{\{$\left\lbrace5;-\dfrac83 \right\rbrace$\}}
+	}
+	
+	\AQquestion[br=3]{L'équation $\cos(x)=\dfrac23$ dans $]-\pi ;\pi]$ admet  }{
+		{0 solution},
+		{1 solution},
+		{2 solutions}
+	}
+	
+	\AQquestion[br=1]{ Un angle a une mesure de $\dfrac{405\pi}{6}$ rad. Sa mesure principale est }{
+		{$-\dfrac{\pi}{2}$},
+		{$-\dfrac{3\pi}{2}$},
+		{$\dfrac{5\pi}{6}$}
+	}
+	
+	\AQquestion[br=3]{La partie réelle de $z=(2+i)^2$ est}{
+		{$2$},
+		{$4$},
+		{$3$},
+		{$1$}
+	}
+\end{alterqcm}
+\end{document}

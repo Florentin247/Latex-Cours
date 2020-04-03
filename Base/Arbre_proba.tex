@@ -1,0 +1,65 @@
+\documentclass{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{trees}
+\begin{document}
+\pagestyle{empty}
+
+
+% Set the overall layout of the tree
+\tikzstyle{level 1}=[level distance=3.5cm, sibling distance=3.5cm]
+\tikzstyle{level 2}=[level distance=3.5cm, sibling distance=2cm]
+
+% Define styles for bags and leafs
+\tikzstyle{bag} = [text width=4em, text centered]
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+
+% The sloped option gives rotated edge labels. Personally
+% I find sloped labels a bit difficult to read. Remove the sloped options
+% to get horizontal labels. 
+\begin{tikzpicture}[grow=right, sloped]
+\node[bag] {}
+    child {
+        node[bag] {}        
+            child {
+                node[end, label=right:
+                    {}] {} %Bout de ligne
+                edge from parent%Branche du bas 2e etage
+                node[above] {}%dessu de la ligne
+                node[below] {}%dessous de la ligne
+            }
+            child {
+                node[end, label=right:
+                    {}] {} %Bout de ligne
+                edge from parent%Branche du bas 2e etage
+                node[above] {}%dessu de la ligne
+                node[below] {}%dessous de la ligne
+            }
+            edge from parent %Branche du bas 2e etage
+            node[above] {}%dessu de la ligne
+            node[below] {}%dessous de la ligne
+    }
+    child {
+        node[bag] {}        
+        child {
+                node[end, label=right:
+                    {}] {} %Bout de ligne
+                edge from parent%Branche du bas 2e etage
+                node[above] {}%dessu de la ligne
+                node[below] {}%dessous de la ligne
+            }
+            child {
+                node[end, label=right:
+                    {}] {} %Bout de ligne
+                edge from parent%Branche du bas 2e etage
+                node[above] {}%dessu de la ligne
+                node[below] {}%dessous de la ligne
+            }
+        edge from parent         %Branche du bas 1er etage
+            node[above] {} %dessu de la ligne
+            node[below] {} %dessous de la ligne
+    };
+\end{tikzpicture}
+
+\end{document}

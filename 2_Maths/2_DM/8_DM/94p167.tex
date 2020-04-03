@@ -17,6 +17,7 @@
 %%%
 \usepackage{xcolor}
 \usepackage{color}
+\usepackage{colortbl}
 
 %%%%%
 %PUCES
@@ -27,6 +28,25 @@
 \usepackage{hyperref}
 \setlength{\parindent}{10px}
 
+%%%%%
+%Tableau
+%%%
+\renewcommand{\arraystretch}{1.5}
+\setlength{\tabcolsep}{1cm}
+
+%%%%%
+%Arbre de Probabilité
+%%%
+\usepackage{tikz}
+\usetikzlibrary{trees}% Set the overall layout of the tree
+\tikzstyle{level 1}=[level distance=3.5cm, sibling distance=5.5cm]
+\tikzstyle{level 2}=[level distance=3.5cm, sibling distance=2cm]
+\tikzstyle{level 3}=[level distance=3.5cm, sibling distance=1.5cm]
+\tikzstyle{level 3}=[level distance=3.5cm, sibling distance=0.5cm]
+
+% Define styles for bags and leafs
+\tikzstyle{bag} = [text width=4em, text centered]
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
 
 
 %%%%%
@@ -47,6 +67,101 @@
         \end{large}}
     \end{center}
     \vspace{0.5 cm}
+\begin{enumerate}
+	\item Le tableau de production d'eau minérale. 
+	\begin{table}[ht]
+   		\centering
+   		\begin{tabular}{|c|c|c|c|}
+  			\hline
+			 					& Source 1 	& Source 2 	& Total 	\\
+		   \hline 
+			Eau calcaire 		& 11.2 		& 3 		& 14.2		\\
+			\hline
+			Eau non calcaire 	& 58.8		& 27		& 85.8		\\
+		   \hline
+			Total 				& 70 		& 30  		& 100  		\\
+		   \hline
 
+   		\end{tabular}
+	\end{table}
+\item \begin{enumerate}
+	\item La probabilité de\par
+			$P(A)$ est de $\dfrac{7}{10}$,\par
+			$P(C)$ est de $\dfrac{14.2}{100}$,\par
+			$P(A\cap C)$ est de $\dfrac{11.2}{100}$,\par
+			$P(B \cap C)$ est de $\dfrac{3}{100}$,\par
+	\item	La probabilité que $P_C(A)$ est de $\dfrac{11.2}{14.2}$
+\end{enumerate}
+    \vspace{0.5 cm}
+\item \begin{enumerate}
+	\item Arbre de proba
+
+%:-+-+-+- Engendré par : http://math.et.info.free.fr/TikZ/Arbre/
+
+\begin{center}
+% Racine à Gauche, développement vers la droite
+\begin{tikzpicture}[xscale=1,yscale=1]
+% Styles (MODIFIABLES)
+\tikzstyle{fleche}=[->,>=latex,thick]
+\tikzstyle{noeud}=[fill=yellow,circle,draw]
+\tikzstyle{feuille}=[fill=yellow,circle,draw]
+\tikzstyle{etiquette}=[midway,fill=white,draw]
+% Dimensions (MODIFIABLES)
+\def\DistanceInterNiveaux{3}
+\def\DistanceInterFeuilles{2}
+% Dimensions calculées (NON MODIFIABLES)
+\def\NiveauA{(0)*\DistanceInterNiveaux}
+\def\NiveauB{(1)*\DistanceInterNiveaux}
+\def\NiveauC{(2)*\DistanceInterNiveaux}
+\def\NiveauD{(3)*\DistanceInterNiveaux}
+\def\InterFeuilles{(-1)*\DistanceInterFeuilles}
+% Noeuds (MODIFIABLES : Styles et Coefficients d'InterFeuilles)
+\node[noeud] (R) at ({\NiveauA},{(3.5)*\InterFeuilles}) {$Racine$};
+\node[noeud] (Ra) at ({\NiveauB},{(1.5)*\InterFeuilles}) {$C$};
+\node[noeud] (Raa) at ({\NiveauC},{(0.5)*\InterFeuilles}) {$C$};
+\node[feuille] (Raaa) at ({\NiveauD},{(0)*\InterFeuilles}) {$C$};
+\node[feuille] (Raab) at ({\NiveauD},{(1)*\InterFeuilles}) {$\overline{C}$};
+\node[noeud] (Rab) at ({\NiveauC},{(2.5)*\InterFeuilles}) {$\overline{C}$};
+\node[feuille] (Raba) at ({\NiveauD},{(2)*\InterFeuilles}) {$C$};
+\node[feuille] (Rabb) at ({\NiveauD},{(3)*\InterFeuilles}) {$\overline{C}$};
+\node[noeud] (Rb) at ({\NiveauB},{(5.5)*\InterFeuilles}) {$\overline{C}$};
+\node[noeud] (Rba) at ({\NiveauC},{(4.5)*\InterFeuilles}) {$C$};
+\node[feuille] (Rbaa) at ({\NiveauD},{(4)*\InterFeuilles}) {$C$};
+\node[feuille] (Rbab) at ({\NiveauD},{(5)*\InterFeuilles}) {$\overline{C}$};
+\node[noeud] (Rbb) at ({\NiveauC},{(6.5)*\InterFeuilles}) {$\overline{C}$};
+\node[feuille] (Rbba) at ({\NiveauD},{(6)*\InterFeuilles}) {$C$};
+\node[feuille] (Rbbb) at ({\NiveauD},{(7)*\InterFeuilles}) {$\overline{C}$};
+% Arcs (MODIFIABLES : Styles)
+\draw[fleche] (R)--(Ra) node[etiquette] {$...$};
+\draw[fleche] (Ra)--(Raa) node[etiquette] {$...$};
+\draw[fleche] (Raa)--(Raaa) node[etiquette] {$...$};
+\draw[fleche] (Raa)--(Raab) node[etiquette] {$...$};
+\draw[fleche] (Ra)--(Rab) node[etiquette] {$...$};
+\draw[fleche] (Rab)--(Raba) node[etiquette] {$...$};
+\draw[fleche] (Rab)--(Rabb) node[etiquette] {$...$};
+\draw[fleche] (R)--(Rb) node[etiquette] {$...$};
+\draw[fleche] (Rb)--(Rba) node[etiquette] {$...$};
+\draw[fleche] (Rba)--(Rbaa) node[etiquette] {$...$};
+\draw[fleche] (Rba)--(Rbab) node[etiquette] {$...$};
+\draw[fleche] (Rb)--(Rbb) node[etiquette] {$...$};
+\draw[fleche] (Rbb)--(Rbba) node[etiquette] {$...$};
+\draw[fleche] (Rbb)--(Rbbb) node[etiquette] {$...$};
+\end{tikzpicture}
+\end{center}
+%:-+-+-+-+- Fin
+
+
+
+
+
+
+
+
+	\item
+
+	\item
+
+\end{enumerate}
+\end{enumerate}
 \end{document}
 

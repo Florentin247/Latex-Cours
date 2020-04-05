@@ -32,22 +32,7 @@
 %Tableau
 %%%
 \renewcommand{\arraystretch}{1.5}
-\setlength{\tabcolsep}{1cm}
-
-%%%%%
-%Arbre de Probabilité
-%%%
-\usepackage{tikz}
-\usetikzlibrary{trees}% Set the overall layout of the tree
-\tikzstyle{level 1}=[level distance=3.5cm, sibling distance=5.5cm]
-\tikzstyle{level 2}=[level distance=3.5cm, sibling distance=2cm]
-\tikzstyle{level 3}=[level distance=3.5cm, sibling distance=1.5cm]
-\tikzstyle{level 3}=[level distance=3.5cm, sibling distance=0.5cm]
-
-% Define styles for bags and leafs
-\tikzstyle{bag} = [text width=4em, text centered]
-\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
-
+\setlength{\tabcolsep}{0.75cm}
 
 %%%%%
 %Haut de Page
@@ -102,27 +87,20 @@
             \hline
             $X_i$                    & 0  		& 1  	& 2		&	3	&	4	& Total     \\
            \hline
-           $P(X=x_i)$ 			     &  0,54    & 0,23     &  0,09 & 	0,01	& 0,0004		&  1  \\
+           $P(X=x_i)$ 			     &  0,54    & 0,36     &  0,09 & 	0,01	& 0,0004		&  1  \\
            \hline
 
         \end{tabular}
     \end{table}
 
+Avec les valeures non approché, le résultat vaut 1.
 
 $P(X=0)$ $ = 1 \times 0.858^4$ $= 0,541937434896 $ \par
-$P(X=1)$ $ = 4 \times 0.858^3 \times 0.142^1$ $=  0,22660634333933844 $\par
+$P(X=1)$ $ = 4 \times 0.858^3 \times 0.142^1$ $=  0,3587651080 $\par
 $P(X=2)$ $ = 6 \times 0.858^2 \times 0.142^2$ $=  0,089064065376 $ \par
 $P(X=3)$ $ = 4 \times 0.858^1 \times 0.142^3$ $=  0,009826804416 $ \par
 $P(X=4)$ $ = 1 \times 0.142^4$ $= 0,000406586896 $ \par
-
-
-
-
-
-
-
-
-	\item
+	\item La probabilité pour qu'il y ait au moins 1 bouteille d'eau calcaire, est de $0.36+0.09+0.01+0.0004$ $ = 0.464 $ 
 
 \end{enumerate}
 \end{enumerate}

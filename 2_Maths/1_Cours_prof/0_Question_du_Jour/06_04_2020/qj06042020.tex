@@ -1,0 +1,156 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\frenchbsetup{StandardLists=true}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{framed}
+\usepackage{fancyhdr}
+\usepackage[left=1.3cm,right=1.3cm,top=1.8cm,bottom=1.2cm]{geometry}
+\usepackage{array} 
+\usepackage{tabularx}
+\usepackage{fancybox}
+\usepackage{pst-tree}
+\usepackage[framed]{ntheorem}
+\usepackage{tabularx}
+\usepackage{pstricks-add}
+\usepackage{graphicx}
+\usepackage{eurosym}
+%\usepackage{pst-tree}
+\usepackage[np]{numprint}
+\usepackage{pifont}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{pgf,tikz}
+\usepackage[tikz]{bclogo}
+\usepackage{pgfkeys}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+\usetikzlibrary{arrows}
+
+
+\rfoot{\small -\thepage-}
+\cfoot{}
+
+\def\R{{\mathbb R}}
+\def\Q{{\mathbb Q}}
+\def\Z{{\mathbb Z}}
+\def\D{{\mathbb D}}
+\def\N{{\mathbb N}}
+\def\C{{\mathbb C}}
+
+\pagestyle{fancy}
+
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\alph{subsubsection}}
+\renewcommand{\labelitemi}{$\bullet$}
+\newcommand{\VE}[1]{\overrightarrow{#1}}
+%\renewcommand{\r}{($O$ ; $\vec{i}$ , $\vec{j}$)}
+\renewcommand{\arraystretch}{1}
+\tikzstyle{mybox} = [draw=black, very thick, rectangle, rounded corners, inner sep=20pt, inner ysep=20pt] 
+\tikzstyle{fancytitle} =[draw=black, very thick, rectangle, rounded corners, fill=white, text=black] % fill obligé sinon ne recouvre pas boite du dessous
+\usepackage{array,multirow,makecell}
+\setcellgapes{1pt}
+\makegapedcells
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash }b{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash }b{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash }b{#1}}
+\theoremstyle{break}
+\theorembodyfont{\upshape}
+\newtheorem{Prop}{Propri\'et\'e}
+\newtheorem{Def}{D\'efinition}
+\newtheorem{Rem}{Remarque}
+\newtheorem{exo}{Exercice}
+\newtheorem{Meth}{Methode}
+\newtheorem{cpreuve}{Preuve}
+\newtheorem{Th}{Théorème}
+\newtheorem{Act}{Activité}
+\theorembodyfont{\small \sffamily }
+\newtheorem{Ex}{Exemple}
+\newtheorem{Preu}{Preuve}
+\everymath{\displaystyle}
+\pagestyle{fancy}
+\lhead[]{\small{06 avril 2020} }
+\chead[]{\textsc{\shadowbox{\begin{large}
+				\textcolor{black}{QUESTIONS du JOUR }
+\end{large}}}}
+\rhead[]{\small {06 avril 2020}}
+\fancyhead[R]{2019/2020}
+\lfoot{}
+\rfoot{\small -\thepage-}
+
+\begin{document}
+
+
+
+
+
+	\begin{tabular}{|p{2cm}|p{14cm}| }
+		\hline
+		&Enoncé\\
+		\hline
+		1&Soit $f(x)=-2(-3x+6)(x-7)$. Déterminer le tableau de signes de $f(x)$
+		\newline 
+		\newline 
+		\newline
+
+	\\
+		\hline
+		2&Soit $g(x)=3x^2-3x-18$ définie sur $\R$.
+		\begin{enumerate}
+			\item Calculer $g(3)$.\newline
+			\item Déterminer l'image de -2 par $g$.\newline
+			\item En déduire une factorisation de $g(x)$
+			
+		\end{enumerate}\\
+		
+		\hline
+	
+		3&La courbe ci-dessous est la représentation graphique d'une fonction $f$.
+		
+		
+			\begin{center}
+				\psset{unit=0.8cm,algebraic=true}
+				\def\xmin {-3}
+				\def\xmax {4}
+				\def\ymin {-4.5}
+				\def\ymax {6}
+				\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+				\psgrid[subgriddiv=2,gridlabels=3pt,gridwidth=0.5pt,griddots=10,subgriddots=10](\xmin,\ymin)(\xmax,\ymax)
+				\psaxes{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)
+				
+				\psplot[linewidth=1pt,linestyle=dashed]{-2.8}{3.5}{2*x*x*x-6*x*x-x+6}
+				
+				\uput[r](3,2){$\mathcal{C}_f$}
+				\psdot[dotstyle=+](1,1)
+				
+				\end{pspicture*}
+			\end{center}
+			\begin{enumerate}
+				\item 	Quelle est l'image de 1 par la fonction $f$ ?
+				\item On a $f'(1)=-7$. Déterminer l'équation de  la tangente en 1 à la courbe.\newline
+				\item Donner le tableau de signe de $f'(x)$ sur $\R$\newline \newline
+			\end{enumerate}
+		
+	\\
+		\hline
+		
+	
+		4&Soit la fonction $g(x)=3x^3-4x$ définie et dérivable sur $\R$
+		\begin{enumerate}
+			\item Quelle est la dérivée $g'$\newline
+			\item Factoriser $g'(x)$ puis étudier le signe de $g'(x)$\newline
+			\item En déduire le tableau de variations de $g$.\newline \newline
+		\end{enumerate}
+	\\
+		\hline
+	
+\end{tabular}
+
+\end{document}

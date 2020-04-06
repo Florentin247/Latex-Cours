@@ -1,0 +1,334 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\frenchbsetup{StandardLists=true} % à inclure si on utilise \usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{framed}
+\usepackage{fancyhdr}
+\usepackage[left=1.2cm,right=1.2cm,top=1.8cm,bottom=1.3cm]{geometry}
+\usepackage{array} 
+\usepackage{fancyhdr} 
+\usepackage{fancybox}
+\usepackage{pst-tree}
+\usepackage[framed]{ntheorem}
+\usepackage{tabularx}
+\usepackage{pstricks,pstricks-add}
+\usepackage{eurosym}
+\usepackage{multicol}
+\usepackage{tikz,tkz-tab}
+\usepackage[tikz]{bclogo}
+\usepackage{mathrsfs}
+\usepackage{numprint}
+\usepackage{pifont}
+\rfoot{\small -\thepage-}
+\cfoot{}
+%papier millimétré
+\newcommand{\mili}[4]{\psgrid[subgriddiv=10, gridlabels=0, gridwidth=0.4pt, subgridwidth=0.4pt,gridcolor=brown!80,subgridcolor=brown!40](#1,#2)(#3,#4)}
+
+% Raccourcis diverses:
+\newcommand{\nwc}{\newcommand}
+\nwc{\dsp}{\displaystyle}
+\nwc{\ct}{\centerline}
+\nwc{\bgar}{\begin{array}}\nwc{\enar}{\end{array}}
+\nwc{\bgit}{\begin{itemize}}\nwc{\enit}{\end{itemize}}
+\nwc{\bgen}{\begin{enumerate}}\nwc{\enen}{\end{enumerate}}
+
+\nwc{\la}{\left\{}\nwc{\ra}{\right\}}
+\nwc{\lp}{\left(}\nwc{\rp}{\right)}
+\nwc{\lb}{\left[}\nwc{\rb}{\right]}
+
+\def\R{{\mathbb R}}
+%\def\Q{{\mathbb Q}}
+\def\Z{{\mathbb Z}}
+%\def\D{{\mathbb D}}
+\def\N{{\mathbb N}}
+%\def\C{{\mathbb C}}
+
+
+\nwc{\bgsk}{\bigskip}
+\nwc{\vsp}{\vspace{0.1cm}}
+\nwc{\vspd}{\vspace{0.2cm}}
+\nwc{\vspt}{\vspace{0.3cm}}
+\nwc{\vspq}{\vspace{0.4cm}}
+
+
+\def\epsi{\varepsilon}
+\def\vphi{\varphi}
+\def\lbd{\lambda}
+
+\def\Cf{\mathcal{C}_f}
+
+
+\pagestyle{fancy}
+\newcommand{\Oij}{$\left( {{\mathrm{O}};\vec i,\vec j} \right)$}
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\alph{subsubsection}}
+\newcommand{\VE}[1]{\overrightarrow{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\renewcommand{\arraystretch}{}
+
+\theoremstyle{break}
+\theorembodyfont{\upshape}
+\newtheorem{Prop}{Propri\'et\'e}
+\newtheorem{Def}{D\'efinition}
+\newtheorem{Rem}{Remarque}
+\newtheorem{corr}{Correction}
+% Tableaux
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1cm}}
+
+\newtheorem{Th}{Théorème}
+\theorembodyfont{\small \sffamily }
+\newtheorem{Ex}{Exemple}
+\newtheorem{Preu}{Preuve}
+\theorembodyfont{\small	 \sffamily }
+\newtheorem{Meth}{\underline{Méthode}}
+
+\pagestyle{fancy}
+\fancyhead[L]{1STI2D}
+\fancyhead[C]{COURS}
+\fancyhead[R]{2019/2020}
+\rfoot{\small -\thepage-}
+\cfoot{}
+
+\begin{document}
+
+	
+	\begin{center}
+		\shadowbox{\begin{large}
+				\textcolor{black}{DÉRIVÉE : Deuxième partie}
+			\end{large}}
+		\end{center}
+	\tableofcontents
+
+\section{Rappel cours dérivation première partie}
+	\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Rappel}
+		\begin{itemize}
+			\item \boldmath	Le {taux de variations} de $f$ en $a$  est le nombre défini par 
+				$\tau_a(h)=\frac{f(a+h)-f(a)}{h}$
+			\item Le nombre dérivé s'il existe est le nombre défini par  :$ f'(a)=\displaystyle\lim_{h\to0}\tau_a(h)=\displaystyle\lim_{h\to0}\frac{f(a+h)-f(a)}{h}=l $
+			\item 	Si $f$ est dérivable en $a$ , la \textbf{tangente} $\mathscr{T}_a$ à la courbe représentative $\mathscr{C}_f$ de $f$ en $a$ est la droite:\begin{enumerate}
+				\item qui a pour coefficient directeur $f'(a)$
+				\item qui passe par le point $A$ de coordonnées $(a;f(a))$.
+				\item elle a pour équation \fbox{$y=f'(a)\left( x-a\right) +f(a)$}
+			\end{enumerate}
+		\item Lorsque le nombre dérivé de $f$ existe pour toutes les valeurs $x$ de I, on dit que $f$ est dérivable sur I.
+		La fonction qui à $x$ associe son nombre dérivé $f'(x)$ s’appelle la fonction dérivée de $f$ (ou la dérivée
+		de $f$ ) et elle se note $f’$.
+		\item Premières formules de dérivation (voir paragraphes II) et III) dérivée de $x\mapsto x^2$, $x\mapsto x^3$ de $u+v$ et de $\lambda u$ )
+\item L'étude du signe de la dérivée de la fonction $f$ permet d'étudier les variations de $f$\\
+Soit $f$ une fonction dérivable sur une intervalle  $I$, alors :
+\begin{itemize}
+	\item Si, pour tout $x$ de $I$, $f'(x)  \geq 0 $  alors $f$ est \textbf{ croissante} sur $I$ .
+	\item Si, pour tout $x$ de $I$, $f'(x) \leq 0 $  alors $f$ est \textbf{ décroissante} sur $I$ .
+	\item Si, pour tout $x$ de $I$, $f'(x) = 0 $ , alors $f$ est \textbf{ constante } sur $I$ .
+\end{itemize} 
+		\end{itemize}
+	\end{bclogo}
+\begin{Meth}[Rappel:Étude d'une fonction polynôme de degré 3]
+Soit la fonction $f$ définie sur $\R$ par $f(x)=x^3-3x-4$
+\begin{enumerate}
+	\item Déterminer la dériver de $f$
+	\item Étudier le signe de $f'(x)$
+	\item En déduire les variations de$f$
+	\item Donner l'équation de la tangente $T$ à la courbe de $f$ au point d'abscisse -2
+	
+\end{enumerate}
+\end{Meth}
+\newpage
+\section{Fonction dérivée de fonctions de référence} 
+
+
+	\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Fonctions de référence}
+	\begin{minipage}{0.9\textwidth}
+	$f$ désigne une fonction dérivable sur $I$ et $f'$ est la fonction dérivée de f. On a : 
+	\begin{center}
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{|C{2.5}|C{2.5}|C{2.5}|}
+	\hline 
+	Fonction $f$ & Fonction $f'$ & Intervalle I \\ 
+	\hline  
+	$k$ & $0$ & $\R$ \\ 
+	\hline  
+	$ax+b$ & $a$ & $\R$ \\ 
+	\hline
+	$x^2$ & $2x$ & $\R$ \\ 
+	\hline
+	$x^3$ & $3x^2$ & $\R$ \\ 
+	\hline
+	$x^n$ & $n x^{n-1}$ & $\R$, avec $n\in\N^*$ \\
+	\hline    
+	\rule{0cm}{0.65cm}
+	$\dfrac{1}{x}$ & $ -\dfrac{1}{x^2}$ & $\R^*$ \\ [0.2cm]
+	\hline
+	$\cos(x)$ & $ -\sin(x)$ & $\R$ \\
+	\hline
+	$\sin(x)$ & $\cos(x)$ & $\R$ \\
+	\hline
+	
+	\end{tabular}
+	\end{center}
+	
+	\end{minipage}
+	
+\end{bclogo}
+
+
+\begin{Rem}
+Les quatre premières lignes sont des rappels de la partie 1 sur la dérivation. La 5ème est une généralisation des résultats obtenus avec $x^2$ et $x^3$ .\\
+\begin{Ex}
+	Si $f$ est définie par $f(x)=x^5$ , $f$ est dérivable sur $\R$ et $f'(x)=5x^4$.
+\end{Ex}
+Les quatre dernières lignes sont admises.	
+\end{Rem} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Fonction dérivée et opérations}
+	\subsection{RAPPEL: Somme de deux fonctions, multiplication par un réel}
+\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Fonction $u+v$ et $\lambda u$ avec $\lambda$ réeel}
+	Si $u$ et $v$ sont deux fonctions dérivables sur un même intervalle $I$ de $\R$ et $\lambda$ un réel non nul alors :
+	\begin{itemize}
+		\item $(u+v)$ est dérivable sur $I$ et $(u+v)'=u'+v'$.
+		\item $\lambda u$ est dérivable sur  $I$ et $(\lambda u)'= \lambda u'$
+	\end{itemize} 
+\end{bclogo}
+\begin{Meth}
+	\begin{enumerate}
+		\item Déterminer la dérivée de la fonction $f$ définie sur $]0;+\infty[$ par $f(x)=-3x^4-\dfrac5x$
+		\item Déterminer la dérivée de la fonction $g$ définie sur $\R$ par $g(x)=3\cos(x)-5\sin(x)$
+	\end{enumerate}
+	
+\end{Meth} 
+\subsection{Produit de deux fonctions dérivables}
+
+	\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Fonction $u\times v$}
+
+	Si $u$ et $v$ sont deux fonctions dérivables sur un même intervalle $I$ de $\R$, alors $u\times v$ est dérivable sur $I$ et $(u\times v)'=u'v+uv'$.
+\end{bclogo}
+\begin{Ex}[Rédaction]
+		Soit la fonction $f$définie sur $\R$ par :\\ $f(x)=(4x^3-3)(-\dfrac{3}{2}x^2-4x)$\\
+	$f$ est de la forme $uv$ avec: \\
+	\begin{tabular}{m{5cm}|m{0.2cm}m{8cm}}
+		\ding{172} $u(x)=4x^3-3$&&\ding{172} $v(x)=-\dfrac{3}{2}x^2-4x$ \\
+	\ding{173} $u$ est dérivable sur $\R$ &&\ding {173} $v$ est dérivable sur $\R$\\
+		\ding{174} $u'(x)=12x^2$&&\ding{174} $v'(x)=-\dfrac{3}{2}\times2x-4=-3x-4$\\	
+	\end{tabular}\\
+	$f$ est donc dérivable sur $\R$ et pour tout $x\in \R$ \newline  $f'(x)=(12x^2)(-\dfrac{3}{2}x^2-4) +(-3x-4)(4x^3-3)$\\
+	$\Leftrightarrow f'(x)=-16x^4-48x^3-12x^4+9x-16x^3+12$\\$\Leftrightarrow f'(x)=-28x^4-64x^3+9x+12$\\
+\end{Ex}
+
+\begin{Meth}
+	Déterminer la fonction dérivée de la fonction $f$ définie sur $\R$ par $f(x)=x \cos x$.
+\end{Meth}
+
+\subsection{Inverse d'une fonction dérivable}
+
+	\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{fonction $\dfrac{1}{v}$}
+	Si $v$ est une fonction dérivable sur un intervalle $I$ de $\R$ et qui ne s'annule pas, alors $\dfrac{1}{v}$ est dérivable sur $I$ et $\left(\dfrac{1}{v}\right)' =-\dfrac{v'}{v^2}$.
+	\end{bclogo}
+\begin{Ex}[Rédaction]
+	Soit la fonction $f$ définie sur $\R$ (car pour tout $x\in \R$, $3x^2+2x+1\neq0 )$ par:\\
+$ f(x) =\dfrac{1}{3x^2+2x+1}$\\
+$f$ est de la forme $\dfrac{1}{u}$
+avec :\\
+$u(x) = 3x^2 + 2x + 1$\\
+u est dérivable sur $\R$ et $u(x)\neq 0$ pour tout $x\in\R$\\
+$u'(x) = 6x + 2$\\
+$f$ est donc dérivable sur $\R$ et pour tout $x\in \R$ :\\
+$f'(x) = -\dfrac{6x + 2}{(3x^2 + 2x + 1)^2}$\\
+\end{Ex}
+\begin{Meth}
+	Déterminer la fonction dérivée de la fonction $f$ définie sur $]5;+\infty[$ par $f(x)=\dfrac{1}{2x-10}$.
+\end{Meth} 
+\subsection{Quotient de deux fonctions dérivables}
+
+	\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Fonction  $\dfrac{u}{v}$}
+
+	Si $u$ et $v$ sont deux fonctions dérivables sur un même intervalle $I$ de $\R$ et $v$ ne s'annule pas sur $I$, alors $\dfrac{u}{v}$ est dérivable sur $I$ et $\left(\dfrac{u}{v}\right)' =\dfrac{u'v-uv'}{v^2}$.
+\end{bclogo}
+\begin{Ex}[Rédaction]
+		Soit la fonction $f$ définie sur $\R\setminus\{-\dfrac{2}{3}\}$  par:\\
+	$ f(x) =\dfrac{2x-1}{3x+2}$\\
+	$f$ est de la forme $\dfrac{u}{v}$
+	avec :\\
+	\begin{tabular}{l|ll}
+		\ding{172} $u(x) = 2x-1$&    &\ding{172}			$v(x)=3x+2$\\
+		\ding{173} $u$ est dérivable sur $\R$ &&\ding {173} $v$ est dérivable sur $\R$ et $v(x)\neq0$ pour $x\in \R \backslash \{-\dfrac{2}{3}\}$\\
+		\ding{174} $u'(x) = 2$&    &\ding{174} 			$v'(x)=3$\\
+	\end{tabular}\\
+	donc $f$ est dérivable sur $\R\setminus\{-\dfrac{2}{3}\}$  et pour tout $x\in\R\setminus\{-\dfrac{2}{3}\}$:\\
+	$f'(x) = \dfrac{2(3x + 2)-3(2x-1)}{(3x+2)^2}$\\
+	$f'(x) = \dfrac{6x+4-6x+3}{(3x+2)^2}$\\
+	$f'(x) = \dfrac{7}{(3x+2)^2}$\\
+	\begin{Rem}
+		On ne développe pas le dénominateur car par la suite on va étudier le signe de $f'(x)$ et comme $(3x+2)^2$ est positif il suffira d'étudier le signe du numérateur.
+	\end{Rem}
+\end{Ex}
+\begin{Meth}
+	Déterminer la fonction dérivée de la fonction $f$ définie sur $\R$ par $f(x)=\dfrac{\cos x}{x^2+1}$.
+\end{Meth}
+
+\begin{Meth}[Étude de variations d'une fonction]
+	Déterminer les fonctions dérivées des fonctions $f$ définies sur $I$ suivantes puis établir leur tableau de variations :
+	\begin{multicols}{2}
+		\begin{enumerate}
+			\item $f(x)=3x^2+2x-4$, $I=\R$ \\ 
+			\item $f(x)=\dfrac3x$, $I=]0;+\infty[$ \\ 
+			\item $f(x)=x^2(-2x+3)$, $I=\R$ \\ 
+			\item $f(x)=\dfrac{3x+4}{1-2x}$, $I=]\frac12;+\infty[$ \\
+			
+		\end{enumerate}
+	\end{multicols}
+\end{Meth}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Fonction dérivée d'une fonction composée} 
+
+\subsection{Dérivée des fonctions du type $x \mapsto f(ax+b)$}
+	\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Propriété}
+
+On définit sur un intervalle $J$ une fonction $g$ composée de la fonction affine $x \mapsto ax+b$ par une fonction $f$. On a le schéma de composition suivant $g$: $\begin{array}{l|rclcl}
+& I & \longrightarrow & J  & \longrightarrow & \R\\
+& x & \longmapsto & ax+b &  \longmapsto & f(ax+b) \end{array}$. 
+
+	Soient $a$ et $b$ deux réels et $f$ une fonction dérivable sur $I$. Soit $J$ un intervalle tel que pour tout $x$ appartenant à $I$, $ax+b$ appartient à $J$. \\
+	Alors la fonction $g$ : $x \mapsto f(ax+b) $ est dérivable sur $J$ et pour tout $x$ dans $J$ :  
+	\begin{center}
+	$g'(x)=a \times f'(ax+b)$
+	\end{center}
+\end{bclogo}
+
+\begin{Meth}
+Déterminer la fonction dérivée de la fonction $g$ définie sur $\R$ par $g(x)=(3x-2)^4$.
+\end{Meth} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\subsection{Dérivée des fonctions trigonométriques composées}
+
+	\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Propriété}
+	Soient $A$, $\omega$ et $\varphi$ des réels. \\
+	Les fonctions $f : t \longmapsto A\cos(\omega t+\varphi)$ et $g:t \longmapsto  A\sin(\omega t+\varphi) $ sont dérivables sur $\R$ et pour tout $x$ dans $\R$ on a:\begin{itemize}
+		\item $$f'(t)=-A \times \omega \sin(\omega t+\varphi)$$
+		\item $$g'(t)=A \times \omega \cos(\omega t+\varphi)$$ 
+	\end{itemize}
+	 
+	\end{bclogo}
+
+\begin{Meth}
+Déterminer la fonction dérivée de la fonction $f$ définie sur $\R$ par $f(t)=10\cos(25t+\dfrac{\pi}{4})$.
+\end{Meth} 
+
+
+
+		
+
+	
+
+`\end{document}

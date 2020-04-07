@@ -1,7 +1,0 @@
-Notes de bas de page
-
-Pour introduire une note de bas de page, on utilise l'instruction \footnote. Elle se place après le mot où l'on veut mettre l'appel de note, et le contenu de la note se trouve dans un bloc accolé à l'instruction, par exemple :
-
-La SNCF\footnote{Société nationale des chemins de fer français} fournit
-un service de transport de voyageurs et de fret.
-

@@ -130,14 +130,40 @@ Soit $f$ une fonction dérivable sur une intervalle  $I$, alors :
 \end{itemize} 
 		\end{itemize}
 	\end{bclogo}
+\newpage
 \begin{Meth}[Rappel:Étude d'une fonction polynôme de degré 3]
 Soit la fonction $f$ définie sur $\R$ par $f(x)=x^3-3x-4$
 \begin{enumerate}
-	\item Déterminer la dériver de $f$
-	\item Étudier le signe de $f'(x)$
-	\item En déduire les variations de$f$
-	\item Donner l'équation de la tangente $T$ à la courbe de $f$ au point d'abscisse -2
+	\item Déterminer la dériver de $f$ \par
+		$f'(x) = 3x^2-3$ ~~~~$\forall x \in \R $ 
+	\item Étudier le signe de $f'(x)$ \par
+	Signe de $f'(x)$ : $a=3>0$
+	\item En déduire les variations de$f$\par
+	On factorise $f'(x) = 3(x^2-1) = 3(x-1)(x+1)$
+	$f'$ est une fonction du 2$^{nd}$ degré qui a 2 racines, $1$ et $-1$ donc $f'(x)$ est du signe de $a=3>0$ à l'exterieur des racines.\par
+		\begin{center}
+				\underline{Tableau de variations}
+
+			\setlength{\columnseprule}{0.4pt}
+            \begin{tikzpicture}
+            \tkzTabInit[espcl=2.5]{$x$/1,$f'(x)$/1,$f(x)$/2.5}{$+\infty$,$-1$,$1$,$+\infty$}
+			\tkzTabLine{,+,z, -, z,+, }
+            \tkzTabVar{-/,+/$-2$,-/$-6$,+/}
+            \end{tikzpicture}
+    \end{center}
+	$f(-1) = (-1)^3 - 3 \times (-1) - 4 = -1 + 3 - 4 = -2$
+	$f(1) = (1)^3 - 3 \times (1) - 4 = 1 - 3 - 4 = -6$
 	
+	\item Donner l'équation de la tangente $T$ à la courbe de $f$ au point d'abscisse -2 \par
+	Equation tengeante à $C_f$ au point d'abscice \par
+	$y = f'(a)(x-a)+f(a)$ \par
+	\textbf{\underline{Ici}} \par
+	$T_{-2}: y = f'(-2)(x-(-2))+f(-2)$\par
+	$f'(-2) = 3 \times (-2)^2 - 3 = 3 \times 4 - 3 = 9 $\par
+	$f(-2) =  (-2)^3 - 3 \times (-2) -4 = -8 + 6 - 4 = -6 $\par
+	\textbf{\underline{Donc}}\par
+	 $T_{-2}: y = 9(x+2)-6$
+	 $T_{-2}: y = 9x+12$
 \end{enumerate}
 \end{Meth}
 \newpage
@@ -198,11 +224,14 @@ Les quatre dernières lignes sont admises.
 \end{bclogo}
 \begin{Meth}
 	\begin{enumerate}
-		\item Déterminer la dérivée de la fonction $f$ définie sur $]0;+\infty[$ par $f(x)=-3x^4-\dfrac5x$
-		\item Déterminer la dérivée de la fonction $g$ définie sur $\R$ par $g(x)=3\cos(x)-5\sin(x)$
+		\item Déterminer la dérivée de la fonction $f$ définie sur $]0;+\infty[$ par $f(x)=-3x^4-\dfrac5x$\par
+		$f'(x) = -3 \times (4x^3) -5 \times	(-\dfrac{1}{x^2}) = -12x^3 + \dfrac{5}{x^2}$
+		\item Déterminer la dérivée de la fonction $g$ définie sur $\R$ par $g(x)=3\cos(x)-5\sin(x)$\par
+		$g'(x) = -3 (\sin(x)) -5 (\cos(x)) = 3\sin(x) - 5\cos(x)$
 	\end{enumerate}
 	
 \end{Meth} 
+\newpage
 \subsection{Produit de deux fonctions dérivables}
 
 	\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Fonction $u\times v$}

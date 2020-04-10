@@ -25,6 +25,15 @@
 \usepackage{mathrsfs}
 \usepackage{numprint}
 \usepackage{pifont}
+
+
+%%%%%%%%%%%%
+%Tableaux
+%%%%
+\usepackage{color,colortbl} 
+\usepackage[table]{xcolor}
+
+
 \rfoot{\small -\thepage-}
 \cfoot{}
 %papier millimétré
@@ -131,6 +140,11 @@ Soit $f$ une fonction dérivable sur une intervalle  $I$, alors :
 		\end{itemize}
 	\end{bclogo}
 \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ù
+%	Méthode 1
+%%%%%%%%%%%%%%%%%%%
+
 \begin{Meth}[Rappel:Étude d'une fonction polynôme de degré 3]
 Soit la fonction $f$ définie sur $\R$ par $f(x)=x^3-3x-4$
 \begin{enumerate}
@@ -222,6 +236,13 @@ Les quatre dernières lignes sont admises.
 		\item $\lambda u$ est dérivable sur  $I$ et $(\lambda u)'= \lambda u'$
 	\end{itemize} 
 \end{bclogo}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ù
+%	Méthode 2
+%%%%%%%%%%%%%%%%%%%
+
+
 \begin{Meth}
 	\begin{enumerate}
 		\item Déterminer la dérivée de la fonction $f$ définie sur $]0;+\infty[$ par $f(x)=-3x^4-\dfrac5x$\par
@@ -250,8 +271,37 @@ Les quatre dernières lignes sont admises.
 	$\Leftrightarrow f'(x)=-16x^4-48x^3-12x^4+9x-16x^3+12$\\$\Leftrightarrow f'(x)=-28x^4-64x^3+9x+12$\\
 \end{Ex}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ù
+%	Méthode 3
+%%%%%%%%%%%%%%%%%%%
 \begin{Meth}
-	Déterminer la fonction dérivée de la fonction $f$ définie sur $\R$ par $f(x)=x \cos x$.
+	Déterminer la fonction dérivée de la fonction $f$ définie sur $\R$ par $f(x)=x \cos(x)$.
+
+
+\begin{multicols}{2}
+	$f$ est définie sur $\R$~~~~$f$ est de la forme $uv$ avec 
+\centering
+\setlength{\arrayrulewidth}{2pt}
+\definecolor{gris1}{gray}{0.85} 
+\definecolor{gris2}{gray}{0.65}
+\renewcommand{\arraystretch}{2}
+    \begin{tabular}{|C{2.5}|C{2.5}|}
+    \hline
+     \cellcolor{gris1} $u(x) = x $ &\cellcolor{pink!70} $v(x) = \cos$ \\ 
+	\hline
+	$u$ dérivable sur $\R$ & $v$ dérivable sur $\R$\\
+    \hline
+     \cellcolor{pink!200}$u'(x)=1$&\cellcolor{gris2}$v'(x)=-\sin(x)$  \\
+    \hline
+    \end{tabular}
+
+	Donc $f$ est dérivable sur $\R$ avec \par
+	$f'(x)$ = \colorbox{pink!200}{$1$} \textcircled{$\times$} \colorbox{pink!70}{$\cos(x)$} $\textcircled{+}$ \colorbox{gris2}{$(-sin(x)$} \textcircled{$\times$} \colorbox{gris1}{$x)$}\par
+	$f'(x)$ = \colorbox{pink}{$1\times\cos(x)$} $\textcircled{+}$ \colorbox{gray}{$(-sin(x)\times x)$}\par
+	On développe, \par
+	$f'(x) = \cos - x \sin(x)$
+
+\end{multicols}
 \end{Meth}
 
 \subsection{Inverse d'une fonction dérivable}
@@ -270,9 +320,29 @@ $u'(x) = 6x + 2$\\
 $f$ est donc dérivable sur $\R$ et pour tout $x\in \R$ :\\
 $f'(x) = -\dfrac{6x + 2}{(3x^2 + 2x + 1)^2}$\\
 \end{Ex}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ù
+%	Méthode 4
+%%%%%%%%%%%%%%%%%%%
+
 \begin{Meth}
 	Déterminer la fonction dérivée de la fonction $f$ définie sur $]5;+\infty[$ par $f(x)=\dfrac{1}{2x-10}$.
+	
+	Soit la fonction $f$ définie sur $[5 + \infty[$ par $f(x) = \dfrac{1}{2x-10}$\par
+	$f$ est de la forme \textcolor{purple}{$\dfrac{1}{u}$} avec\par
+	$u(x) = 2x -10$\par
+	$u$ est dérivable sur $]5;+\infty[$ et non nul\par
+	$u'(x) = 2$\par
+	Donc $f$ est dérivable sur $]5;+\infty[$ et $\forall~x~\in ]5;+\infty[$ \par
+	
+	\framebox{$f'(x)$ = $\textcircled{-}$ $\dfrac{2} {(2x-10)^2}$}
+
+
 \end{Meth} 
+
+
+
+
 \subsection{Quotient de deux fonctions dérivables}
 
 	\begin{bclogo}[couleur = yellow!30, arrondi = 0.1,logo=\bcbook]{Fonction  $\dfrac{u}{v}$}
@@ -297,9 +367,19 @@ $f'(x) = -\dfrac{6x + 2}{(3x^2 + 2x + 1)^2}$\\
 		On ne développe pas le dénominateur car par la suite on va étudier le signe de $f'(x)$ et comme $(3x+2)^2$ est positif il suffira d'étudier le signe du numérateur.
 	\end{Rem}
 \end{Ex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ù
+%	Méthode 5
+%%%%%%%%%%%%%%%%%%%
+
 \begin{Meth}
 	Déterminer la fonction dérivée de la fonction $f$ définie sur $\R$ par $f(x)=\dfrac{\cos x}{x^2+1}$.
 \end{Meth}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ù
+%	Méthode 6
+%%%%%%%%%%%%%%%%%%%
 
 \begin{Meth}[Étude de variations d'une fonction]
 	Déterminer les fonctions dérivées des fonctions $f$ définies sur $I$ suivantes puis établir leur tableau de variations :
@@ -315,7 +395,10 @@ $f'(x) = -\dfrac{6x + 2}{(3x^2 + 2x + 1)^2}$\\
 \end{Meth}
 
 
+\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%4 Fonctions dérivées
+%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Fonction dérivée d'une fonction composée} 
 
 \subsection{Dérivée des fonctions du type $x \mapsto f(ax+b)$}
@@ -331,6 +414,11 @@ On définit sur un intervalle $J$ une fonction $g$ composée de la fonction affi
 	$g'(x)=a \times f'(ax+b)$
 	\end{center}
 \end{bclogo}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ù
+%	Méthode 7
+%%%%%%%%%%%%%%%%%%%
 
 \begin{Meth}
 Déterminer la fonction dérivée de la fonction $g$ définie sur $\R$ par $g(x)=(3x-2)^4$.
@@ -349,6 +437,11 @@ Déterminer la fonction dérivée de la fonction $g$ définie sur $\R$ par $g(x)
 	\end{itemize}
 	 
 	\end{bclogo}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ù
+%	Méthode 8
+%%%%%%%%%%%%%%%%%%%
 
 \begin{Meth}
 Déterminer la fonction dérivée de la fonction $f$ définie sur $\R$ par $f(t)=10\cos(25t+\dfrac{\pi}{4})$.

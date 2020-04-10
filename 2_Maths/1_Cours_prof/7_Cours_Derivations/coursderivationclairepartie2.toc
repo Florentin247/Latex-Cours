@@ -1,0 +1,11 @@
+\babel@toc {french}{}
+\contentsline {section}{\numberline {I}Rappel cours dérivation première partie}{1}%
+\contentsline {section}{\numberline {II}Fonction dérivée de fonctions de référence}{3}%
+\contentsline {section}{\numberline {III}Fonction dérivée et opérations}{3}%
+\contentsline {subsection}{\numberline {1}RAPPEL: Somme de deux fonctions, multiplication par un réel}{3}%
+\contentsline {subsection}{\numberline {2}Produit de deux fonctions dérivables}{4}%
+\contentsline {subsection}{\numberline {3}Inverse d'une fonction dérivable}{4}%
+\contentsline {subsection}{\numberline {4}Quotient de deux fonctions dérivables}{5}%
+\contentsline {section}{\numberline {IV}Fonction dérivée d'une fonction composée}{6}%
+\contentsline {subsection}{\numberline {1}Dérivée des fonctions du type $x \DOTSB \mapstochar \rightarrow f(ax+b)$}{6}%
+\contentsline {subsection}{\numberline {2}Dérivée des fonctions trigonométriques composées}{6}%

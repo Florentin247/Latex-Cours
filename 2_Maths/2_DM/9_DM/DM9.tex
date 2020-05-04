@@ -1,0 +1,154 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\frenchbsetup{StandardLists=true}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{framed}
+\usepackage{fancyhdr}
+\usepackage[left=1.3cm,right=1.3cm,top=1.8cm,bottom=1.2cm]{geometry}
+\usepackage{array} 
+\usepackage{fancyhdr} 
+\usepackage{fancybox}
+\usepackage{pst-tree}
+\usepackage[framed]{ntheorem}
+\usepackage{tabularx}
+\usepackage{pstricks-add}
+\usepackage{eurosym}
+%\usepackage{pst-tree}
+\usepackage[np]{numprint}
+\usepackage{pifont}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{pgf,tikz}
+\usepackage[tikz]{bclogo}
+\usepackage{pgfkeys}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+\usetikzlibrary{arrows}
+
+
+\rfoot{\small -\thepage-}
+\cfoot{}
+
+\def\R{{\mathbb R}}
+\def\Q{{\mathbb Q}}
+\def\Z{{\mathbb Z}}
+\def\D{{\mathbb D}}
+\def\N{{\mathbb N}}
+\def\C{{\mathbb C}}
+
+\pagestyle{fancy}
+
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\alph{subsubsection}}
+\renewcommand{\labelitemi}{$\bullet$}
+\newcommand{\VE}[1]{\overrightarrow{#1}}
+%\renewcommand{\r}{($O$ ; $\vec{i}$ , $\vec{j}$)}
+\renewcommand{\arraystretch}{1}
+\tikzstyle{mybox} = [draw=black, very thick, rectangle, rounded corners, inner sep=20pt, inner ysep=20pt] 
+\tikzstyle{fancytitle} =[draw=black, very thick, rectangle, rounded corners, fill=white, text=black] % fill obligé sinon ne recouvre pas boite du dessous
+\usepackage{array,multirow,makecell}
+\setcellgapes{1pt}
+\makegapedcells
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash }b{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash }b{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash }b{#1}}
+\theoremstyle{break}
+\theorembodyfont{\upshape}
+\newtheorem{Prop}{Propri\'et\'e}
+\newtheorem{Def}{D\'efinition}
+\newtheorem{Rem}{Remarque}
+\newtheorem{exo}{Exercice}
+\newtheorem{Meth}{Methode}
+\newtheorem{cpreuve}{Preuve}
+\newtheorem{Th}{Théorème}
+\newtheorem{Act}{Activité}
+\theorembodyfont{\small \sffamily }
+\newtheorem{Ex}{Exemple}
+\newtheorem{Preu}{Preuve}
+\everymath{\displaystyle}
+\pagestyle{fancy}
+\lhead[]{\small NOM : .......}
+\chead[]{\textsc{\shadowbox{\begin{large}
+				\textcolor{black}{Dm6}
+\end{large}}}}
+\rhead[]{\small {}}
+\fancyhead[R]{2019/2020}
+\lfoot{}
+\rfoot{\small -\thepage-}
+
+\begin{document}
+	\textbf{Ce DM est sous le format d'une épreuve d'E3C, celle que vous auriez pu avoir, il est à faire pour le lundi 4 mai 2020.}
+\begin{exo}[AUTOMATISMES.SANS CALCULATRICE 7  points] 
+ A Compléter sur le sujet (aucun détail de calcul n'est imposé)\\
+{\renewcommand{\arraystretch}{2}
+\begin{tabular}{|p{1cm}|p{10cm}|p{5.5cm}| }
+	\hline
+&Enoncé&Réponse\\
+\hline
+1&Mettre sous forme d'une fraction irréductible $A= \dfrac54 \times \dfrac2{15}$& $\dfrac16$\\
+\hline
+2&Factoriser $B= (3x+2)^2 - (x+1)^2$&$ $\\
+\hline
+3&Ecrire sous forme d'un nombre entier $3\times10^{-3}\times8\times10^7$& $240000$\\
+\hline
+4&Donner l'écriture scientifique de $724,54 \times 10^{-3}$&$7,2454\times 10^{-5} $\\
+\hline
+5& $A=\dfrac{b\times h}{2}$ & $h=\dfrac{b}2$\\
+\hline
+6&Développer $3(2x+1)^2-4(x-2)$&\\
+\hline
+7& Résoudre dans $]-\pi ; \pi]$ l'équation $\sin x = -\dfrac12$ & \\
+\hline
+8& Déterminer l'équation réduite  de la droite passant par les points $A(2 ; 3)$ et $B( 6 ; 5)$ & \\
+\hline
+9&Le prix d'un objet est passé de 200 euros à 250 euros. Le pourcentage d'augmentation de cet objet est : & \\
+\hline
+10& Le nombre de personnes ayant contracté le virus a augmenté de 25 \% entre le mois de février et de mars puis retombre au mois d'avril au même nombre qu'en février. Le pourcentage de diminution du nombre de personnes ayant eu le virus entre mars et avril est : & \\
+\hline
+
+\end{tabular}}
+
+\end{exo}
+\newpage
+\begin{exo}[7 points]
+	Soit la fonction $f$ définie sur l'intervalle $[ -5 ; 5 ]$ par $f(x)=x^3-3x^2-24x+8$
+	\begin{enumerate}
+		\item 
+		\begin{enumerate}
+			\item Calculer la dérivée $f'(x)$
+			\item Vérifier que pour tout $x \in [ -5 ; 5]$, $ f'(x)= 3 (x-4)(x+2)$
+		\end{enumerate}
+		\item Etudier le signe de $f '(x )$ sur $[ -5 ; 5 ]$
+		 
+		 \item Donner le tableau de variations de $f$ sur $[ -5 ; 5 ]$
+		 \item Déterminer la valeur de $x$ pour laquelle la fonction $f$ admet un maximum sur $[ -5 ; 5 ]$ et en préciser la valeur.
+		 \item  Déterminer l'équation de la tangente à la courbe au point d'abscisse 0.
+	
+	\end{enumerate}
+\end{exo}
+\begin{exo}[6 points]
+	Un magasin de vêtements a constitué un stock de jeans. certains de ces jeans présentent un défaut et on admet que le pourcentage de jeans présentant un défaut est égal à 10 \%.\\
+	on prélève au hasard successivement un jean dans le stock; le choix d'un jean est modélisé par une épreuve de Bernoulli, dont le succès est l'évènement "Le jean choisi a un défaut", noté S.\\
+	Dans cet exercice les résultats seront donnés sous forme décimale arrondis au millième si nécessaire.
+	\begin{enumerate}
+		\item Donner la probabilité $p$ de l'épreuve de Bernoulli considérée.
+		\item On répète trois fois de manière indépendante cette épreuve.
+		\begin{enumerate}
+			\item Représenter par un arbre pondéré l'expérience aléatoire.
+			\item Calculer la probabilité de l'évènement A :"Aucun jean n'a de défaut"
+			\item Calculer la probabilité de l'évènement B : "Un seul jean a un défaut"
+			\item Calculer la probabilité de l'évènement C : "Au moins deux jeans ont un défaut"
+		\end{enumerate}
+	\end{enumerate}
+\end{exo}
+
+
+\end{document}
